@@ -1,0 +1,197 @@
+66.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DATA_ACCESS,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+18:32:16.2 (2085054)|USER_INFO|[EXTERNAL]|0057F0000042UBb|ishibashi@hurex.co.jp.dev1|(GMT+09:00) 日本標準時 (Asia/Tokyo)|GMT+09:00
+18:32:16.2 (2115983)|EXECUTION_STARTED
+18:32:16.2 (2125127)|CODE_UNIT_STARTED|[EXTERNAL]|apex://RegistrationInfoController/ACTION$getRegistrationInfo
+18:32:16.2 (4404709)|CODE_UNIT_STARTED|[EXTERNAL]|01pBK000001mgyr|RegistrationInfoController.getRegistrationInfo()
+18:32:16.2 (4685374)|HEAP_ALLOCATE|[95]|Bytes:3
+18:32:16.2 (4755367)|HEAP_ALLOCATE|[100]|Bytes:152
+18:32:16.2 (4768696)|HEAP_ALLOCATE|[417]|Bytes:408
+18:32:16.2 (4778966)|HEAP_ALLOCATE|[430]|Bytes:408
+18:32:16.2 (4798669)|HEAP_ALLOCATE|[317]|Bytes:6
+18:32:16.2 (4840759)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:23
+18:32:16.2 (4843964)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:36
+18:32:16.2 (4845638)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:7
+18:32:16.2 (4854034)|METHOD_ENTRY|[5]|01pBK000001mgyr|RegistrationInfoController.RegistrationInfoController()
+18:32:16.2 (4857959)|STATEMENT_EXECUTE|[5]
+18:32:16.2 (4862807)|STATEMENT_EXECUTE|[5]
+18:32:16.2 (4879995)|HEAP_ALLOCATE|[68]|Bytes:5
+18:32:16.2 (4905059)|HEAP_ALLOCATE|[74]|Bytes:5
+18:32:16.2 (4909994)|HEAP_ALLOCATE|[82]|Bytes:7
+18:32:16.2 (5126755)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+18:32:16.2 (5131761)|STATEMENT_EXECUTE|[7]
+18:32:16.2 (5139633)|METHOD_EXIT|[5]|RegistrationInfoController
+18:32:16.2 (5149117)|HEAP_ALLOCATE|[30]|Bytes:5
+18:32:16.2 (5151449)|STATEMENT_EXECUTE|[29]
+18:32:16.2 (5152389)|STATEMENT_EXECUTE|[30]
+18:32:16.2 (5153144)|STATEMENT_EXECUTE|[30]
+18:32:16.2 (5154204)|STATEMENT_EXECUTE|[31]
+18:32:16.2 (5156333)|HEAP_ALLOCATE|[31]|Bytes:70
+18:32:16.2 (5169456)|HEAP_ALLOCATE|[31]|Bytes:4
+18:32:16.2 (6176487)|SOQL_EXECUTE_BEGIN|[31]|Aggregations:0|SELECT Id, AccountId FROM User WHERE Id = '005BK00000GwCFkYAN' LIMIT 1
+18:32:16.2 (9764633)|SOQL_EXECUTE_END|[31]|Rows:1
+18:32:16.2 (9791760)|HEAP_ALLOCATE|[31]|Bytes:8
+18:32:16.2 (9809211)|HEAP_ALLOCATE|[31]|Bytes:60
+18:32:16.2 (9911335)|HEAP_ALLOCATE|[31]|Bytes:8
+18:32:16.2 (9926007)|HEAP_ALLOCATE|[31]|Bytes:30
+18:32:16.2 (9983547)|HEAP_ALLOCATE|[31]|Bytes:12
+18:32:16.2 (9989890)|VARIABLE_SCOPE_BEGIN|[31]|currentUser|User|true|false
+18:32:16.2 (10068915)|VARIABLE_ASSIGNMENT|[31]|currentUser|{"Id":"005BK00000GwCFkYAN","AccountId":"001BK00000cc2ZEYAY"}|0x62648f57
+18:32:16.2 (10100107)|STATEMENT_EXECUTE|[32]
+18:32:16.2 (10102175)|STATEMENT_EXECUTE|[36]
+18:32:16.2 (10103913)|HEAP_ALLOCATE|[36]|Bytes:379
+18:32:16.2 (10116307)|HEAP_ALLOCATE|[36]|Bytes:4
+18:32:16.2 (10123128)|HEAP_ALLOCATE|[36]|Bytes:7
+18:32:16.2 (11313160)|SOQL_EXECUTE_BEGIN|[36]|Aggregations:0|SELECT Id, LastName, FirstName, NameKanaSei__pc, NameKanaMei__pc, PersonBirthdate, Gender__pc, PostalCode__c, City__c, CityAndAddress__c, PersonMobilePhone, FinalEducationLevel__pc, SchoolFacultyDepartment__c, NumberOfCompaniesWorked__c, EmploymentStatus__pc, LicensesAndCertifications1__c, ManagementExperience__c, MyPageOtherRequests__c FROM Account WHERE Id = :tmpVar1 LIMIT 1
+18:32:16.2 (28408883)|SOQL_EXECUTE_END|[36]|Rows:1
+18:32:16.2 (28443412)|HEAP_ALLOCATE|[36]|Bytes:8
+18:32:16.2 (28457039)|HEAP_ALLOCATE|[36]|Bytes:545
+18:32:16.2 (28546938)|HEAP_ALLOCATE|[36]|Bytes:8
+18:32:16.2 (28564456)|HEAP_ALLOCATE|[36]|Bytes:33
+18:32:16.2 (28623485)|HEAP_ALLOCATE|[36]|Bytes:76
+18:32:16.2 (28630342)|VARIABLE_SCOPE_BEGIN|[36]|acc|Account|true|false
+18:32:16.2 (28781505)|VARIABLE_ASSIGNMENT|[36]|acc|{"EmploymentStatus__pc":"離職中","CityAndAddress__c":"市区町村（都道府県以下の住所）213","FirstName":"名11111","FinalEducationLevel__pc":"高専卒","NumberOfCompaniesWorked__c":7,"PersonBirthdate":"2026-04-24T00:00:00.000Z","PostalCode__c":"123-4777","NameKanaMei__pc":"ふりがな(名)1111","Gender__pc":"男性","City__c":"宮城県","NameKanaSei__pc":"ふりがな(姓)11","ManagementExperience__c":false,"MyPageOtherRequests__c":"その他11111111111","LicensesAndCertifications1__c":"免許・資格11","PersonMobilePhone":"5515","Id":"001BK00000cc2ZEYAY","LastName":"テスト 廣川111","SchoolFacultyDepartment__c":"学校名/学部名/学科11"}|0x4ac267c6
+18:32:16.2 (28796103)|STATEMENT_EXECUTE|[47]
+18:32:16.2 (28819501)|METHOD_ENTRY|[47]|01pBK000001mgyr|RegistrationInfoController.buildWrapper(Account)
+18:32:16.2 (28848227)|VARIABLE_SCOPE_BEGIN|[159]|acc|Account|true|false
+18:32:16.2 (28892157)|VARIABLE_ASSIGNMENT|[159]|acc|{"EmploymentStatus__pc":"離職中","CityAndAddress__c":"市区町村（都道府県以下の住所）213","FirstName":"名11111","FinalEducationLevel__pc":"高専卒","NumberOfCompaniesWorked__c":7,"PersonBirthdate":"2026-04-24T00:00:00.000Z","PostalCode__c":"123-4777","NameKanaMei__pc":"ふりがな(名)1111","Gender__pc":"男性","City__c":"宮城県","NameKanaSei__pc":"ふりがな(姓)11","ManagementExperience__c":false,"MyPageOtherRequests__c":"その他11111111111","LicensesAndCertifications1__c":"免許・資格11","PersonMobilePhone":"5515","Id":"001BK00000cc2ZEYAY","LastName":"テスト 廣川111","SchoolFacultyDepartment__c":"学校名/学部名/学科11"}|0x4ac267c6
+18:32:16.2 (28914396)|HEAP_ALLOCATE|[160]|Bytes:5
+18:32:16.2 (28917055)|STATEMENT_EXECUTE|[159]
+18:32:16.2 (28918001)|STATEMENT_EXECUTE|[160]
+18:32:16.2 (28987181)|HEAP_ALLOCATE|[160]|Bytes:432
+18:32:16.2 (28993303)|HEAP_ALLOCATE|[160]|Bytes:51
+18:32:16.2 (29001070)|HEAP_ALLOCATE|[160]|Bytes:76
+18:32:16.2 (29013417)|CONSTRUCTOR_ENTRY|[160]|01pBK000001mgyr|<init>()|RegistrationInfoController.RegistrationInfoWrapper
+18:32:16.2 (29027629)|VARIABLE_SCOPE_BEGIN|[7]|this|RegistrationInfoController.RegistrationInfoWrapper|true|false
+18:32:16.2 (29065079)|VARIABLE_ASSIGNMENT|[7]|this|{}|0x695a2ef7
+18:32:16.2 (29070734)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:6
+18:32:16.2 (30212867)|STATEMENT_EXECUTE|[7]
+18:32:16.2 (30215331)|STATEMENT_EXECUTE|[8]
+18:32:16.2 (30216580)|STATEMENT_EXECUTE|[9]
+18:32:16.2 (30217331)|STATEMENT_EXECUTE|[10]
+18:32:16.2 (30218161)|STATEMENT_EXECUTE|[11]
+18:32:16.2 (30218913)|STATEMENT_EXECUTE|[12]
+18:32:16.2 (30219641)|STATEMENT_EXECUTE|[13]
+18:32:16.2 (30220488)|STATEMENT_EXECUTE|[14]
+18:32:16.2 (30221440)|STATEMENT_EXECUTE|[15]
+18:32:16.2 (30235766)|STATEMENT_EXECUTE|[16]
+18:32:16.2 (30236923)|STATEMENT_EXECUTE|[17]
+18:32:16.2 (30238363)|STATEMENT_EXECUTE|[18]
+18:32:16.2 (30239126)|STATEMENT_EXECUTE|[19]
+18:32:16.2 (30239866)|STATEMENT_EXECUTE|[20]
+18:32:16.2 (30240750)|STATEMENT_EXECUTE|[21]
+18:32:16.2 (30241648)|STATEMENT_EXECUTE|[22]
+18:32:16.2 (30242442)|STATEMENT_EXECUTE|[23]
+18:32:16.2 (30243204)|STATEMENT_EXECUTE|[24]
+18:32:16.2 (30244189)|STATEMENT_EXECUTE|[25]
+18:32:16.2 (30247802)|CONSTRUCTOR_EXIT|[160]|01pBK000001mgyr|<init>()|RegistrationInfoController.RegistrationInfoWrapper
+18:32:16.2 (30253608)|VARIABLE_SCOPE_BEGIN|[160]|w|RegistrationInfoController.RegistrationInfoWrapper|true|false
+18:32:16.2 (30279418)|VARIABLE_ASSIGNMENT|[160]|w|{}|0x695a2ef7
+18:32:16.2 (30282672)|STATEMENT_EXECUTE|[161]
+18:32:16.2 (30360603)|HEAP_ALLOCATE|[161]|Bytes:18
+18:32:16.2 (30398644)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{}|0x695a2ef7
+18:32:16.2 (30406124)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"001BK00000cc2ZEYAY"
+18:32:16.2 (30415508)|VARIABLE_ASSIGNMENT|[8]|this.recordId|"001BK00000cc2ZEYAY"|0x695a2ef7
+18:32:16.2 (30421372)|STATEMENT_EXECUTE|[162]
+18:32:16.2 (30457593)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"recordId":"001BK00000cc2ZEYAY"}|0x695a2ef7
+18:32:16.2 (30463051)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"テスト 廣川111"
+18:32:16.2 (30468210)|VARIABLE_ASSIGNMENT|[9]|this.lastName|"テスト 廣川111"|0x695a2ef7
+18:32:16.2 (30472578)|STATEMENT_EXECUTE|[163]
+18:32:16.2 (30500720)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"lastName":"テスト 廣川111","recordId":"001BK00000cc2ZEYAY"}|0x695a2ef7
+18:32:16.2 (30505911)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"名11111"
+18:32:16.2 (30510035)|VARIABLE_ASSIGNMENT|[10]|this.firstName|"名11111"|0x695a2ef7
+18:32:16.2 (30514108)|STATEMENT_EXECUTE|[164]
+18:32:16.2 (30541018)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"firstName":"名11111","lastName":"テスト 廣川111","recordId":"001BK00000cc2ZEYAY"}|0x695a2ef7
+18:32:16.2 (30545864)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"ふりがな(姓)11"
+18:32:16.2 (30549990)|VARIABLE_ASSIGNMENT|[11]|this.kanaSei|"ふりがな(姓)11"|0x695a2ef7
+18:32:16.2 (30553930)|STATEMENT_EXECUTE|[165]
+18:32:16.2 (30575463)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"firstName":"名11111","kanaSei":"ふりがな(姓)11","lastName":"テスト 廣川111","recordId":"001BK00000cc2ZEYAY"}|0x695a2ef7
+18:32:16.2 (30580913)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"ふりがな(名)1111"
+18:32:16.2 (30584723)|VARIABLE_ASSIGNMENT|[12]|this.kanaMei|"ふりがな(名)1111"|0x695a2ef7
+18:32:16.2 (30588562)|STATEMENT_EXECUTE|[166]
+18:32:16.2 (30710480)|HEAP_ALLOCATE|[166]|Bytes:10
+18:32:16.2 (30736409)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"firstName":"名11111","kanaMei":"ふりがな(名)1111","kanaSei":"ふりがな(姓)11","lastName":"テスト 廣川111","recordId":"001BK00000cc2ZEYAY"}|0x695a2ef7
+18:32:16.2 (30742645)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"2026/04/24"
+18:32:16.2 (30746843)|VARIABLE_ASSIGNMENT|[13]|this.birthdate|"2026/04/24"|0x695a2ef7
+18:32:16.2 (30750948)|STATEMENT_EXECUTE|[167]
+18:32:16.2 (30779458)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"birthdate":"2026/04/24","firstName":"名11111","kanaMei":"ふりがな(名)1111","kanaSei":"ふりがな(姓)11","lastName":"テスト 廣川111","recordId":"001BK00000cc2ZEYAY"}|0x695a2ef7
+18:32:16.2 (30785445)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"男性"
+18:32:16.2 (30790003)|VARIABLE_ASSIGNMENT|[14]|this.gender|"男性"|0x695a2ef7
+18:32:16.2 (30793898)|STATEMENT_EXECUTE|[168]
+18:32:16.2 (30818537)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"birthdate":"2026/04/24","firstName":"名11111","gender":"男性","kanaMei":"ふりがな(名)1111","kanaSei":"ふりがな(姓)11","lastName":"テスト 廣川111","recordId":"001BK00000cc2ZEYAY"}|0x695a2ef7
+18:32:16.2 (30824305)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"123-4777"
+18:32:16.2 (30827707)|VARIABLE_ASSIGNMENT|[15]|this.postalCode|"123-4777"|0x695a2ef7
+18:32:16.2 (30831372)|STATEMENT_EXECUTE|[169]
+18:32:16.2 (30854733)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"birthdate":"2026/04/24","firstName":"名11111","gender":"男性","kanaMei":"ふりがな(名)1111","kanaSei":"ふりがな(姓)11","lastName":"テスト 廣川111","postalCode":"123-4777","recordId":"001BK00000cc2ZEYAY"}|0x695a2ef7
+18:32:16.2 (30860579)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"宮城県"
+18:32:16.2 (30864513)|VARIABLE_ASSIGNMENT|[16]|this.prefecture|"宮城県"|0x695a2ef7
+18:32:16.2 (30868273)|STATEMENT_EXECUTE|[170]
+18:32:16.2 (30891714)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"birthdate":"2026/04/24","firstName":"名11111","gender":"男性","kanaMei":"ふりがな(名)1111","kanaSei":"ふりがな(姓)11","lastName":"テスト 廣川111","postalCode":"123-4777","prefecture":"宮城県","recordId":"001BK00000cc2ZEYAY"}|0x695a2ef7
+18:32:16.2 (30898231)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"市区町村（都道府県以下の住所）213"
+18:32:16.2 (30902407)|VARIABLE_ASSIGNMENT|[17]|this.address|"市区町村（都道府県以下の住所）213"|0x695a2ef7
+18:32:16.2 (30906201)|STATEMENT_EXECUTE|[171]
+18:32:16.2 (30934179)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"address":"市区町村（都道府県以下の住所）213","birthdate":"2026/04/24","firstName":"名11111","gender":"男性","kanaMei":"ふりがな(名)1111","kanaSei":"ふりがな(姓)11","lastName":"テスト 廣川111","postalCode":"123-4777","prefecture":"宮城県","recordId":"001BK00000cc2ZEYAY"}|0x695a2ef7
+18:32:16.2 (30941807)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"5515"
+18:32:16.2 (30947118)|VARIABLE_ASSIGNMENT|[18]|this.phone|"5515"|0x695a2ef7
+18:32:16.2 (30952428)|STATEMENT_EXECUTE|[172]
+18:32:16.2 (30992997)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"address":"市区町村（都道府県以下の住所）213","birthdate":"2026/04/24","firstName":"名11111","gender":"男性","kanaMei":"ふりがな(名)1111","kanaSei":"ふりがな(姓)11","lastName":"テスト 廣川111","phone":"5515","postalCode":"123-4777","prefecture":"宮城県","recordId":"001BK00000cc2ZEYAY"}|0x695a2ef7
+18:32:16.2 (31001828)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"高専卒"
+18:32:16.2 (31006293)|VARIABLE_ASSIGNMENT|[19]|this.education|"高専卒"|0x695a2ef7
+18:32:16.2 (31010185)|STATEMENT_EXECUTE|[173]
+18:32:16.2 (31036526)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"address":"市区町村（都道府県以下の住所）213","birthdate":"2026/04/24","education":"高専卒","firstName":"名11111","gender":"男性","kanaMei":"ふりがな(名)1111","kanaSei":"ふりがな(姓)11","lastName":"テスト 廣川111","phone":"5515","postalCode":"123-4777","prefecture":"宮城県","recordId":"001BK00000cc2ZEYAY"}|0x695a2ef7
+18:32:16.2 (31043254)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"学校名/学部名/学科11"
+18:32:16.2 (31052613)|VARIABLE_ASSIGNMENT|[20]|this.school|"学校名/学部名/学科11"|0x695a2ef7
+18:32:16.2 (31056786)|STATEMENT_EXECUTE|[174]
+18:32:16.2 (31098120)|HEAP_ALLOCATE|[174]|Bytes:28
+18:32:16.2 (31103473)|HEAP_ALLOCATE|[174]|Bytes:28
+18:32:16.2 (31141743)|HEAP_ALLOCATE|[174]|Bytes:1
+18:32:16.2 (31167743)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"address":"市区町村（都道府県以下の住所）213","birthdate":"2026/04/24","education":"高専卒","firstName":"名11111","gender":"男性","kanaMei":"ふりがな(名)1111","kanaSei":"ふりがな(姓)11","lastName":"テスト 廣川111","phone":"5515","postalCode":"123-4777","prefecture":"宮城県","recordId":"001BK00000cc2ZEYAY","school":"学校名/学部名/学科11"}|0x695a2ef7
+18:32:16.2 (31175120)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"7"
+18:32:16.2 (31179035)|VARIABLE_ASSIGNMENT|[21]|this.companyCount|"7"|0x695a2ef7
+18:32:16.2 (31182942)|STATEMENT_EXECUTE|[175]
+18:32:16.2 (31210865)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"address":"市区町村（都道府県以下の住所）213","birthdate":"2026/04/24","companyCount":"7","education":"高専卒","firstName":"名11111","gender":"男性","kanaMei":"ふりがな(名)1111","kanaSei":"ふりがな(姓)11","lastName":"テスト 廣川111","phone":"5515","postalCode":"123-4777","prefecture":"宮城県","recordId":"001BK00000cc2ZEYAY","school":"学校名/学部名/学科11"}|0x695a2ef7
+18:32:16.2 (31218371)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"離職中"
+18:32:16.2 (31222221)|VARIABLE_ASSIGNMENT|[22]|this.employmentStatus|"離職中"|0x695a2ef7
+18:32:16.2 (31226006)|STATEMENT_EXECUTE|[176]
+18:32:16.2 (31252725)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"address":"市区町村（都道府県以下の住所）213","birthdate":"2026/04/24","companyCount":"7","education":"高専卒","employmentStatus":"離職中","firstName":"名11111","gender":"男性","kanaMei":"ふりがな(名)1111","kanaSei":"ふりがな(姓)11","lastName":"テスト 廣川111","phone":"5515","postalCode":"123-4777","prefecture":"宮城県","recordId":"001BK00000cc2ZEYAY","school":"学校名/学部名/学科11"}|0x695a2ef7
+18:32:16.2 (31259913)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"免許・資格11"
+18:32:16.2 (31263913)|VARIABLE_ASSIGNMENT|[23]|this.license|"免許・資格11"|0x695a2ef7
+18:32:16.2 (31267748)|STATEMENT_EXECUTE|[177]
+18:32:16.2 (31280513)|METHOD_ENTRY|[177]|01pBK000001mgyr|RegistrationInfoController.convertManagementBooleanToString(Boolean)
+18:32:16.2 (31286561)|VARIABLE_SCOPE_BEGIN|[153]|mgmtBool|Boolean|false|false
+18:32:16.2 (31293054)|VARIABLE_ASSIGNMENT|[153]|mgmtBool|false
+18:32:16.2 (31300910)|HEAP_ALLOCATE|[154]|Bytes:5
+18:32:16.2 (31303356)|STATEMENT_EXECUTE|[153]
+18:32:16.2 (31308138)|STATEMENT_EXECUTE|[154]
+18:32:16.2 (31309975)|STATEMENT_EXECUTE|[155]
+18:32:16.2 (31311733)|HEAP_ALLOCATE|[155]|Bytes:5
+18:32:16.2 (31320295)|METHOD_EXIT|[177]|01pBK000001mgyr|RegistrationInfoController.convertManagementBooleanToString(Boolean)
+18:32:16.2 (31341798)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"address":"市区町村（都道府県以下の住所）213","birthdate":"2026/04/24","companyCount":"7","education":"高専卒","employmentStatus":"離職中","firstName":"名11111","gender":"男性","kanaMei":"ふりがな(名)1111","kanaSei":"ふりがな(姓)11","lastName":"テスト 廣川111","license":"免許・資格11","phone":"5515","postalCode":"123-4777","prefecture":"宮城県","recordId":"001BK00000cc2ZEYAY","school":"学校名/学部名/学科11"}|0x695a2ef7
+18:32:16.2 (31350246)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"false"
+18:32:16.2 (31353860)|VARIABLE_ASSIGNMENT|[24]|this.managementExperience|"false"|0x695a2ef7
+18:32:16.2 (31357573)|STATEMENT_EXECUTE|[178]
+18:32:16.2 (31384856)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"address":"市区町村（都道府県以下の住所）213","birthdate":"2026/04/24","companyCount":"7","education":"高専卒","employmentStatus":"離職中","firstName":"名11111","gender":"男性","kanaMei":"ふりがな(名)1111","kanaSei":"ふりがな(姓)11","lastName":"テスト 廣川111","license":"免許・資格11","managementExperience":"false","phone":"5515","postalCode":"123-4777","prefecture":"宮城県","recordId":"001BK00000cc2ZEYAY","school":"学校名/学部名/学科11"}|0x695a2ef7
+18:32:16.2 (31393219)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"その他11111111111"
+18:32:16.2 (31397412)|VARIABLE_ASSIGNMENT|[25]|this.remarks|"その他11111111111"|0x695a2ef7
+18:32:16.2 (31401636)|STATEMENT_EXECUTE|[179]
+18:32:16.2 (31405513)|METHOD_EXIT|[47]|01pBK000001mgyr|RegistrationInfoController.buildWrapper(Account)
+18:32:16.31 (31462295)|CUMULATIVE_LIMIT_USAGE
+18:32:16.31 (31462295)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 2 out of 100
+  Number of query rows: 2 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+18:32:16.31 (31462295)|CUMULATIVE_LIMIT_USAGE_END
+
+18:32:16.2 (31510508)|CODE_UNIT_FINISHED|RegistrationInfoController.getRegistrationInfo()
+18:32:16.2 (31678063)|CODE_UNIT_FINISHED|apex://RegistrationInfoController/ACTION$getRegistrationInfo
+18:32:16.2 (31685500)|EXECUTION_FINISHED

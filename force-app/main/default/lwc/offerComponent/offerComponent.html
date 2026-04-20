@@ -1,0 +1,42 @@
+<template>
+    <template if:true={hasOffers}>
+        <section class="section-container">
+            <div class="header">
+                <div class="header-left">
+                    <span class="material-symbols-outlined icon">person_heart</span>
+                    特別なオファー
+                    <span class="badge" if:true={showBadge}>{displayCount}</span>
+                </div>
+                <div class="view-link">
+                    <a href="/process">
+                        オファーを見る
+                        <span class="material-symbols-outlined chevron-icon">chevron_forward</span>
+                    </a>
+                </div>
+            </div>
+            <div class="card-container">
+                <template for:each={jobInfos} for:item="job">
+                    <a key={job.jobId} href={job.jobLink} class="card job-title-link">
+                        <div class="card-content">
+                            <div class="badge-group">
+                                <span class="badge-outline">オファー</span>
+                                <span class={job.viewStatusClass}>{job.viewStatusLabel}</span>
+                                <span class="job-category-tag" if:true={job.JobCategory1}>{job.JobCategory1}</span>
+                                <span class="job-category-tag" if:true={job.MainIndustry}>{job.MainIndustry}</span>
+                            </div>
+                            <div class="company-name">企業名：{job.companyName}</div>
+                            <h3 class="job-title-text">求人タイトル：{job.JobPosition}</h3>
+                            <!-- <a  class="job-title-link">
+                                
+                            </a> -->
+                            <div class="update-info">
+                                <span class="material-symbols-outlined">schedule</span>
+                                <span class="update-date">更新日時：{job.lastUpdate}</span>
+                            </div>
+                        </div>
+                    </a>
+                </template>
+            </div>
+        </section>
+    </template>
+</template>

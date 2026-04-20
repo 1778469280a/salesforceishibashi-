@@ -1,0 +1,78 @@
+.preferredCriteriaCard {
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E5E7EB;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #042356;
+}
+
+.title-line {
+    width: 4px;
+    height: 18px;
+    background-color: #042356;
+    margin-right: 10px;
+}
+
+.info-list {
+    margin: 0;
+    padding: 0;
+}
+
+.info-list dt {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #042356;
+    margin-bottom: 6px;
+}
+
+.info-list dd {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.4;
+    margin: 0 0 14px 0;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.info-list dd:last-of-type {
+    border-bottom: none;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.edit-link {
+    font-size: 14px;
+    color: #042356 !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.edit-link .material-symbols-outlined {
+    font-size: 1.2rem;
+    margin-left: 2px;
+}

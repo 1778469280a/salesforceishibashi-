@@ -1,0 +1,50 @@
+<template>
+    <section class="header-section">
+        <span class="material-symbols-outlined" style="transform:translateY(8px);">
+            account_circle
+        </span>
+        <h1 class="header-title">ログイン</h1>
+    </section>
+    <div class="login-card">
+
+
+        <p class="subtitle">すでに登録済みの方</p>
+
+        <div class="form-section">
+            <div class="slds-form-element slds-m-bottom_medium">
+                <div class="input-label">メールアドレス</div>
+                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                    <lightning-icon icon-name="utility:email" size="x-small"
+                        class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default"></lightning-icon>
+                    <input type="email" class="slds-input custom-input" placeholder="メールアドレス" value={email}
+                        onchange={handleEmailChange} />
+                </div>
+            </div>
+
+            <div class="slds-form-element slds-m-bottom_medium">
+                <div class="input-label">パスワード</div>
+                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                    <lightning-icon icon-name="utility:lock" size="x-small"
+                        class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default"></lightning-icon>
+                    <input type="password" class="slds-input custom-input" placeholder="パスワード" value={password}
+                        onchange={handlePasswordChange} />
+                </div>
+            </div>
+
+            <div class="link-section slds-m-bottom_large">
+                <a href={forgotPasswordUrl} class="forgot-password-link">ログインができない方はこちら <span
+                        class="arrow">&gt;</span></a>
+            </div>
+
+            <template if:true={errorMessage}>
+                <p class="error-text slds-m-bottom_small">{errorMessage}</p>
+            </template>
+
+            <button class="custom-login-button" onclick={handleLogin} disabled={isLoading}>
+                <span><span class="material-symbols-outlined" style="transform:translateY(4px);">
+                        account_circle
+                    </span>ログイン</span>
+            </button>
+        </div>
+    </div>
+</template>

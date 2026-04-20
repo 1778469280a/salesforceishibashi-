@@ -1,0 +1,48 @@
+.registration-complete {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 40px 16px;
+    text-align: center;
+    font-family: sans-serif;
+    background: #f9f9f9;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.content {
+    background: white;
+    border-radius: 12px;
+    padding: 32px 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.success-message {
+    font-size: 20px;
+    font-weight: 600;
+    color: #001a66;
+    margin-bottom: 16px;
+}
+
+.info-message {
+    font-size: 14px;
+    color:red;
+    line-height: 1.5;
+    margin-bottom: 32px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #042356;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.login-button:hover {
+    background-color: #00144d;
+}

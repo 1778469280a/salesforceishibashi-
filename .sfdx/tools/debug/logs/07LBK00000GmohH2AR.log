@@ -1,0 +1,241 @@
+66.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DATA_ACCESS,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+10:37:27.2 (2329177)|USER_INFO|[EXTERNAL]|005BK00000Ilvi1|foryoze@owleyes.ch.hurex|(GMT+09:00) 日本標準時 (Asia/Tokyo)|GMT+09:00
+10:37:27.2 (2410442)|EXECUTION_STARTED
+10:37:27.2 (2425091)|CODE_UNIT_STARTED|[EXTERNAL]|apex://JobSearchController/ACTION$savePreferences
+10:37:27.2 (4303005)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:20
+10:37:27.2 (4392576)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+10:37:27.2 (6536569)|CODE_UNIT_STARTED|[EXTERNAL]|01pBK000001SmE1|JobSearchController.savePreferences(Map<String,ANY>)
+10:37:27.2 (9314448)|HEAP_ALLOCATE|[95]|Bytes:3
+10:37:27.2 (9365781)|HEAP_ALLOCATE|[100]|Bytes:152
+10:37:27.2 (9381336)|HEAP_ALLOCATE|[417]|Bytes:408
+10:37:27.2 (9391875)|HEAP_ALLOCATE|[430]|Bytes:408
+10:37:27.2 (9411121)|HEAP_ALLOCATE|[317]|Bytes:6
+10:37:27.2 (9421124)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:10
+10:37:27.2 (9424676)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:46
+10:37:27.2 (9435041)|METHOD_ENTRY|[5]|01pBK000001SmE1|JobSearchController.JobSearchController()
+10:37:27.2 (9440175)|STATEMENT_EXECUTE|[5]
+10:37:27.2 (9444351)|STATEMENT_EXECUTE|[5]
+10:37:27.2 (9462958)|HEAP_ALLOCATE|[68]|Bytes:5
+10:37:27.2 (9484581)|HEAP_ALLOCATE|[74]|Bytes:5
+10:37:27.2 (9489356)|HEAP_ALLOCATE|[82]|Bytes:7
+10:37:27.2 (9779491)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+10:37:27.2 (9784512)|STATEMENT_EXECUTE|[7]
+10:37:27.2 (9794003)|METHOD_EXIT|[5]|JobSearchController
+10:37:27.2 (9816099)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:48
+10:37:27.2 (9823036)|VARIABLE_SCOPE_BEGIN|[290]|filters|Map<String,ANY>|true|false
+10:37:27.2 (9931756)|VARIABLE_ASSIGNMENT|[290]|filters|"Map of size 11 too large to display"|0x7d56a2a8
+10:37:27.2 (9943221)|HEAP_ALLOCATE|[291]|Bytes:5
+10:37:27.2 (9946193)|STATEMENT_EXECUTE|[290]
+10:37:27.2 (9947471)|STATEMENT_EXECUTE|[291]
+10:37:27.2 (9948239)|STATEMENT_EXECUTE|[291]
+10:37:27.2 (9949281)|STATEMENT_EXECUTE|[293]
+10:37:27.2 (9986488)|HEAP_ALLOCATE|[293]|Bytes:105
+10:37:27.2 (9992906)|SYSTEM_METHOD_ENTRY|[1]|UserInfo.UserInfo()
+10:37:27.2 (9994876)|STATEMENT_EXECUTE|[1]
+10:37:27.2 (10000896)|SYSTEM_METHOD_EXIT|[1]|UserInfo
+10:37:27.2 (10014616)|METHOD_ENTRY|[293]||System.UserInfo.getUserId()
+10:37:27.2 (11495926)|METHOD_EXIT|[293]||System.UserInfo.getUserId()
+10:37:27.2 (11517201)|HEAP_ALLOCATE|[293]|Bytes:4
+10:37:27.2 (11523328)|VARIABLE_SCOPE_BEGIN|[293]|userId|Id|false|false
+10:37:27.2 (11719403)|VARIABLE_ASSIGNMENT|[293]|userId|"005BK00000Ilvi1YAB"
+10:37:27.2 (11723228)|STATEMENT_EXECUTE|[294]
+10:37:27.2 (11726567)|HEAP_ALLOCATE|[294]|Bytes:62
+10:37:27.2 (11741151)|HEAP_ALLOCATE|[294]|Bytes:4
+10:37:27.2 (11750716)|HEAP_ALLOCATE|[294]|Bytes:7
+10:37:27.2 (17338694)|SOQL_EXECUTE_BEGIN|[294]|Aggregations:0|SELECT Contact.AccountId FROM User WHERE Id = :tmpVar1 LIMIT 1
+10:37:27.2 (51293831)|SOQL_EXECUTE_END|[294]|Rows:1
+10:37:27.2 (51338800)|HEAP_ALLOCATE|[294]|Bytes:8
+10:37:27.2 (51360445)|HEAP_ALLOCATE|[294]|Bytes:130
+10:37:27.2 (51513349)|HEAP_ALLOCATE|[294]|Bytes:8
+10:37:27.2 (51532372)|HEAP_ALLOCATE|[294]|Bytes:30
+10:37:27.2 (51607376)|HEAP_ALLOCATE|[294]|Bytes:16
+10:37:27.2 (51615395)|VARIABLE_SCOPE_BEGIN|[294]|u|User|true|false
+10:37:27.2 (69816573)|VARIABLE_ASSIGNMENT|[294]|u|{"ContactId":"003BK00000ZKsGDYA1","Id":"005BK00000Ilvi1YAB","Contact":{"AccountId":"001BK00000ga0kTYAQ","Id":"003BK00000ZKsGDYA1"}}|0x61c85141
+10:37:27.2 (69924461)|STATEMENT_EXECUTE|[296]
+10:37:27.2 (69927171)|STATEMENT_EXECUTE|[300]
+10:37:27.2 (69961391)|HEAP_ALLOCATE|[300]|Bytes:4
+10:37:27.2 (74346616)|VARIABLE_ASSIGNMENT|[300]|this.Id|"001BK00000ga0kTYAQ"|0x6864e814
+10:37:27.2 (74416768)|VARIABLE_SCOPE_BEGIN|[300]|acc|Account|true|false
+10:37:27.2 (74438056)|VARIABLE_ASSIGNMENT|[300]|acc|{"Id":"001BK00000ga0kTYAQ"}|0x6864e814
+10:37:27.2 (74441624)|STATEMENT_EXECUTE|[303]
+10:37:27.2 (74449234)|HEAP_ALLOCATE|[303]|Bytes:5
+10:37:27.2 (74648738)|VARIABLE_ASSIGNMENT|[303]|this.PreferredWorkLocation1__c|"北海道"|0x6864e814
+10:37:27.2 (74656093)|STATEMENT_EXECUTE|[304]
+10:37:27.2 (74658846)|HEAP_ALLOCATE|[304]|Bytes:13
+10:37:27.2 (74695228)|VARIABLE_ASSIGNMENT|[304]|this.PreferredWorkLocation1Category__c|"北海道/東北"|0x6864e814
+10:37:27.2 (74699536)|STATEMENT_EXECUTE|[305]
+10:37:27.2 (74701093)|HEAP_ALLOCATE|[305]|Bytes:5
+10:37:27.2 (74723359)|VARIABLE_ASSIGNMENT|[305]|this.PreferredWorkLocation2__c|"秋田県"|0x6864e814
+10:37:27.2 (74726623)|STATEMENT_EXECUTE|[306]
+10:37:27.2 (74727923)|HEAP_ALLOCATE|[306]|Bytes:13
+10:37:27.2 (74747480)|VARIABLE_ASSIGNMENT|[306]|this.PreferredWorkLocation2Category__c|"北海道/東北"|0x6864e814
+10:37:27.2 (74750763)|STATEMENT_EXECUTE|[307]
+10:37:27.2 (74752082)|HEAP_ALLOCATE|[307]|Bytes:5
+10:37:27.2 (74770736)|VARIABLE_ASSIGNMENT|[307]|this.PreferredWorkLocation3__c|"埼玉県"|0x6864e814
+10:37:27.2 (74773981)|STATEMENT_EXECUTE|[308]
+10:37:27.2 (74775323)|HEAP_ALLOCATE|[308]|Bytes:13
+10:37:27.2 (74793463)|VARIABLE_ASSIGNMENT|[308]|this.PreferredWorkLocation3Category__c|"関東"|0x6864e814
+10:37:27.2 (74796731)|STATEMENT_EXECUTE|[311]
+10:37:27.2 (74798225)|HEAP_ALLOCATE|[311]|Bytes:9
+10:37:27.2 (74817186)|VARIABLE_ASSIGNMENT|[311]|this.PreferredSalary__c|"301万円～400万円"|0x6864e814
+10:37:27.2 (74820449)|STATEMENT_EXECUTE|[314]
+10:37:27.2 (74821926)|HEAP_ALLOCATE|[314]|Bytes:10
+10:37:27.2 (74876970)|VARIABLE_SCOPE_BEGIN|[314]|categories|List<ANY>|true|false
+10:37:27.2 (74891236)|VARIABLE_ASSIGNMENT|[314]|categories|["営業系"]|0x7cf7889b
+10:37:27.2 (74895411)|STATEMENT_EXECUTE|[315]
+10:37:27.2 (74896380)|STATEMENT_EXECUTE|[316]
+10:37:27.2 (74897796)|HEAP_ALLOCATE|[316]|Bytes:1
+10:37:27.2 (75010039)|HEAP_ALLOCATE|[316]|Bytes:5
+10:37:27.2 (75018055)|HEAP_ALLOCATE|[316]|Bytes:3
+10:37:27.2 (75021306)|HEAP_ALLOCATE|[316]|Bytes:5
+10:37:27.2 (75024276)|HEAP_ALLOCATE|[316]|Bytes:3
+10:37:27.2 (75048588)|VARIABLE_ASSIGNMENT|[316]|this.PreferredOccupations__c|"営業系"|0x6864e814
+10:37:27.2 (75052984)|STATEMENT_EXECUTE|[320]
+10:37:27.2 (75054496)|HEAP_ALLOCATE|[320]|Bytes:8
+10:37:27.2 (75076121)|VARIABLE_SCOPE_BEGIN|[320]|transfer|List<ANY>|true|false
+10:37:27.2 (75085251)|VARIABLE_ASSIGNMENT|[320]|transfer|["不可","可（単身）","可（家族同伴）","条件付き可"]|0x10496fe4
+10:37:27.2 (75089115)|STATEMENT_EXECUTE|[321]
+10:37:27.2 (75090105)|STATEMENT_EXECUTE|[322]
+10:37:27.2 (75102206)|HEAP_ALLOCATE|[322]|Bytes:5
+10:37:27.2 (75105136)|HEAP_ALLOCATE|[322]|Bytes:2
+10:37:27.2 (75107484)|HEAP_ALLOCATE|[322]|Bytes:5
+10:37:27.2 (75109793)|HEAP_ALLOCATE|[322]|Bytes:5
+10:37:27.2 (75112156)|HEAP_ALLOCATE|[322]|Bytes:5
+10:37:27.2 (75114153)|HEAP_ALLOCATE|[322]|Bytes:7
+10:37:27.2 (75116411)|HEAP_ALLOCATE|[322]|Bytes:5
+10:37:27.2 (75118646)|HEAP_ALLOCATE|[322]|Bytes:5
+10:37:27.2 (75120838)|HEAP_ALLOCATE|[322]|Bytes:5
+10:37:27.2 (75123042)|HEAP_ALLOCATE|[322]|Bytes:22
+10:37:27.2 (75145871)|VARIABLE_ASSIGNMENT|[322]|this.IsWillingToRelocate__pc|"不可;可（単身）;可（家族同伴）;条件付 (2 more) ..."|0x6864e814
+10:37:27.2 (75150173)|STATEMENT_EXECUTE|[325]
+10:37:27.2 (75181281)|HEAP_ALLOCATE|[325]|Bytes:8
+10:37:27.2 (75202181)|DML_BEGIN|[325]|Op:Update|Type:Account|Rows:1
+10:37:27.2 (75243752)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+10:37:27.2 (823671034)|CODE_UNIT_STARTED|[EXTERNAL]|Flow:Account
+10:37:27.2 (823709185)|CODE_UNIT_FINISHED|Flow:Account
+10:37:27.845 (845269313)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+10:37:27.845 (845792558)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+10:37:27.845 (845984317)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+10:37:27.845 (845999588)|VARIABLE_SCOPE_BEGIN|[1]|this|pi.LogAccountChange|true|false
+10:37:27.845 (846131163)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x46060fe0
+10:37:27.914 (914586685)|CUMULATIVE_LIMIT_USAGE
+10:37:27.914 (914586685)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+10:37:27.914 (914586685)|LIMIT_USAGE_FOR_NS|pi|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+10:37:27.914 (914586685)|CUMULATIVE_LIMIT_USAGE_END
+
+10:37:28.332 (1332146353)|CODE_UNIT_STARTED|[EXTERNAL]|DuplicateDetector
+10:37:28.332 (1332241206)|DUPLICATE_DETECTION_BEGIN
+10:37:28.332 (1337957974)|DUPLICATE_DETECTION_RULE_INVOCATION|DuplicateRuleId:0BmBK000000E8dd|DuplicateRuleName:求職者ルール（氏名と生年月日）|DmlType:UPDATE
+10:37:28.332 (1354963934)|DUPLICATE_DETECTION_RULE_INVOCATION|DuplicateRuleId:0BmBK000000E8fF|DuplicateRuleName:求職者ルール（メール）|DmlType:UPDATE
+10:37:28.332 (1355051348)|DUPLICATE_DETECTION_RULE_INVOCATION|DuplicateRuleId:0BmBK000000GcCb|DuplicateRuleName:求職者ルール（電話番号）|DmlType:UPDATE
+10:37:28.332 (1355139695)|DUPLICATE_DETECTION_END
+10:37:28.332 (1355149072)|CODE_UNIT_FINISHED|DuplicateDetector
+10:37:28.667 (1667687581)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+10:37:28.667 (1667750963)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+10:37:28.667 (1667831865)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+10:37:28.667 (1667842792)|VARIABLE_SCOPE_BEGIN|[1]|this|pi.LogAccountChange|true|false
+10:37:28.667 (1667915313)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x784da3c7
+10:37:28.667 (1682430657)|SOQL_EXECUTE_BEGIN|[263]|Aggregations:0|SELECT Id, ObjectEmail__c, ObjectFid__c FROM ObjectChangeLog__c WHERE ((ObjectState__c = :tmpVar1 OR ObjectState__c = :tmpVar2) AND ObjectFid__c = :tmpVar3)
+10:37:28.667 (1697307179)|SOQL_EXECUTE_END|[263]|Rows:0
+10:37:28.698 (1698041043)|CUMULATIVE_LIMIT_USAGE
+10:37:28.698 (1698041043)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 5 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+10:37:28.698 (1698041043)|LIMIT_USAGE_FOR_NS|pi|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+10:37:28.698 (1698041043)|CUMULATIVE_LIMIT_USAGE_END
+
+10:37:28.332 (1703779955)|CODE_UNIT_STARTED|[EXTERNAL]|Flow:Account
+10:37:28.332 (1704808790)|CODE_UNIT_FINISHED|Flow:Account
+10:37:28.332 (1704877715)|CODE_UNIT_STARTED|[EXTERNAL]|Flow:Account
+10:37:28.332 (1704888416)|CODE_UNIT_FINISHED|Flow:Account
+10:37:28.332 (1739642014)|DML_END|[325]
+10:37:28.772 (1772351001)|CUMULATIVE_LIMIT_USAGE
+10:37:28.772 (1772351001)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 5 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+10:37:28.772 (1772351001)|LIMIT_USAGE_FOR_NS|pi|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+10:37:28.772 (1772351001)|CUMULATIVE_LIMIT_USAGE_END
+
+10:37:28.332 (1772421498)|CODE_UNIT_FINISHED|JobSearchController.savePreferences(Map<String,ANY>)
+10:37:28.332 (1772613261)|CODE_UNIT_FINISHED|apex://JobSearchController/ACTION$savePreferences
+10:37:28.332 (1772621204)|EXECUTION_FINISHED

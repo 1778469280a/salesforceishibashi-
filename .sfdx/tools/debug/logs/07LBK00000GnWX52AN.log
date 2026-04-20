@@ -1,0 +1,50 @@
+66.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DATA_ACCESS,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+15:18:41.0 (192893)|USER_INFO|[EXTERNAL]|005BK00000Ilvi1|foryoze@owleyes.ch.hurex|(GMT+09:00) 日本標準時 (Asia/Tokyo)|GMT+09:00
+15:18:41.0 (231140)|EXECUTION_STARTED
+15:18:41.0 (240863)|CODE_UNIT_STARTED|[EXTERNAL]|apex://ProcessController/ACTION$getProcesses
+15:18:41.0 (2501960)|CODE_UNIT_STARTED|[EXTERNAL]|01pBK000001TU29|ProcessController.getProcesses()
+15:18:41.0 (2873502)|HEAP_ALLOCATE|[95]|Bytes:3
+15:18:41.0 (2998101)|HEAP_ALLOCATE|[100]|Bytes:152
+15:18:41.0 (3012706)|HEAP_ALLOCATE|[417]|Bytes:408
+15:18:41.0 (3024362)|HEAP_ALLOCATE|[430]|Bytes:408
+15:18:41.0 (3044925)|HEAP_ALLOCATE|[317]|Bytes:6
+15:18:41.0 (3055803)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:1
+15:18:41.0 (3068826)|METHOD_ENTRY|[1]|01pBK000001TU29|ProcessController.ProcessController()
+15:18:41.0 (3075297)|STATEMENT_EXECUTE|[1]
+15:18:41.0 (3081516)|STATEMENT_EXECUTE|[1]
+15:18:41.0 (3103203)|HEAP_ALLOCATE|[68]|Bytes:5
+15:18:41.0 (3134896)|HEAP_ALLOCATE|[74]|Bytes:5
+15:18:41.0 (3140369)|HEAP_ALLOCATE|[82]|Bytes:7
+15:18:41.0 (3290288)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+15:18:41.0 (3303327)|METHOD_EXIT|[1]|ProcessController
+15:18:41.0 (3315743)|HEAP_ALLOCATE|[4]|Bytes:5
+15:18:41.0 (3319043)|STATEMENT_EXECUTE|[3]
+15:18:41.0 (3320465)|STATEMENT_EXECUTE|[4]
+15:18:41.0 (3322995)|HEAP_ALLOCATE|[4]|Bytes:480
+15:18:41.0 (3344514)|HEAP_ALLOCATE|[4]|Bytes:4
+15:18:41.0 (11350998)|SOQL_EXECUTE_BEGIN|[4]|Aggregations:0|SELECT Id, JobPosition__c, LastModifiedDate, LatestProcessStatus__c, First_interview_date__c, Second_interview_date__c, Third_interview_date__c, Final_interview_date__c, JobPosition__r.Id, JobPosition__r.Company__r.Name, JobPosition__r.JobPosition__c, JobPosition__r.JobCategory1__c, JobPosition__r.WorkLocation2__c, JobPosition__r.LastViewedDate FROM SelectionProcess__c WHERE (LatestProcessStatus__c != NULL AND JobPosition__c != NULL) ORDER BY LastModifiedDate DESC NULLS FIRST
+15:18:41.0 (74111366)|SOQL_EXECUTE_END|[4]|Rows:3
+15:18:41.0 (74160758)|HEAP_ALLOCATE|[4]|Bytes:16
+15:18:41.0 (74190546)|HEAP_ALLOCATE|[4]|Bytes:1243
+15:18:41.0 (74267348)|HEAP_ALLOCATE|[4]|Bytes:16
+15:18:41.74 (74355007)|CUMULATIVE_LIMIT_USAGE
+15:18:41.74 (74355007)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 3 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 0
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+15:18:41.74 (74355007)|CUMULATIVE_LIMIT_USAGE_END
+
+15:18:41.0 (74387441)|CODE_UNIT_FINISHED|ProcessController.getProcesses()
+15:18:41.0 (74587067)|CODE_UNIT_FINISHED|apex://ProcessController/ACTION$getProcesses
+15:18:41.0 (74594005)|EXECUTION_FINISHED

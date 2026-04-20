@@ -1,0 +1,298 @@
+.container {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+/* ==========================================
+   ★ 自作トースト用のスタイル
+   ========================================== */
+.custom-toast-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    animation: fadein 0.3s, fadeout 0.3s 2.7s; /* 0.3秒で現れ、2.7秒後に消え始める */
+}
+
+.custom-toast {
+    display: flex;
+    align-items: center;
+    min-width: 250px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.custom-toast .material-symbols-outlined {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* 成功時の緑色 */
+.toast-success {
+    background-color: #2e844a; 
+}
+
+/* エラー時の赤色 */
+.toast-error {
+    background-color: #c23934;
+}
+
+/* フワッと出るアニメーション */
+@keyframes fadein {
+    from { top: 0; opacity: 0; }
+    to { top: 20px; opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { top: 20px; opacity: 1; }
+    to { top: 0; opacity: 0; }
+}
+
+/* ==========================================
+   メインカード・レイアウト
+   ========================================== */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 15px 0;
+    margin-bottom: 20px;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #042356;
+}
+
+.title-line {
+    width: 4px;
+    height: 18px;
+    background-color: #042356;
+    margin-right: 10px;
+}
+
+.edit-link {
+    font-size: 14px;
+    color: #042356 !important;
+    text-decoration: none !important;   
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.edit-link .material-symbols-outlined {
+    font-size: 20px;
+}
+
+.cancel-link{
+    font-size:20px;
+}
+
+.career-card {
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.career-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E5E7EB;
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+    color: #042356;
+}
+
+.career-title {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.delete-icon {
+    color: #dc3545;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+/* ==========================================
+   入力フォーム・テキストエリア
+   ========================================== */
+.career-item {
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.career-item.no-border {
+    border-bottom: none;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+}
+
+.item-label {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #042356;
+    margin-bottom: 6px;
+}
+
+.item-value {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.4;
+}
+
+.item-input,
+.item-select,
+.item-textarea {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 0.95rem;
+    color: #333;
+    border: 1px solid #E5E7EB;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.item-textarea {
+    min-height: 80px;
+    resize: vertical;
+    line-height: 1.4;
+}
+
+/* ==========================================
+   ボタン類
+   ========================================== */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.btn-cancel {
+    padding: 8px 20px;
+    background: #fff;
+    color: #666;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-save {
+    padding: 8px 25px;
+    background-color: #042356;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* ==========================================
+   経験職種（アコーディオンとチェックボックス）
+   ========================================== */
+.category-group {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: white;
+    margin-bottom: -1px;
+}
+
+.category-summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    background-color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    color: #001a66;
+    cursor: pointer;
+}
+
+.category-summary input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #001a66;
+    cursor: pointer;
+}
+
+.category-label {
+    flex: 1;
+    font-weight: 600;
+}
+
+.toggle-icon {
+    font-size: 18px;
+    font-weight: normal;
+    color: #001a66;
+    margin-left: auto;
+}
+
+.category-options {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* ★ 長いテキストでチェックボックスが潰れるのを防ぐ修正 */
+.option-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #333;
+    line-height: 1.4;
+}
+
+.option-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #001a66;
+    cursor: pointer;
+    flex-shrink: 0; /* ★ 絶対に縮まないようにする */
+    margin-top: 1px; /* ★ テキストが改行された際に上揃えにする微調整 */
+}
+
+/* ==========================================
+   レスポンシブ対応（スマホ向け）
+   ========================================== */
+@media screen and (max-width: 850px) {
+    .card {
+        padding: 30px 0;
+    }
+
+    .header-section {
+        padding: 0 30px 15px 30px;
+    }
+}

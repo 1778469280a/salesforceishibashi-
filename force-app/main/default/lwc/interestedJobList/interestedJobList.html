@@ -1,0 +1,91 @@
+<template>
+    <section class="job-cards-container">
+        <div class="header-container">
+            <template if:true={showHeader}>
+                <div class="header-actions">
+                    <span class="selected-jobs-label">選択した求人を</span>
+                </div>
+                <button class="bulk-delete-button" onclick={handleBulkDelete} aria-label="選択した求人を削除">
+                    <span class="material-symbols-outlined">delete</span>
+                    削除
+                </button>
+            </template>
+        </div>
+
+        <template if:true={jobsWithMeta.length}>
+            <template for:each={jobsWithMeta} for:item="job">
+                <div key={job.Id} class="job-card">
+                    <label class="checkbox-column">
+                        <input type="checkbox" data-job-id={job.Id} onchange={handleCheckboxChange}
+                            checked={job.checked} class="checkbox-input">
+                    </label>
+
+                    <div class="job-card-content" data-url={job.jobDetailUrl} onclick={handleCardClick}>
+                        <div class="job-card-header-row">
+                            <div class="job-status-container">
+                                <span class={job.viewStatusClass}>{job.viewStatusLabel}</span>
+                                <span class="job-category-tag" if:true={job.jobCategory}>{job.jobCategory}</span>
+                                <span class="job-category-tag" if:true={job.MainIndustry}>{job.MainIndustry}</span>
+                            </div>
+                            <div class="job-card-actions">
+                                <button class="action-icon-button delete-button-with-text" data-job-id={job.Id}
+                                    onclick={handleSingleDelete}>
+                                    <span class="material-symbols-outlined">delete</span>
+                                    削除する
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="job-title-container">
+                            <div class="job-title-link">
+                                <h3 class="job-title">{job.jobTitlePart}</h3>
+                            </div>
+                            <template if:true={job.jobBenefitPart}>
+                                <div class="job-benefit">{job.jobBenefitPart}</div>
+                            </template>
+                        </div>
+
+                        <div class="job-info-item">
+                            <div class="info-label">
+                                <span class="material-symbols-outlined icon-icon">card_travel</span>
+                                仕事内容
+                            </div>
+                            <div class="info-content job-description">{job.jobDescription}</div>
+                        </div>
+
+                        <div class="job-info-item">
+                            <div class="info-label">
+                                <span class="material-symbols-outlined icon-icon">currency_yen</span>
+                                想定年収
+                            </div>
+                            <div class="info-content">{job.minAnnualSalary}万円～{job.maxAnnualSalary}万円</div>
+                        </div>
+
+                        <div class="job-info-item">
+                            <div class="info-label">
+                                <span class="material-symbols-outlined icon-icon">distance</span>
+                                勤務地
+                            </div>
+                            <div class="info-content">{job.workLocation}</div>
+                        </div>
+
+                        <div class="job-info-item update-time">
+                            <span class="material-symbols-outlined time-icon">schedule</span>
+                            <span class="info-time">更新日時：{job.formattedLastModified}</span>
+                        </div>
+
+                        <button class="inquiry-button" data-job-id={job.Id}>
+                            <span class="material-symbols-outlined">outgoing_mail</span>
+                            <span>この求人に問い合わせる</span>
+                        </button>
+                    </div>
+
+
+                </div>
+            </template>
+        </template>
+        <template if:false={jobsWithMeta.length}>
+            <div class="empty-state">気になる求人はありません。</div>
+        </template>
+    </section>
+</template>

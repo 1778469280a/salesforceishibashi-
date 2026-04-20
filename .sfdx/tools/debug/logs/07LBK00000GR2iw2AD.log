@@ -1,0 +1,50 @@
+66.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DATA_ACCESS,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+17:39:04.2 (2208648)|USER_INFO|[EXTERNAL]|0057F0000042UBb|ishibashi@hurex.co.jp.dev1|(GMT+09:00) 日本標準時 (Asia/Tokyo)|GMT+09:00
+17:39:04.2 (2249523)|EXECUTION_STARTED
+17:39:04.2 (2263917)|CODE_UNIT_STARTED|[EXTERNAL]|apex://ProcessController/ACTION$getProcesses
+17:39:04.2 (3958857)|CODE_UNIT_STARTED|[EXTERNAL]|01pBK000001TU29|ProcessController.getProcesses()
+17:39:04.2 (4249788)|HEAP_ALLOCATE|[95]|Bytes:3
+17:39:04.2 (4337754)|HEAP_ALLOCATE|[100]|Bytes:152
+17:39:04.2 (4352264)|HEAP_ALLOCATE|[417]|Bytes:408
+17:39:04.2 (4363518)|HEAP_ALLOCATE|[430]|Bytes:408
+17:39:04.2 (4383426)|HEAP_ALLOCATE|[317]|Bytes:6
+17:39:04.2 (4393046)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:1
+17:39:04.2 (4410615)|METHOD_ENTRY|[1]|01pBK000001TU29|ProcessController.ProcessController()
+17:39:04.2 (4421385)|STATEMENT_EXECUTE|[1]
+17:39:04.2 (4426282)|STATEMENT_EXECUTE|[1]
+17:39:04.2 (4446698)|HEAP_ALLOCATE|[68]|Bytes:5
+17:39:04.2 (4480322)|HEAP_ALLOCATE|[74]|Bytes:5
+17:39:04.2 (4485121)|HEAP_ALLOCATE|[82]|Bytes:7
+17:39:04.2 (4639535)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+17:39:04.2 (4657737)|METHOD_EXIT|[1]|ProcessController
+17:39:04.2 (4667997)|HEAP_ALLOCATE|[4]|Bytes:5
+17:39:04.2 (4670502)|STATEMENT_EXECUTE|[3]
+17:39:04.2 (4671881)|STATEMENT_EXECUTE|[4]
+17:39:04.2 (4674130)|HEAP_ALLOCATE|[4]|Bytes:379
+17:39:04.2 (4690688)|HEAP_ALLOCATE|[4]|Bytes:4
+17:39:04.2 (14394945)|SOQL_EXECUTE_BEGIN|[4]|Aggregations:0|SELECT Id, JobPosition__c, LastModifiedDate, LatestProcessStatus__c, JobPosition__r.Id, JobPosition__r.Company__r.Name, JobPosition__r.JobPosition__c, JobPosition__r.JobCategory1__c, JobPosition__r.WorkLocation2__c, JobPosition__r.LastViewedDate FROM SelectionProcess__c WHERE (LatestProcessStatus__c != NULL AND JobPosition__c != NULL) ORDER BY LastModifiedDate DESC NULLS FIRST
+17:39:04.2 (87204682)|SOQL_EXECUTE_END|[4]|Rows:6
+17:39:04.2 (87252938)|HEAP_ALLOCATE|[4]|Bytes:28
+17:39:04.2 (87277693)|HEAP_ALLOCATE|[4]|Bytes:1989
+17:39:04.2 (87338716)|HEAP_ALLOCATE|[4]|Bytes:28
+17:39:04.87 (87417447)|CUMULATIVE_LIMIT_USAGE
+17:39:04.87 (87417447)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 6 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 0
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+17:39:04.87 (87417447)|CUMULATIVE_LIMIT_USAGE_END
+
+17:39:04.2 (87442665)|CODE_UNIT_FINISHED|ProcessController.getProcesses()
+17:39:04.2 (87617918)|CODE_UNIT_FINISHED|apex://ProcessController/ACTION$getProcesses
+17:39:04.2 (87622618)|EXECUTION_FINISHED

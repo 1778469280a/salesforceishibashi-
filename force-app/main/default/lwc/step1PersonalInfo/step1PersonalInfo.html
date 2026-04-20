@@ -1,0 +1,155 @@
+<template>
+    <div class="step-personal-info">
+        <div class="field">
+            <label class="field-label">パスワード</label>
+            <input type="password" class="field-input" value={password} oninput={handleInputChange} data-id="password" />
+        </div>
+
+        <!-- パスワード確認 -->
+        <div class="field">
+            <label class="field-label">パスワード（確認用）</label>
+            <template if:true={passwordMismatch}>
+                <input type="password" class="field-input error" value={passwordConfirm} oninput={handleInputChange} onblur={handlePasswordConfirmBlur} data-id="passwordConfirm" />
+            </template>
+            <template if:false={passwordMismatch}>
+                <input type="password" class="field-input" value={passwordConfirm} oninput={handleInputChange} onblur={handlePasswordConfirmBlur} data-id="passwordConfirm" />
+            </template>
+            <template if:true={passwordMismatch}>
+                <div class="error-message">
+                    <span class="material-symbols-outlined" style="transform: translateY(4px); font-size: 16px; margin-right: 4px; font-weight:bold;">error</span>
+                    パスワードが一致しません
+                </div>
+            </template>
+        </div>
+
+        <div class="field-row">
+            <div class="field half">
+                <label class="field-label">姓</label>
+                <input type="text" class="field-input" value={lastName} oninput={handleInputChange} data-id="lastName" />
+            </div>
+            <div class="field half">
+                <label class="field-label">名</label>
+                <input type="text" class="field-input" value={firstName} oninput={handleInputChange} data-id="firstName" />
+            </div>
+        </div>
+
+        <!-- せい -->
+        <div class="field-row">
+            <div class="field half">
+                <label class="field-label">せい</label>
+                <template if:true={lastNameKanaError}>
+                    <input type="text" class="field-input error" value={lastNameKana} oninput={handleInputChange} onblur={handleKanaBlur} data-id="lastNameKana" />
+                </template>
+                <template if:false={lastNameKanaError}>
+                    <input type="text" class="field-input" value={lastNameKana} oninput={handleInputChange} onblur={handleKanaBlur} data-id="lastNameKana" />
+                </template>
+                <template if:true={lastNameKanaError}>
+                    <div class="error-message">
+                        <span class="material-symbols-outlined" style="transform: translateY(4px); font-size: 16px; margin-right: 4px; font-weight:bold;">error</span>
+                        ひらがなで入力してください
+                    </div>
+                </template>
+            </div>
+
+            <!-- めい -->
+            <div class="field half">
+                <label class="field-label">めい</label>
+                <template if:true={firstNameKanaError}>
+                    <input type="text" class="field-input error" value={firstNameKana} oninput={handleInputChange} onblur={handleKanaBlur} data-id="firstNameKana" />
+                </template>
+                <template if:false={firstNameKanaError}>
+                    <input type="text" class="field-input" value={firstNameKana} oninput={handleInputChange} onblur={handleKanaBlur} data-id="firstNameKana" />
+                </template>
+                <template if:true={firstNameKanaError}>
+                    <div class="error-message">
+                        <span class="material-symbols-outlined" style="transform: translateY(4px); font-size: 16px; margin-right: 4px; font-weight:bold;">error</span>
+                        ひらがなで入力してください
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <!-- 生年月日 -->
+        <div class="field">
+            <label class="field-label">生年月日</label>
+            <div class="birthday-selects">
+                <select class="select year-select" value={birthYear} onchange={handleSelectChange} data-id="birthYear">
+                    <option value="">年</option>
+                    <template for:each={yearOptions} for:item="opt">
+                        <option key={opt.value} value={opt.value}>{opt.label}</option>
+                    </template>
+                </select>
+                <select class="select month-day-select" value={birthMonth} onchange={handleSelectChange} data-id="birthMonth">
+                    <option value="">月</option>
+                    <template for:each={monthOptions} for:item="opt">
+                        <option key={opt.value} value={opt.value}>{opt.label}</option>
+                    </template>
+                </select>
+                <select class="select month-day-select" value={birthDay} onchange={handleSelectChange} data-id="birthDay">
+                    <option value="">日</option>
+                    <template for:each={dayOptions} for:item="opt">
+                        <option key={opt.value} value={opt.value}>{opt.label}</option>
+                    </template>
+                </select>
+            </div>
+        </div>
+
+        <!-- 携帯電話 -->
+        <div class="field">
+            <label class="field-label">携帯電話番号</label>
+            <template if:true={phoneError}>
+                <input type="tel" class="field-input error" value={phone} oninput={handleInputChange} onblur={handlePhoneBlur} data-id="phone" />
+            </template>
+            <template if:false={phoneError}>
+                <input type="tel" class="field-input" value={phone} oninput={handleInputChange} onblur={handlePhoneBlur} data-id="phone" />
+            </template>
+            <template if:true={phoneError}>
+                <div class="error-message">
+                    <span class="material-symbols-outlined" style="transform: translateY(4px); font-size: 16px; margin-right: 4px; font-weight:bold;">error</span>
+                    無効な電話番号です。10桁、もしくは11桁の数字で入力してください
+                </div>
+            </template>
+        </div>
+
+        <!-- 性別 -->
+        <div class="field">
+            <label class="field-label">性別</label>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="gender" value="男性" checked={genderMale} onchange={handleGenderChange} data-value="男性" /> 男性
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="女性" checked={genderFemale} onchange={handleGenderChange} data-value="女性" /> 女性
+                </label>
+            </div>
+        </div>
+
+        <div class="secctionLine"></div>
+
+        <!-- 郵便番号 -->
+        <div class="field">
+            <label class="section-label">現在のお住まい</label>
+            <label class="field-label">郵便番号</label>
+            <div class="zip-row">
+                <template if:true={zipError}>
+                    <input type="text" class="field-input zip-input error" value={zipcode} oninput={handleInputChange} data-id="zipcode" />
+                </template>
+                <template if:false={zipError}>
+                    <input type="text" class="field-input zip-input" value={zipcode} oninput={handleInputChange} data-id="zipcode" />
+                </template>
+                <button class="search-button" type="button" onclick={handleZipSearch}>住所検索</button>
+            </div>
+            <template if:true={zipError}>
+                <div class="error-message">
+                    <span class="material-symbols-outlined" style="transform: translateY(4px); font-size: 16px; margin-right: 4px; font-weight:bold;">error</span>
+                    {zipError}
+                </div>
+            </template>
+
+            <label class="field-label">都道府県</label>
+            <input type="text" class="field-input" value={prefecture} oninput={handleInputChange} data-id="prefecture" />
+            <label class="field-label">都道府県以降の住所</label>
+            <input type="text" class="field-input" value={cityAddress} oninput={handleInputChange} data-id="cityAddress" />
+        </div>
+    </div>
+</template>

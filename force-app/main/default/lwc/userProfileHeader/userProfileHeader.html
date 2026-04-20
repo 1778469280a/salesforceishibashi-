@@ -1,0 +1,58 @@
+<template>
+    <div>
+        <div class="header-outer">
+            <div class="header-inner">
+                <div class="user-info">
+                    <span class="material-symbols-outlined">account_circle</span>
+                    <template if:true={userName}>
+                        <span class="user-name">{userName}</span>
+                        <span class="user-suffix">さん | ようこそ</span>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-bg">
+            <div class="content-inner">
+
+                <div class="overlap-card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <span class="material-symbols-outlined icon-mail">mail</span>
+                            応募状況
+                        </div>
+                        <div class="card-link-wrapper">
+                            <a href="/portal/process" class="card-link">
+                                応募状況を確認する
+                                <span class="material-symbols-outlined icon-chevron">chevron_right</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="status-list">
+                        <div class="status-item">
+                            <span class={inquiryNumClass}>{inquiryCount}</span>
+                            <span class={inquiryTextClass}>問合せ中</span>
+                        </div>
+
+                        <div class="status-item">
+                            <span class={applyingNumClass}>{applyingCount}</span>
+                            <span class={applyingTextClass}>応募中</span>
+                        </div>
+
+                        <div class="status-item">
+                            <span class={interviewNumClass}>{interviewCount}</span>
+                            <span class={interviewTextClass}>面接中</span>
+                        </div>
+
+                        <div class="status-item">
+                            <span class={offerNumClass}>{offerCount}</span>
+                            <span class={offerTextClass}>内定</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>

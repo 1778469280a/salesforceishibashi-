@@ -1,0 +1,96 @@
+<template>
+    <lightning-card title={cardTitle} icon-name="custom:custom67">
+
+        <template if:true={isLoading}>
+            <div class="spinner-overlay">
+                <lightning-spinner alternative-text="Loading" size="medium" variant="brand"></lightning-spinner>
+                <div class="loading-message-box">
+                    <h3 class="slds-text-heading_small slds-m-bottom_x-small">処理を実行中...</h3>
+                    <p class="slds-text-body_small">画面を閉じずにお待ちください。</p>
+                </div>
+            </div>
+        </template>
+
+        <div class="slds-p-around_medium">
+
+            <template if:true={isListMode}>
+                <div class="slds-m-bottom_medium">
+                    <lightning-input type="search" onchange={handleSearch} placeholder="メタデータ型を検索..." class="slds-size_1-of-3"></lightning-input>
+                </div>
+                <div style="height: 500px;">
+                    <lightning-datatable 
+                        key-field="DeveloperName" 
+                        data={filteredData} 
+                        columns={listColumns} 
+                        onrowaction={handleRowAction} 
+                        hide-checkbox-column>
+                    </lightning-datatable>
+                </div>
+            </template>
+
+
+            <template if:true={isRecordListMode}>
+                <div class="slds-grid slds-grid_align-spread slds-m-bottom_medium slds-p-bottom_small slds-border_bottom">
+                    <div class="slds-grid slds-grid_vertical-align-center">
+                        <lightning-button label="型一覧に戻る" icon-name="utility:back" onclick={goBackToTypeList}></lightning-button>
+                        <span class="slds-m-left_medium slds-text-heading_small">
+                            <b>{selectedMetadataLabel}</b> のレコード一覧
+                        </span>
+                    </div>
+                    <div>
+                        <lightning-button variant="brand" label="一括登録" icon-name="utility:upload" onclick={goToUploadMode}></lightning-button>
+                    </div>
+                </div>
+
+                <div style="height: 500px;">
+                     <lightning-datatable
+                        key-field="Id"
+                        data={recordListData}
+                        columns={recordListColumns}
+                        hide-checkbox-column
+                        show-row-number-column>
+                    </lightning-datatable>
+                </div>
+            </template>
+
+
+            <template if:true={isUploadMode}>
+                <div class="slds-m-bottom_small">
+                    <lightning-button label="レコード一覧に戻る" icon-name="utility:back" onclick={goBackToRecordList}></lightning-button>
+                </div>
+                
+                <div class="slds-text-align_center slds-p-vertical_xx-large slds-box slds-theme_default upload-container">
+                    <lightning-icon icon-name="utility:upload" size="large" class="slds-m-bottom_medium"></lightning-icon>
+                    
+                    <div class="slds-text-heading_medium slds-m-bottom_medium">
+                        CSV一括登録: {selectedMetadataLabel}
+                    </div>
+
+                    <lightning-input type="file" label="CSVファイルを選択" accept=".csv" onchange={handleFileUpload} variant="label-hidden"></lightning-input>
+
+                    <div class="slds-m-top_large slds-text-color_weak slds-text-align_left slds-container_small slds-container_center">
+                        <ul class="slds-list_dotted slds-text-body_small">
+                            <li>ヘッダー1行目はAPI参照名（MasterLabel必須）</li>
+                            <li>DeveloperName列がない場合、自動採番されます</li>
+                        </ul>
+                    </div>
+                </div>
+            </template>
+
+
+            <template if:true={isPreviewMode}>
+                <div class="slds-grid slds-grid_align-spread slds-m-bottom_small">
+                    <div><h2 class="slds-text-heading_small">登録プレビュー ({dataToDeploy.length}件)</h2></div>
+                </div>
+                <div style="height: 400px; border: 1px solid #dddbda; border-radius: 0.25rem;">
+                    <lightning-datatable key-field="DeveloperName" data={dataToDeploy} columns={previewColumns} hide-checkbox-column show-row-number-column></lightning-datatable>
+                </div>
+                <div class="slds-m-top_medium slds-text-align_right">
+                    <lightning-button label="キャンセル" onclick={handleCancelPreview} class="slds-m-right_small"></lightning-button>
+                    <lightning-button variant="brand" label="確定して登録" icon-name="utility:save" onclick={handleDeploy}></lightning-button>
+                </div>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

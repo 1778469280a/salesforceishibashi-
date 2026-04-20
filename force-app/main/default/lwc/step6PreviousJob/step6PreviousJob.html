@@ -1,0 +1,95 @@
+<template>
+    <div class="step-previous-job">
+        <div class="field">
+            <label class="section-label">現在または直前の勤務先</label>
+            <label class="field-label">会社名</label>
+            <input type="text" class="field-input" value={companyName} oninput={handleCompanyInput} />
+        </div>
+        <div class="field">
+            <label class="field-label">勤務開始年月</label>
+            <div class="year-month-group">
+                <select class="select year-select" value={startYear} onchange={handleStartYearChange}>
+                    <option value="">年</option>
+                    <template for:each={yearOptions} for:item="opt">
+                        <option key={opt.value} value={opt.value}>{opt.label}</option>
+                    </template>
+                </select>
+                <select class="select month-select" value={startMonth} onchange={handleStartMonthChange}>
+                    <option value="">月</option>
+                    <template for:each={monthOptions} for:item="opt">
+                        <option key={opt.value} value={opt.value}>{opt.label}</option>
+                    </template>
+                </select>
+            </div>
+        </div>
+        <div class="field">
+            <label class="field-label">勤務終了年月</label>
+            <div class="year-month-group">
+                <select class="select year-select" value={endYear} onchange={handleEndYearChange}>
+                    <option value="">年</option>
+                    <template for:each={yearOptions} for:item="opt">
+                        <option key={opt.value} value={opt.value}>{opt.label}</option>
+                    </template>
+                </select>
+                <select class="select month-select" value={endMonth} onchange={handleEndMonthChange}>
+                    <option value="">月</option>
+                    <template for:each={monthOptions} for:item="opt">
+                        <option key={opt.value} value={opt.value}>{opt.label}</option>
+                    </template>
+                </select>
+            </div>
+            <div if:true={showDateRangeError} class="error-message">
+                <span class="material-symbols-outlined" style="transform: translateY(4px); font-size: 16px; margin-right: 4px; font-weight:bold;">error</span>
+                勤務開始年月より過去の年月になっています
+            </div>
+        </div>
+        <div class="field">
+            <label class="field-label">現在の年収</label>
+            <select class="field-select" value={currentSalary} onchange={handleSalaryChange}>
+                <option value=""></option>
+                <template if:false={isSalaryLoading}>
+                    <template for:each={salaryOptions} for:item="opt">
+                        <option key={opt.value} value={opt.value}>{opt.label}</option>
+                    </template>
+                </template>
+            </select>
+        </div>
+        <div class="field">
+            <label class="field-label">直近の業務・職務内容</label>
+            <textarea class="field-textarea" value={jobDescription} oninput={handleJobDescriptionInput} rows="4"></textarea>
+        </div>
+        <div class="field">
+            <label class="field-label">経験職種</label>
+            <template if:false={isOccupationLoading}>
+                <div class="category-container">
+                    <template for:each={jobGroups} for:item="group">
+                        <div key={group.key} class="category-group">
+                            <div class="category-summary" onclick={toggleGroup} data-group-key={group.key}>
+                                <input type="checkbox" 
+                                       checked={group.allSelected}
+                                       indeterminate={group.indeterminate}
+                                       onchange={handleGroupSelect}
+                                       data-group-key={group.key}
+                                       onclick={stopPropagation} />
+                                <span class="category-label">{group.label}</span>
+                                <span class="toggle-icon">{group.toggleIconName}</span>
+                            </div>
+                            <div if:true={group.isExpanded} class="category-options">
+                                <template for:each={group.options} for:item="option">
+                                    <label key={option.value} class="option-label">
+                                        <input type="checkbox" 
+                                               value={option.value}
+                                               checked={option.isSelected}
+                                               onchange={handleOptionChange}
+                                               data-group-key={group.key} />
+                                        {option.label}
+                                    </label>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

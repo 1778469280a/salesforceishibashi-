@@ -1,0 +1,79 @@
+66.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DATA_ACCESS,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+Execute Anonymous: //String FIELDS = 'Person.P_Id,Person.P_Name,Person.P_Telephone,Person.P_Mail,Person.P_Mobile,Person.P_MobileMail,Person.P_RegistrationDate,Person.P_RegisteredBy,Person.P_UpdateDate,Person.P_UpdatedBy';
+Execute Anonymous: /*
+Execute Anonymous: Datetime lastSyncTime = Datetime.valueOf('2026-03-01 10:56:02');
+Execute Anonymous: PORTERS_DTO_ResumeDateResponse res =
+Execute Anonymous:             PORTERS_API_GetResumeData.getResumeData(null, 0);
+Execute Anonymous: for(PORTERS_DTO_ResumeDateResponse.Wrapper wrapper:res.result){
+Execute Anonymous:                 system.debug(wrapper);
+Execute Anonymous:             }*/
+Execute Anonymous: PORTERS_BATCH_CandiData batch = new PORTERS_BATCH_CandiData();
+Execute Anonymous: Database.executeBatch(batch,1);
+17:22:52.0 (476907)|USER_INFO|[EXTERNAL]|0057F0000042UBb|ishibashi@hurex.co.jp.dev1|(GMT+09:00) 日本標準時 (Asia/Tokyo)|GMT+09:00
+17:22:52.0 (505401)|EXECUTION_STARTED
+17:22:52.0 (541526)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+17:22:52.0 (14490413)|VARIABLE_SCOPE_BEGIN|[7]|PORTERS_BATCH_CandiData.FIELDS|String|false|true
+17:22:52.0 (14568060)|VARIABLE_SCOPE_BEGIN|[9]|batch|PORTERS_BATCH_CandiData|true|false
+17:22:52.0 (14731188)|HEAP_ALLOCATE|[95]|Bytes:3
+17:22:52.0 (14794730)|HEAP_ALLOCATE|[100]|Bytes:152
+17:22:52.0 (14812742)|HEAP_ALLOCATE|[417]|Bytes:408
+17:22:52.0 (14828181)|HEAP_ALLOCATE|[430]|Bytes:408
+17:22:52.0 (14856930)|HEAP_ALLOCATE|[317]|Bytes:6
+17:22:52.0 (14886465)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+17:22:52.0 (14955595)|STATEMENT_EXECUTE|[1]
+17:22:52.0 (14958541)|STATEMENT_EXECUTE|[9]
+17:22:52.0 (14962511)|HEAP_ALLOCATE|[9]|Bytes:65
+17:22:52.0 (14968655)|HEAP_ALLOCATE|[9]|Bytes:10
+17:22:52.0 (14972719)|HEAP_ALLOCATE|[9]|Bytes:181
+17:22:52.0 (15047162)|VARIABLE_ASSIGNMENT|[9]|PORTERS_BATCH_CandiData.FIELDS|"Person.P_Id,Person.P (161 more) ..."
+17:22:52.0 (15090986)|METHOD_ENTRY|[1]|01pBK000001lCjV|PORTERS_BATCH_CandiData.PORTERS_BATCH_CandiData()
+17:22:52.0 (15098019)|STATEMENT_EXECUTE|[1]
+17:22:52.0 (15102288)|STATEMENT_EXECUTE|[1]
+17:22:52.0 (15111209)|METHOD_EXIT|[1]|PORTERS_BATCH_CandiData
+17:22:52.0 (15156330)|HEAP_ALLOCATE|[9]|Bytes:16
+17:22:52.0 (15198811)|HEAP_ALLOCATE|[68]|Bytes:5
+17:22:52.0 (15232140)|HEAP_ALLOCATE|[74]|Bytes:5
+17:22:52.0 (15239334)|HEAP_ALLOCATE|[82]|Bytes:7
+17:22:52.0 (15267005)|SYSTEM_MODE_ENTER|false
+17:22:52.0 (15297474)|HEAP_ALLOCATE|[9]|Bytes:5
+17:22:52.0 (15322778)|CONSTRUCTOR_ENTRY|[9]|01pBK000001lCjV|<init>()|PORTERS_BATCH_CandiData
+17:22:52.0 (15404541)|VARIABLE_SCOPE_BEGIN|[8]|this|PORTERS_BATCH_CandiData|true|false
+17:22:52.0 (15496149)|VARIABLE_ASSIGNMENT|[8]|this|{}|0x5966b8e0
+17:22:52.0 (15505353)|STATEMENT_EXECUTE|[1]
+17:22:52.0 (15506628)|STATEMENT_EXECUTE|[3]
+17:22:52.0 (15507914)|STATEMENT_EXECUTE|[4]
+17:22:52.0 (15508916)|STATEMENT_EXECUTE|[5]
+17:22:52.0 (15515482)|HEAP_ALLOCATE|[5]|Bytes:4
+17:22:52.0 (15543404)|VARIABLE_ASSIGNMENT|[5]|this.pageSize|200|0x5966b8e0
+17:22:52.0 (15553204)|HEAP_ALLOCATE|[5]|Bytes:6
+17:22:52.0 (17397910)|STATEMENT_EXECUTE|[8]
+17:22:52.0 (17403209)|STATEMENT_EXECUTE|[9]
+17:22:52.0 (23226062)|HEAP_ALLOCATE|[9]|Bytes:72
+17:22:52.0 (23270739)|VARIABLE_SCOPE_BEGIN|[9]|settings|PORTERS_Settings__c|true|false
+17:22:52.0 (23504826)|VARIABLE_ASSIGNMENT|[9]|settings|{"LastModifiedDate":"2026-04-07T06:02:35.000Z","IsDeleted":false,"LastSyncTime__c":"2026-04-07T06:02:35.000Z","Client_Secret__c":"sPeXbzmOIRQwl4zKeRFR (108 more) ...","PARTITION_ID__c":2012.0,"API_Call_Count__c":2.0,"Token_Expires_At__c":"2026-02-04T05:41:00.000Z","SetupOwnerId":"00DBK000004uTTF2A2","Access_Token__c":"eba88d5229388a807c43 (12 more) ...","Name":"a0PBK000008oB5J","SystemModstamp":"2026-04-07T06:02:35.000Z","Is_Development_Mode__c":true,"CreatedById":"0057F0000042UBbQAM","CreatedDate":"2026-03-05T03:24:41.000Z","Last_Call_Timestamp__c":"2026-02-03T05:41:00.000Z","Id":"a0PBK000008oB5J2AU","LastModifiedById":"0057F0000042UBbQAM"}|0x2a1aeb7b
+17:22:52.0 (23518973)|STATEMENT_EXECUTE|[10]
+17:22:52.0 (23573147)|VARIABLE_ASSIGNMENT|[10]|this.lastSyncTime|"2026-04-07T06:02:35.000Z"|0x5966b8e0
+17:22:52.0 (23588506)|CONSTRUCTOR_EXIT|[9]|01pBK000001lCjV|<init>()|PORTERS_BATCH_CandiData
+17:22:52.0 (23603226)|SYSTEM_MODE_EXIT|false
+17:22:52.0 (23659892)|VARIABLE_ASSIGNMENT|[9]|batch|{"lastSyncTime":"2026-04-07T06:02:35.000Z","pageSize":200}|0x5966b8e0
+17:22:52.0 (23665119)|STATEMENT_EXECUTE|[10]
+17:22:52.92 (92276207)|CUMULATIVE_LIMIT_USAGE
+17:22:52.92 (92276207)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+17:22:52.92 (92276207)|CUMULATIVE_LIMIT_USAGE_END
+
+17:22:52.0 (92393989)|CODE_UNIT_FINISHED|execute_anonymous_apex
+17:22:52.0 (92419639)|EXECUTION_FINISHED

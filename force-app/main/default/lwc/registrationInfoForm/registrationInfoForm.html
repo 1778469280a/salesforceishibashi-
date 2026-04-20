@@ -1,0 +1,204 @@
+<template>
+    <div class="registration-container">
+        <div class="title-bar">
+            <span class="material-symbols-outlined">account_circle</span>
+            <h2>{titleText}</h2>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <div class="header-title">
+                    <span class="title-line"></span>
+                    {subTitleText}
+                </div>
+                <template if:true={isEditing}>
+                    <div class="cancel-link" onclick={handleCancel}>
+                        <span class="material-symbols-outlined">close</span>
+                        キャンセル
+                    </div>
+                </template>
+                <template if:false={isEditing}>
+                    <div class="edit-link" onclick={handleEditClick}>
+                        基本情報を変更する
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </div>
+                </template>
+            </div>
+
+            <template if:false={isEditing}>
+                <dl class="info-list">
+                    <dt>氏名</dt>
+                    <dd>{fullName}</dd>
+                    <dt>ふりがな</dt>
+                    <dd>{fullKana}</dd>
+                    <dt>生年月日</dt>
+                    <dd>{userInfo.birthdate}</dd>
+                    <dt>性別</dt>
+                    <dd>{genderText}</dd>
+                    <dt>住所</dt>
+                    <dd>〒{userInfo.postalCode}<br>{userInfo.prefecture} {userInfo.address}</dd>
+                    <dt>電話番号</dt>
+                    <dd>{userInfo.phone}</dd>
+                    <dt>最終学歴</dt>
+                    <dd>{userInfo.education}</dd>
+                    <dt>学校名/学部/学科</dt>
+                    <dd>{userInfo.school}</dd>
+                    <dt>経験社数</dt>
+                    <dd>{userInfo.companyCount}</dd>
+                    <dt>就業状況</dt>
+                    <dd>{userInfo.employmentStatus}</dd>
+                    <dt>免許・資格</dt>
+                    <dd>{userInfo.license}</dd>
+                    <dt>マネジメント経験</dt>
+                    <dd>{managementText}</dd>
+                    <dt>その他</dt>
+                    <dd class="other-text">{userInfo.remarks}</dd>
+                </dl>
+            </template>
+
+            <template if:true={isEditing}>
+                <div class="edit-form">
+                    <div class="form-group">
+                        <label>姓</label>
+                        <input type="text" class="input-field" value={userInfo.lastName} onchange={handleInputChange}
+                            data-field="lastName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>名</label>
+                        <input type="text" class="input-field" value={userInfo.firstName} onchange={handleInputChange}
+                            data-field="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>せい</label>
+                        <input type="text" class="input-field" value={userInfo.kanaSei} onchange={handleInputChange}
+                            data-field="kanaSei">
+                    </div>
+                    <div class="form-group">
+                        <label>めい</label>
+                        <input type="text" class="input-field" value={userInfo.kanaMei} onchange={handleInputChange}
+                            data-field="kanaMei">
+                    </div>
+                    <div class="form-group">
+                        <label>生年月日</label>
+                        <div class="date-select-group">
+                            <select class="input-field select-field year-select" value={birthYear}
+                                onchange={handleSelectChange} data-id="birthYear">
+                                <option value="">年</option>
+                                <template for:each={yearOptions} for:item="opt">
+                                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                                </template>
+                            </select>
+                            <select class="input-field select-field month-select" value={birthMonth}
+                                onchange={handleSelectChange} data-id="birthMonth">
+                                <option value="">月</option>
+                                <template for:each={monthOptions} for:item="opt">
+                                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                                </template>
+                            </select>
+                            <select class="input-field select-field day-select" value={birthDay}
+                                onchange={handleSelectChange} data-id="birthDay">
+                                <option value="">日</option>
+                                <template for:each={dayOptions} for:item="opt">
+                                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                                </template>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>性別</label>
+                        <select class="input-field select-field" value={genderText} onchange={handleInputChange}
+                            data-field="gender">
+                            <template for:each={genderOptions} for:item="option">
+                                <option key={option.value} value={option.value}>{option.label}</option>
+                            </template>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>住所</label>
+                        <div class="zip-row">
+                            <span>〒</span>
+                            <input type="text" class="input-field zip-field" value={userInfo.postalCode}
+                                onchange={handleInputChange} data-field="postalCode">
+                        </div>
+                        <label>都道府県：
+                            <select class="input-field select-field" data-field="prefecture"
+                                onchange={handleInputChange}>
+                                <template for:each={prefectureOptions} for:item="option">
+                                    <option key={option.value} value={option.value}>{option.label}</option>
+                                </template>
+                            </select>
+                        </label>
+                        <label>都道府県以降の住所：<input type="text" class="input-field" value={userInfo.address}
+                                onchange={handleInputChange} data-field="address"></label>
+                    </div>
+                    <div class="form-group">
+                        <label>電話番号</label>
+                        <input type="tel" class="input-field tel-field" value={userInfo.phone}
+                            onchange={handleInputChange} data-field="phone">
+                    </div>
+                    <div class="form-group">
+                        <label>最終学歴</label>
+                        <div class="radio-group">
+                            <template for:each={educationOptionsWithCheck} for:item="option">
+                                <label key={option.value} class="radio-label">
+                                    <input type="radio" name="education" value={option.value} checked={option.isChecked}
+                                        onchange={handleRadioChange} data-field="education"> {option.label}
+                                </label>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>学校名/学部/学科</label>
+                        <input type="text" class="input-field" value={userInfo.school} onchange={handleInputChange}
+                            data-field="school">
+                    </div>
+                    <div class="form-group">
+                        <label>経験社数</label>
+                        <div class="radio-group">
+                            <template for:each={companyCountOptionsWithCheck} for:item="option">
+                                <label key={option.value} class="radio-label">
+                                    <input type="radio" name="companies" value={option.value} checked={option.isChecked}
+                                        onchange={handleRadioChange} data-field="companyCount"> {option.label}
+                                </label>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>就業状況</label>
+                        <div class="radio-group">
+                            <template for:each={employmentOptionsWithCheck} for:item="option">
+                                <label key={option.value} class="radio-label">
+                                    <input type="radio" name="employment" value={option.value}
+                                        checked={option.isChecked} onchange={handleRadioChange}
+                                        data-field="employmentStatus"> {option.label}
+                                </label>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>免許・資格</label>
+                        <textarea lwc:dom="manual" class="input-field textarea-field" rows="4"
+                            data-field="license"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>マネジメント経験</label>
+                        <select class="input-field select-field" value={managementText} onchange={handleInputChange}
+                            data-field="managementExperience">
+                            <template for:each={managementOptions} for:item="option">
+                                <option key={option.value} value={option.value}>{option.label}</option>
+                            </template>
+                        </select>
+                    </div>
+                    <div class="form-group last-group">
+                        <label>その他</label>
+                        <textarea lwc:dom="manual" class="input-field textarea-field" rows="4"
+                            data-field="remarks"></textarea>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn-cancel" onclick={handleCancel}>キャンセル</button>
+                        <button class="btn-save" onclick={handleSave}>変更を保存する</button>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

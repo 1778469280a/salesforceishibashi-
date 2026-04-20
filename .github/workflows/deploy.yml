@@ -1,0 +1,26 @@
+name: Salesforce Test環境へ自動デプロイ
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Node.jsをセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Salesforce CLIをインストール
+        run: npm install -g @salesforce/cli
+
+      - name: Test環境にログイン
+        run: |
+          sf org login sfdx-url --sfdx-auth-url ${{ secrets.SFDX_TEST_AUTH_URL }} --set-default --alias test-sandbox
+
+      - name: デプロイを実行
+        run: sf project deploy start --manifest manifest/package.xml --target-org test-sandbox

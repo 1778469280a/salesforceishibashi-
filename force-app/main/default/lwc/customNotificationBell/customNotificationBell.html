@@ -1,0 +1,59 @@
+<template>
+    <div class="bell-container">
+        <div class="icon-wrapper" onclick={toggleDropdown}>
+            <span class="material-symbols-outlined icon-notifications">notifications</span>
+            <span class="iconLabel">お知らせ</span>
+            <template if:true={hasUnread}>
+                <span class="badge">{unreadCount}</span>
+            </template>
+        </div>
+
+        <template if:true={isDropdownOpen}>
+            <div class="bell-mobile-overlay" onclick={toggleDropdown}></div>
+
+            <section class="slds-popover slds-nubbin_top custom-popover" role="dialog">
+                <header class="slds-popover__header slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                    <h2 class="slds-text-heading_small slds-text-title_bold">通知</h2>
+                    <template if:true={hasUnread}>
+                        <a href="javascript:void(0);" class="mark-all-read" onclick={handleMarkAllAsRead}>すべて既読にする</a>
+                    </template>
+                </header>
+                
+                <div class="slds-popover__body slds-p-around_none body-scroll">
+                    <template if:true={hasNotifications}>
+                        <ul class="slds-list_vertical slds-has-dividers_bottom-space">
+                            <template for:each={notifications} for:item="notif">
+                                
+                                <li key={notif.id} class={notif.cssClass} data-id={notif.id} onclick={handleNotificationClick}>
+                                    <div class="slds-media slds-p-around_small">
+                                        <div class="slds-media__figure">
+                                            <lightning-icon icon-name="standard:custom_notification" size="small"></lightning-icon>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <p class="notif-title">{notif.title}</p>
+                                            <p class="notif-body">{notif.body}</p>
+                                            <p class="notif-time">{notif.relativeTime}</p>
+                                        </div>
+                                        <template if:false={notif.read}>
+                                            <div class="slds-media__figure slds-media__figure_reverse slds-m-top_x-small">
+                                                <div class="unread-dot"></div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </li>
+
+                            </template>
+                        </ul>
+                        <div class="load-more" onclick={loadOlderNotifications}>過去の通知をもっと見る</div>
+                    </template>
+                    
+                    <template if:false={hasNotifications}>
+                        <div class="slds-p-around_medium slds-text-align_center slds-text-color_weak">
+                            新しい通知はありません
+                        </div>
+                    </template>
+                </div>
+            </section>
+        </template>
+    </div>
+</template>

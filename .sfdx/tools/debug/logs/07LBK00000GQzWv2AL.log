@@ -1,0 +1,50 @@
+66.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DATA_ACCESS,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+18:09:58.2 (2177989)|USER_INFO|[EXTERNAL]|0057F0000042UBb|ishibashi@hurex.co.jp.dev1|(GMT+09:00) 日本標準時 (Asia/Tokyo)|GMT+09:00
+18:09:58.2 (2221297)|EXECUTION_STARTED
+18:09:58.2 (2246874)|CODE_UNIT_STARTED|[EXTERNAL]|apex://InterestedJobController/ACTION$getInterestedJobs
+18:09:58.2 (3007223)|CODE_UNIT_STARTED|[EXTERNAL]|01pBK000001YhEr|InterestedJobController.getInterestedJobs()
+18:09:58.2 (3368627)|HEAP_ALLOCATE|[95]|Bytes:3
+18:09:58.2 (3473381)|HEAP_ALLOCATE|[100]|Bytes:152
+18:09:58.2 (3492831)|HEAP_ALLOCATE|[417]|Bytes:408
+18:09:58.2 (3510939)|HEAP_ALLOCATE|[430]|Bytes:408
+18:09:58.2 (3540921)|HEAP_ALLOCATE|[317]|Bytes:6
+18:09:58.2 (3554972)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:7
+18:09:58.2 (3575349)|METHOD_ENTRY|[1]|01pBK000001YhEr|InterestedJobController.InterestedJobController()
+18:09:58.2 (3589907)|STATEMENT_EXECUTE|[1]
+18:09:58.2 (3601525)|STATEMENT_EXECUTE|[1]
+18:09:58.2 (3625647)|HEAP_ALLOCATE|[68]|Bytes:5
+18:09:58.2 (3665343)|HEAP_ALLOCATE|[74]|Bytes:5
+18:09:58.2 (3673228)|HEAP_ALLOCATE|[82]|Bytes:7
+18:09:58.2 (3890905)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+18:09:58.2 (3910175)|METHOD_EXIT|[1]|InterestedJobController
+18:09:58.2 (3924197)|HEAP_ALLOCATE|[10]|Bytes:5
+18:09:58.2 (3928224)|STATEMENT_EXECUTE|[9]
+18:09:58.2 (3929927)|STATEMENT_EXECUTE|[10]
+18:09:58.2 (3933170)|HEAP_ALLOCATE|[10]|Bytes:327
+18:09:58.2 (3954115)|HEAP_ALLOCATE|[10]|Bytes:4
+18:09:58.2 (10565550)|SOQL_EXECUTE_BEGIN|[10]|Aggregations:0|SELECT Id, Job__c, LastModifiedDate, Job__r.JobPosition__c, Job__r.JobDescription__c, Job__r.MinAnnualSalary__c, Job__r.MaxAnnualSalary__c, Job__r.WorkLocation2__c, Job__r.JobCategory1__c, Job__r.LastModifiedDate, Job__r.LastViewedDate FROM InterestedJob__c WHERE IsArchive__c = FALSE ORDER BY LastModifiedDate DESC NULLS FIRST
+18:09:58.2 (47247234)|SOQL_EXECUTE_END|[10]|Rows:4
+18:09:58.2 (47300340)|HEAP_ALLOCATE|[10]|Bytes:20
+18:09:58.2 (47333084)|HEAP_ALLOCATE|[10]|Bytes:2221
+18:09:58.2 (47408606)|HEAP_ALLOCATE|[10]|Bytes:20
+18:09:58.47 (47500250)|CUMULATIVE_LIMIT_USAGE
+18:09:58.47 (47500250)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 4 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+18:09:58.47 (47500250)|CUMULATIVE_LIMIT_USAGE_END
+
+18:09:58.2 (47556433)|CODE_UNIT_FINISHED|InterestedJobController.getInterestedJobs()
+18:09:58.2 (47793772)|CODE_UNIT_FINISHED|apex://InterestedJobController/ACTION$getInterestedJobs
+18:09:58.2 (47801689)|EXECUTION_FINISHED

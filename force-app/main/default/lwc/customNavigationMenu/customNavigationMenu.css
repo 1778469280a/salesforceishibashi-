@@ -1,0 +1,519 @@
+/* =========================================
+   PC版の基本設定（非表示要素）
+   ========================================= */
+.header-placeholder {
+    display: block;
+    height:127px;
+    width: 100%;
+}
+
+.mobile-overlay {
+    display: none;
+}
+
+/* =========================================
+   全体ラッパー
+   ========================================= */
+.global-header-wrapper {
+width: 100%;
+    background-color: #ffffff;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 500 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================
+   上部ヘッダー
+   ========================================= */
+.top-header {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.header-left {
+    margin-right: auto;
+}
+
+.logo-img {
+    height: 40px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* =========================================
+   ベルとモバイル開閉ボタンのグループ
+   ========================================= */
+.mobile-controls {
+    display: flex;
+    align-items: center;
+}
+
+.bell-container {
+    display: flex;
+    align-items: center;
+    overflow: visible;
+    padding-top: 2px;
+}
+
+.mobile-toggle {
+    display: none;
+    cursor: pointer;
+    color: #042356;
+    user-select: none;
+    margin-left: 25px;
+    padding-top: 5px;
+}
+
+.mobile-toggle .material-symbols-outlined {
+    font-size: 2.2rem;
+}
+
+/* ★PC版：親要素を relative に（ラベルは出ないが念のため） */
+.control-icon-group {
+    position: relative;
+    align-items: center;
+    padding-top: 2px;
+}
+
+/* ★PC版：ラベルは非表示にする */
+.control-label {
+    display: none;
+}
+
+/* =========================================
+   上部ヘッダー（右側アクション群）
+   ========================================= */
+.header-right-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    color: #333;
+    line-height: 1;
+}
+
+.action-link {
+    display: inline-flex;
+    align-items: center;
+    color: #000 !important;
+    font-weight: normal;
+    text-decoration: none !important;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    line-height: 1;
+    transition: opacity 0.2s ease;
+}
+
+.action-link:hover {
+    opacity: 0.7;
+}
+
+.icon-new-window {
+    font-size: 1.1rem;
+    margin-left: 2px;
+    line-height: 1;
+}
+
+.action-divider {
+    color: #E5E7EB;
+    margin: 0 12px;
+    line-height: 1;
+}
+
+.contact-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.contact-label {
+    font-size: 0.75rem;
+    color: #555;
+    margin-bottom: 0;
+    text-align: justify;
+    text-align-last: justify;
+    line-height: 1;
+}
+
+.contact-phone {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #042356 !important;
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1;
+    margin-top: 2px;
+    transition: opacity 0.2s ease;
+}
+
+.contact-phone:hover {
+    opacity: 0.7;
+}
+
+.icon-phone {
+    font-size: 1.3rem;
+    margin-right: 4px;
+    line-height: 1;
+}
+
+c-custom-notification-bell {
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* =========================================
+   ナビゲーション部分のスタイル
+   ========================================= */
+.nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0 47px;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E5E7EB;
+    background-color: transparent;
+}
+
+.nav-item {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none !important;
+    color: #808080 !important;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 12px 0;
+    padding: 5px 8px;
+    border-radius: 3px;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-item:hover,
+.nav-item:hover>.material-symbols-outlined {
+    color: #042356 !important;
+}
+
+.active,
+.active>.material-symbols-outlined {
+    color: #042356 !important;
+    background-color: #F5F5F5 !important;
+    font-variation-settings: 'FILL' 1;
+}
+
+.nav-item .material-symbols-outlined {
+    margin-right: 6px;
+    font-size: 20px;
+}
+
+.nav-label {
+    line-height: 1;
+    font-size: 20px;
+}
+
+.mobile-footer-navigation-menu {
+    display: none;
+}
+
+.nav-badge {
+    position: absolute;
+    top: -6px;
+    left: 16px;
+    background-color: #FF3B30;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 1;
+    padding: 2px 5px;
+    border-radius: 10px;
+    min-width: 16px;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #ffffff;
+    z-index: 2;
+}
+
+/* =========================================
+   スマホ用レスポンシブ設定 (画面幅 850px 以下)
+   ========================================= */
+@media screen and (max-width: 850px) {
+    .header-placeholder {
+        height: 60px;
+    }
+
+    .top-header {
+        padding: 12px 20px;
+    }
+
+    .logo-img {
+        height: 30px;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    c-custom-notification-bell {
+        position: static !important;
+        transform: none !important; /* ★スマホ時はベルのY軸移動を打ち消す */
+    }
+
+    /* ★スマホ版：親要素を absolute の基準にする */
+    .control-icon-group {
+        position: relative;
+        display: inline-block; /* アイコンのサイズに合わせる */
+        line-height: 1;
+    }
+
+    /* ★スマホ版：ラベルを absolute で配置 */
+    .control-label {
+        display: block; /* スマホ時表示 */
+        position: absolute;
+        
+        /* ▼▼ 要望の調整箇所 ▼▼ */
+        /* アイコンの上端からの距離。アイコンの大きさに合わせて微調整してください */
+        /* ベル用(約30px)とハンバーガー用(約35px)で個別に設定します */
+        
+        /* 横方向の中央揃え（テキスト長が変わっても崩れない推奨設定） */
+        left: 50%;
+        transform: translateX(-50%);
+        
+        /* 共通スタイル */
+        font-size: 10px;
+        color: #042356;
+        font-weight: bold;
+        white-space: nowrap;
+        line-height: 1;
+    }
+
+    /* ★アイコンごとの top 位置微調整 */
+    .bell-container .control-label {
+        top: 26px; /* ベル(約30px)の下に配置 */
+    }
+    
+    .mobile-toggle .control-label {
+        top: 37px; /* ハンバーガー(約35px)の下に配置 */
+    }
+
+    .bell-container {
+        padding-top: 0; /* ★ラベルの分高さが出るのでゼロに */
+    }
+
+    .mobile-toggle {
+        display: block;
+        padding-top: 0; /* ★ラベルの分高さが出るのでゼロに */
+    }
+
+    .mobile-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(128, 128, 128, 0.6);
+        z-index: 499;
+        cursor: pointer;
+    }
+
+    .header-placeholder {
+        display: block;
+        height: 60px;
+        width: 100%;
+    }
+
+    .global-header-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: #ffffff;
+    }
+
+    .global-header-wrapper.mobile-open {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        border-bottom: 1px solid #E5E7EB;
+        padding-bottom: 0;
+    }
+
+    .pc-divider {
+        display: none;
+    }
+
+    .header-right-actions,
+    .nav-container {
+        display: none;
+        width: 100%;
+    }
+
+    .global-header-wrapper.mobile-open .header-right-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 5px;
+        padding: 20px 20px 10px 20px;
+        border-top: 1px solid #E5E7EB;
+        gap: 15px;
+    }
+
+    .global-header-wrapper.mobile-open .action-divider {
+        display: none;
+    }
+
+    .global-header-wrapper.mobile-open .contact-label {
+        text-align: left;
+        text-align-last: left;
+    }
+
+    .global-header-wrapper.mobile-open .nav-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 0 20px 20px 20px;
+        border-top: none;
+        border-bottom: none;
+    }
+
+    .global-header-wrapper.mobile-open .nav-item {
+        width: 100%;
+        margin: 0;
+        padding: 15px 5px;
+        border-radius: 0;
+        border-bottom: 1px solid #E5E7EB;
+    }
+
+    .global-header-wrapper.mobile-open .nav-item.active {
+        background-color: #F5F5F5 !important;
+        color: #042356 !important;
+    }
+
+    .mobile-footer-menu {
+        padding: 20px;
+        font-size: 12px;
+        background-color: #f9f9f9;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .mobile-footer-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex: 1;
+        border-bottom: 1px solid #E5E7EB;
+    }
+
+    .mobile-footer-item {
+        margin-bottom: 12px;
+    }
+
+    .mobile-footer-link {
+        color: #000 !important;
+        text-decoration: none !important;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .mobile-footer-icon {
+        font-size: 12px;
+        margin-left: 2px;
+        transform: translateY(1px);
+    }
+
+    .mobile-footer-navigation-menu {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 998;
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .mobile-nav-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 60px;
+    }
+
+    .mobile-nav-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none !important;
+        color: #555555;
+        flex: 1;
+        height: 100%;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .mobile-nav-item.active {
+        color: #042356 !important;
+    }
+
+    .mobile-nav-icon, .mobile-nav-label {
+        font-size: 24px;
+        margin-bottom: 2px;
+        color: #808080 !important;
+    }
+
+    .mobile-nav-label {
+        font-size: 10px;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .wrapperClass,
+    .header-placeholder {
+        padding-bottom: 60px;
+    }
+
+    .mobile-nav-badge {
+        position: absolute;
+        top: 4px;
+        right: calc(50% - 18px);
+        background-color: #FF3B30;
+        color: #ffffff;
+        font-size: 9px;
+        font-weight: bold;
+        line-height: 1;
+        padding: 2px 4px;
+        border-radius: 10px;
+        min-width: 14px;
+        text-align: center;
+        box-sizing: border-box;
+        z-index: 2;
+    }
+
+    .nav-badge {
+        top: 4px;
+        left: 15px;
+    }
+}

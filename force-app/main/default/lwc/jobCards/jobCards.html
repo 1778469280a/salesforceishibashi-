@@ -1,0 +1,83 @@
+<template>
+    <section class="job-cards-container">
+        <div class="header-container">
+            <div class="header-title">
+                <span class="material-symbols-outlined icon-checklist">checklist</span>
+                希望条件に合う求人
+            </div>
+            <div class="header-link">
+                <a href="/search?tabs-8472=tab2" class="modify-condition-link">
+                    希望条件を変更する
+                    <span class="material-symbols-outlined icon-chevron-forward">chevron_forward</span>
+                </a>
+            </div>
+        </div>
+        <template if:true={jobWithUrls}>
+            <template for:each={jobWithUrls} for:item="job">
+                <a key={job.Id} href={job.url} class="job-card-link">
+                    <div class="job-card">
+                        <div class="job-card-header-row">
+                            <div class="job-status-container">
+                                <span class={job.viewStatusClass}>{job.viewStatusLabel}</span>
+                                <template if:true={job.JobCategory1}>
+                                    <span class="job-category-tag">{job.JobCategory1}</span>
+                                </template>
+                                <template if:true={job.MainIndustry}>
+                                    <span class="job-category-tag">{job.MainIndustry}</span>
+                                </template>
+                            </div>
+                            <button class={job.favoriteButtonClass} 
+                                    data-job-id={job.Id} 
+                                    data-is-favorite={job.IsFavorite} 
+                                    onclick={handleFavoriteButtonClick}>
+                                <span class="material-symbols-outlined icon-bookmark">bookmark</span>
+                                <span class="button-text">{job.favoriteButtonText}</span>
+                            </button>
+                        </div>
+                        
+                        <div class="job-card-content">
+                            <div class="job-title-container">
+                                <h3 class="job-title">{job.jobTitlePart}</h3>
+                                <template if:true={job.jobBenefitPart}>
+                                    <div class="job-benefit">
+                                        {job.jobBenefitPart}
+                                    </div>
+                                </template>
+                            </div>
+                            <div class="job-info-item">
+                                <div class="info-label">
+                                    <span class="material-symbols-outlined icon-icon">card_travel</span>
+                                    仕事内容
+                                </div>
+                                <div class="info-content job-description">{job.JobDescription}</div>
+                            </div>
+                            <div class="job-info-item">
+                                <div class="info-label">
+                                    <span class="material-symbols-outlined icon-icon">currency_yen</span>
+                                    想定年収
+                                </div>
+                                <div class="info-content">{job.MinAnnualSalary}万円〜{job.MaxAnnualSalary}万円</div>
+                            </div>
+                            <div class="job-info-item">
+                                <div class="info-label">
+                                    <span class="material-symbols-outlined icon-icon">distance</span>
+                                    勤務地
+                                </div>
+                                <div class="info-content">{job.WorkLocation2}</div>
+                            </div>
+                            <div class="job-info-item update-time">
+                                <span class="material-symbols-outlined time-icon">schedule</span>
+                                <span class="info-time">更新日時：{job.FormattedLastModifiedDate}</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </template>
+            <div class="more-button-wrapper">
+                <a href="/search?tabs-8472=tab2" class="more-button">希望条件の求人をもっと見る
+                    <span class="material-symbols-outlined icon-arrow">chevron_forward</span>
+                </a>
+            </div>
+        </template>
+    </section>
+</template>

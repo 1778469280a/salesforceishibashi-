@@ -1,0 +1,105 @@
+.container {
+    text-align: center;
+    font-family: sans-serif;
+    min-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: -60px;
+}
+
+.message-box {
+    background-color: #ffffff;
+    color: #333333;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+.main-message {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+    padding: 30px 20px 0 20px;
+}
+
+.instruction {
+    font-size: 22px;
+    color: #666666;
+    margin: 0 0 30px 0;
+    padding: 0 20px;
+}
+
+.note {
+    font-size: 20px;
+    background-color: #ffffff;
+    border: 5px solid black;
+    border-radius: 8px;
+    padding: 25px 20px;
+    margin: 0 20px 30px 20px;
+    line-height: 1.8;
+}
+
+.back-link {
+    margin: 0 20px 40px 20px;
+}
+
+.back-link a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background-color: #2B547E;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 15px 60px;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    width: 560px;
+}
+
+.arrow {
+  font-size: 36px !important;
+  color: #ffffff !important;
+  vertical-align: middle;
+}
+
+.existing-user {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 50px 30px;
+    background: #ffffff;
+    border: 2px solid #2B547E;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.existing-user .main-message {
+    font-size: 26px;
+    font-weight: bold;
+    color: #2B547E;
+    margin: 0 0 30px 0;
+    padding: 0;
+}
+
+.existing-user .back-link {
+    margin: 0;
+}
+
+.existing-user .back-link a {
+    width: 100%;
+    max-width: 460px;
+    font-size: 20px;
+    padding: 18px 20px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}

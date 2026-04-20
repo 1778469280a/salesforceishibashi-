@@ -1,0 +1,142 @@
+<template>
+    <section class="job-search-header">
+        <div class="current-conditions-wrapper">
+            <div class="current-conditions">
+                <span class="condition-label">現在の検索条件：</span>
+                <div class="condition-tags-wrapper">
+                    <template for:each={filterTags} for:item="tag">
+                        <span key={tag.id} class="condition-tag">{tag.label}</span>
+                    </template>
+                </div>
+            </div>
+            <div class="modify-condition-btn-wrapper" lwc:ref="btnWrapper">
+                <button class="modify-condition-btn" onclick={openModifyModal}>
+                    <span class="material-symbols-outlined icon">document_search</span>
+                    <span class="btn-text">条件を変更</span>
+                </button>
+            </div>
+        </div>
+        <div class="header-left">
+            <div class="result-count">
+                <span class="count">{totalCount}</span>件
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="sort-container">
+                <lightning-combobox name="sortBy" value={selectedSort} options={sortOptions} onchange={handleSortChange}
+                    variant="label-hidden" class="sort-select"></lightning-combobox>
+            </div>
+        </div>
+    </section>
+
+    <section class="job-cards-container">
+        <template if:false={isLoading}>
+            <template if:true={jobWithUrls.length}>
+                <template for:each={jobWithUrls} for:item="job">
+                    <a key={job.Id} href={job.url} class="job-card job-title-link">
+                        <div class="job-card-content">
+                            <div class="job-status-container">
+                                <div class="status-tags-left">
+                                    <span class={job.viewStatusClass}>{job.viewStatusLabel}</span>
+                                    <span class="job-category-tag" if:true={job.JobCategory1}>{job.JobCategory1}</span>
+                                    <span class="job-category-tag" if:true={job.MainIndustry}>{job.MainIndustry}</span>
+                                </div>
+                                <button class={job.favoriteButtonClass} data-job-id={job.Id}
+                                    data-is-favorite={job.IsFavorite} onclick={handleFavoriteClick}>
+                                    <span class="material-symbols-outlined icon-bookmark">bookmark</span>
+                                    <span class="button-text">{job.favoriteButtonText}</span>
+                                </button>
+                            </div>
+
+                            <div class="job-title-container">
+                                <h3 class="job-title">{job.jobTitlePart}</h3>
+                                <template if:true={job.jobBenefitPart}>
+                                    <div class="job-benefit">{job.jobBenefitPart}</div>
+                                </template>
+                            </div>
+                            <div class="job-info-item">
+                                <div class="info-label">
+                                    <span class="material-symbols-outlined icon-icon">card_travel</span>
+                                    仕事内容
+                                </div>
+                                <div class="info-content job-description">{job.JobDescription}</div>
+                            </div>
+                            <div class="job-info-item">
+                                <div class="info-label">
+                                    <span class="material-symbols-outlined icon-icon">currency_yen</span>
+                                    想定年収
+                                </div>
+                                <div class="info-content">{job.MinAnnualSalary}万円〜{job.MaxAnnualSalary}万円</div>
+                            </div>
+                            <div class="job-info-item">
+                                <div class="info-label">
+                                    <span class="material-symbols-outlined icon-icon">distance</span>
+                                    勤務地
+                                </div>
+                                <div class="info-content">{job.WorkLocation2}</div>
+                            </div>
+                            <div class="job-info-item update-time">
+                                <span class="material-symbols-outlined time-icon">schedule</span>
+                                <span class="info-time">更新日時：{job.FormattedLastModifiedDate}</span>
+                            </div>
+                        </div>
+                    </a>
+                </template>
+            </template>
+
+            <template if:false={jobWithUrls.length}>
+                <div class="no-results">検索結果はありません</div>
+            </template>
+        </template>
+    </section>
+
+    <template if:true={showModifyModal}>
+        <div class="modal-backdrop" onclick={closeModifyModal}></div>
+        <div class="modify-modal">
+            <div class="modal-header">
+                <h3>求人検索条件の変更</h3>
+                <button class="close-btn" onclick={closeModifyModal}>
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <c-job-search initial-filters={currentFilters} onsearch={handleModalSearch}
+                    onsearchcompleted={closeModifyModal}></c-job-search>
+            </div>
+        </div>
+    </template>
+
+    <section class="pagination-container" if:true={showPagination}>
+        <div class="pagination-info">
+            <span class="total-count">{totalCount}</span>件
+            <span class="range-text">({paginationRangeText})</span>
+        </div>
+        <div class="pagination-controls">
+            <button class="pagination-btn pagination-nav" onclick={handlePrevPage} disabled={isFirstPage}>
+                <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            <template for:each={visiblePages} for:item="pageItem" for:index="index">
+                <button key={pageItem.key} class="pagination-btn pagination-page {pageItem.isCurrent ? 'active' : ''}"
+                    data-page={pageItem.value} onclick={handlePageClick} disabled={pageItem.isCurrent}
+                    if:true={pageItem.isNumber}>
+                    {pageItem.value}
+                </button>
+                <span key={pageItem.key} class="pagination-ellipsis" if:true={pageItem.isEllipsis}>
+                    …
+                </span>
+            </template>
+            <button class="pagination-btn pagination-nav" onclick={handleNextPage} disabled={isLastPage}>
+                <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+        </div>
+    </section>
+
+    <div class={fixedBarClass}>
+        <div class="fixed-bar-content">
+            <button class="modify-condition-btn fixed-btn-style" onclick={openModifyModal}>
+                <span class="material-symbols-outlined icon">document_search</span>
+                <span class="btn-text">条件を変更</span>
+            </button>
+        </div>
+    </div>
+    </template>

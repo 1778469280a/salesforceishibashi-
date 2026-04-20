@@ -1,0 +1,26 @@
+66.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DATA_ACCESS,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+17:18:55.7 (7934739)|EXECUTION_STARTED
+17:18:55.7 (7973738)|CODE_UNIT_STARTED|[EXTERNAL]|VisualForce View State
+17:18:55.7 (15033288)|CODE_UNIT_FINISHED|VisualForce View State
+17:18:55.7 (15050366)|EXECUTION_FINISHED
+17:18:55.343 (343812765)|VF_PAGE_MESSAGE|コンパイルエラー: 行 201、列 35 でInvalid identifier '例外が発生するはず'. Apex identifiers must start with an ASCII letter (a-z or A-Z) followed by any number of ASCII letters (a-z or A-Z), digits (0 - 9), '_'.
+17:18:55.343 (383636147)|VF_SERIALIZE_VIEWSTATE_BEGIN|
+17:18:55.343 (386474114)|VF_SERIALIZE_VIEWSTATE_END
+17:18:55.393 (393954049)|CUMULATIVE_LIMIT_USAGE
+17:18:55.393 (393954049)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+17:18:55.393 (393954049)|CUMULATIVE_LIMIT_USAGE_END
+

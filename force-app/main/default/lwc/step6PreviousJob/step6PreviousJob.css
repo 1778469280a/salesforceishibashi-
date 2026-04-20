@@ -1,0 +1,158 @@
+.step-previous-job {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #001a66;
+    line-height: 1.2;
+}
+
+.section-label{
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #001a66;
+    line-height: 1.2;
+}
+
+.field-input, .field-select, .field-textarea, .select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    background: white;
+    color: #333;
+    font-family: inherit;
+}
+
+.field-input:focus, .field-select:focus, .field-textarea:focus, .select:focus {
+    outline: none;
+    border-color: #001a66;
+    box-shadow: 0 0 0 2px rgba(0, 26, 102, 0.2);
+}
+
+.field-textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.field-select, .select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23001a66'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 30px;
+    padding-right: 35px;
+}
+
+.select {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.year-month-group {
+    display: flex;
+    gap: 6px;
+    width: 100%;
+}
+
+.year-month-group .year-select {
+    flex: 2;
+}
+
+.year-month-group .month-select {
+    flex: 1;
+}
+
+.category-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.category-group {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.category-summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    background-color: #f8f9fa;
+    font-weight: 600;
+    font-size: 16px;
+    color: #001a66;
+    cursor: pointer;
+}
+
+.category-summary input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #001a66;
+    cursor: pointer;
+}
+
+.category-label {
+    flex: 1;
+    font-weight: 600;
+}
+
+.toggle-icon {
+    font-size: 18px;
+    font-weight: normal;
+    color: #001a66;
+    margin-left: auto;
+}
+
+.category-options {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.option-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #333;
+}
+
+.option-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #001a66;
+    cursor: pointer;
+}
+
+.error-message {
+    color: #d32f2f;
+    font-size: 13px;
+    margin-top: 4px;
+    font-weight:bold;
+}
+
+.field:has(.error-message) .year-month-group select {
+    border: 1px solid #F00 !important;
+    background-color: #ff000020 !important;
+}

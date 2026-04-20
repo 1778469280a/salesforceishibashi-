@@ -1,0 +1,285 @@
+.search-container {
+    margin: 0 auto;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    color: #333;
+    max-width: 100%;
+}
+
+.search-form {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.filter-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 16px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.filter-item:hover {
+    background-color: #f9f9f9;
+}
+
+.filter-item:last-child {
+    border-bottom: none;
+}
+
+.filter-item-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    width: 100%;
+}
+
+.filter-label-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.selected-values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 2px;
+    font-size: 12px;
+    line-height: 1.2;
+    width: 100%;
+}
+
+.selected-tag {
+    background-color: #f0f7ff;
+    color: #005fb2;
+    padding: 2px 8px;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.filter-icon {
+    display: flex;
+    align-items: center;
+    color: #042356;
+}
+
+.filter-label {
+    font-size: 15px;
+    font-weight: 500;
+    color: #042356;
+}
+
+.filter-item-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    margin-top: 0;
+    align-self: flex-start;
+}
+
+.filter-value {
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.filter-arrow {
+    font-size: 12px;
+    color: #999;
+    white-space: nowrap;
+}
+
+/* フォーム部品の共通スタイル */
+.filter-select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    line-height: 1.2;
+    height: 38px;
+    box-sizing: border-box;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #042356;
+}
+
+/* 転勤の可否用（チェックボックス） */
+.checkbox-group {
+    display: flex;
+    gap: 15px;
+}
+
+.horizontal-wrap {
+    flex-wrap: wrap;
+    gap: 15px 25px !important;
+    padding-top: 5px;
+}
+
+.option-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* モーダル関連 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    padding: 15px 20px;
+    display: flex;  
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #eee;
+    justify-content: space-between;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    margin-left: auto;
+}
+
+.modal-body {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-options-flat {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn-reset {
+    padding: 8px 20px;
+    background: #fff;
+    color: #666;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-submit {
+    padding: 8px 25px;
+    background-color: #042356;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #042356;
+    cursor: pointer;
+}
+
+/* 垂直レイアウト項目 */
+.filter-item-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 20px;
+    gap: 10px;
+}
+
+.filter-item-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-item-bottom {
+    width: 100%;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    border-top: 1px solid #eee;
+    padding: 25px 20px;
+}
+
+/* 勤務地の直接選択リスト用 */
+.location-selects-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.inline-select-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.inline-select-label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #042356;
+    white-space: nowrap;
+    min-width: 55px; 
+}
+
+.location-select optgroup {
+    font-weight: bold;
+    color: #666;
+    background-color: #f8f9fa;
+}

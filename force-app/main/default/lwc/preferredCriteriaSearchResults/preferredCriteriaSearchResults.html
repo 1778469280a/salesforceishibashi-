@@ -1,0 +1,336 @@
+<template>
+    <template if:true={toastConfig.show}>
+        <div class="custom-toast-container">
+            <template if:false={toastConfig.isError}>
+                <div class="custom-toast toast-success">
+                    <span class="material-symbols-outlined">check_circle</span>
+                    {toastConfig.message}
+                </div>
+            </template>
+            <template if:true={toastConfig.isError}>
+                <div class="custom-toast toast-error">
+                    <span class="material-symbols-outlined">error</span>
+                    {toastConfig.message}
+                </div>
+            </template>
+        </div>
+    </template>
+
+    <section class="job-search-header">
+        <div class="current-conditions-wrapper">
+            <div class="current-conditions">
+                <span class="condition-label">希望条件</span>
+                <div class="condition-text-wrapper">
+                    {currentConditionsText}
+                </div>
+            </div>
+            <button class="modify-condition-btn" onclick={openModifyModal}>
+                <span class="material-symbols-outlined icon">checklist</span>
+                <span class="btn-text">希望条件を変更する</span>
+            </button>
+        </div>
+        <div class="header-left">
+            <div class="result-count">
+                <span class="count">{totalCount}</span>件
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="sort-container">
+                <lightning-combobox name="sortBy" value={selectedSort} options={sortOptions} onchange={handleSortChange}
+                    variant="label-hidden" class="sort-select"></lightning-combobox>
+            </div>
+        </div>
+    </section>
+
+    <section class="job-cards-container">
+        <template if:true={isLoading}>
+            <div class="loading-spinner">
+                <lightning-spinner alt-text="読み込み中" size="medium"></lightning-spinner>
+            </div>
+        </template>
+
+        <template if:false={isLoading}>
+            <template if:true={jobWithUrls.length}>
+                <template for:each={jobWithUrls} for:item="job">
+                    <a key={job.Id} href={job.url} class="job-card job-title-link">
+                        <div class="job-card-content">
+                            <div class="job-status-container">
+                                <div class="status-tags-left">
+                                    <span class={job.viewStatusClass}>{job.viewStatusLabel}</span>
+                                    <span class="job-category-tag" if:true={job.JobCategory1}>{job.JobCategory1}</span>
+                                    <span class="job-category-tag" if:true={job.MainIndustry}>{job.MainIndustry}</span>
+                                </div>
+                                <button class={job.favoriteButtonClass} data-job-id={job.Id}
+                                    data-is-favorite={job.IsFavorite} onclick={handleFavoriteClick}>
+                                    <span class="material-symbols-outlined icon-bookmark">bookmark</span>
+                                    <span class="button-text">{job.favoriteButtonText}</span>
+                                </button>
+                            </div>
+
+                            <div class="job-title-container">
+                                <h3 class="job-title">{job.jobTitlePart}</h3>
+                                <template if:true={job.jobBenefitPart}>
+                                    <div class="job-benefit">{job.jobBenefitPart}</div>
+                                </template>
+                            </div>
+
+                            <div class="job-info-item">
+                                <div class="info-label">
+                                    <span class="material-symbols-outlined icon-icon">card_travel</span>
+                                    仕事内容
+                                </div>
+                                <div class="info-content job-description">{job.JobDescription}</div>
+                            </div>
+                            <div class="job-info-item">
+                                <div class="info-label">
+                                    <span class="material-symbols-outlined icon-icon">currency_yen</span>
+                                    想定年収
+                                </div>
+                                <div class="info-content">
+                                    {job.MinAnnualSalary}万円〜{job.MaxAnnualSalary}万円
+                                </div>
+                            </div>
+                            <div class="job-info-item">
+                                <div class="info-label">
+                                    <span class="material-symbols-outlined icon-icon">distance</span>
+                                    勤務地
+                                </div>
+                                <div class="info-content">{job.WorkLocation2}</div>
+                            </div>
+                            <div class="job-info-item update-time">
+                                <span class="material-symbols-outlined time-icon">schedule</span>
+                                <span class="info-time">更新日時：{job.FormattedLastModifiedDate}</span>
+                            </div>
+                        </div>
+                    </a>
+                </template>
+            </template>
+
+            <template if:false={jobWithUrls.length}>
+                <div class="no-results">検索条件に一致する求人は見つかりませんでした。</div>
+            </template>
+        </template>
+    </section>
+
+    <section class="pagination-container" if:true={showPagination}>
+        <div class="pagination-info">
+            <span class="total-count">{totalCount}</span>件
+            <span class="range-text">({paginationRangeText})</span>
+        </div>
+        <div class="pagination-controls">
+            <button class="pagination-btn pagination-nav" onclick={handlePrevPage} disabled={isFirstPage}>
+                <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            <template for:each={visiblePages} for:item="pageItem">
+                <button key={pageItem.key} class={pageItem.className} data-page={pageItem.value}
+                    onclick={handlePageClick} disabled={pageItem.isCurrent} if:true={pageItem.isNumber}>
+                    {pageItem.value}
+                </button>
+                <span key={pageItem.key} class="pagination-ellipsis" if:true={pageItem.isEllipsis}>
+                    …
+                </span>
+            </template>
+            <button class="pagination-btn pagination-nav" onclick={handleNextPage} disabled={isLastPage}>
+                <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+        </div>
+    </section>
+
+    <template if:true={showModifyModal}>
+        <div class="modal-backdrop" onclick={closeModifyModal}></div>
+        <div class="modify-modal">
+
+            <template if:true={isModalLoading}>
+                <div class="spinner-overlay">
+                    <lightning-spinner alternative-text="登録中..." size="medium"></lightning-spinner>
+                </div>
+            </template>
+
+            <div class="modal-header">
+                <h3>希望条件の変更</h3>
+                <button class="close-btn" onclick={closeModifyModal}>
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="modal-body search-form-wrapper">
+
+                <div class="search-form">
+                    <div class="filter-item filter-item-vertical">
+                        <div class="filter-item-top">
+                            <span class="filter-icon">
+                                <span class="material-symbols-outlined">location_on</span>
+                            </span>
+                            <span class="filter-label">希望勤務地</span>
+                        </div>
+                        <div class="filter-item-bottom">
+                            <div class="location-selects-wrapper">
+                                <div class="inline-select-group">
+                                    <span class="inline-select-label">第1希望</span>
+                                    <select class="filter-select location-select" name="pref1"
+                                        onchange={handleSelectLocationChange}>
+                                        <option value="">指定なし</option>
+                                        <template for:each={regionsData} for:item="region">
+                                            <optgroup key={region.key} label={region.label}>
+                                                <template for:each={region.prefectures} for:item="pref">
+                                                    <option key={pref} value={pref}>{pref}</option>
+                                                </template>
+                                            </optgroup>
+                                        </template>
+                                    </select>
+                                </div>
+                                <div class="inline-select-group">
+                                    <span class="inline-select-label">第2希望</span>
+                                    <select class="filter-select location-select" name="pref2"
+                                        onchange={handleSelectLocationChange}>
+                                        <option value="">指定なし</option>
+                                        <template for:each={regionsData} for:item="region">
+                                            <optgroup key={region.key} label={region.label}>
+                                                <template for:each={region.prefectures} for:item="pref">
+                                                    <option key={pref} value={pref}>{pref}</option>
+                                                </template>
+                                            </optgroup>
+                                        </template>
+                                    </select>
+                                </div>
+                                <div class="inline-select-group">
+                                    <span class="inline-select-label">第3希望</span>
+                                    <select class="filter-select location-select" name="pref3"
+                                        onchange={handleSelectLocationChange}>
+                                        <option value="">指定なし</option>
+                                        <template for:each={regionsData} for:item="region">
+                                            <optgroup key={region.key} label={region.label}>
+                                                <template for:each={region.prefectures} for:item="pref">
+                                                    <option key={pref} value={pref}>{pref}</option>
+                                                </template>
+                                            </optgroup>
+                                        </template>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-item filter-item-vertical">
+                        <div class="filter-item-top">
+                            <span class="filter-icon">
+                                <span class="material-symbols-outlined">currency_yen</span>
+                            </span>
+                            <span class="filter-label">希望年収</span>
+                        </div>
+                        <div class="filter-item-bottom">
+                            <select class="filter-select salary-select" onchange={handleSelectChange}
+                                data-type="salary">
+                                <option value="">指定なし</option>
+                                <option value="200万円以下">200万円以下</option>
+                                <option value="201万円～300万円">201万円～300万円</option>
+                                <option value="301万円～400万円">301万円～400万円</option>
+                                <option value="401万円～500万円">401万円～500万円</option>
+                                <option value="501万円～600万円">501万円～600万円</option>
+                                <option value="601万円～700万円">601万円～700万円</option>
+                                <option value="701万円～800万円">701万円～800万円</option>
+                                <option value="801万円～900万円">801万円～900万円</option>
+                                <option value="901万円～1000万円">901万円～1000万円</option>
+                                <option value="1001万円以上">1001万円以上</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="filter-item" onclick={handleJobTypeClick}>
+                        <div class="filter-item-left">
+                            <div class="filter-label-wrapper">
+                                <span class="filter-icon">
+                                    <span class="material-symbols-outlined">card_travel</span>
+                                </span>
+                                <span class="filter-label">希望職種</span>
+                            </div>
+                            <div class="selected-values" if:true={editFilters.categories.length}>
+                                <template for:each={selectedJobCategories} for:item="item">
+                                    <span key={item} class="selected-tag">{item}</span>
+                                </template>
+                            </div>
+                        </div>
+                        <div class="filter-item-right">
+                            <span class="filter-value">{jobTypeSelectedText}</span>
+                            <span class="filter-arrow">></span>
+                        </div>
+                    </div>
+
+                    <div class="filter-item filter-item-vertical">
+                        <div class="filter-item-top">
+                            <span class="filter-icon">
+                                <span class="material-symbols-outlined">move_location</span>
+                            </span>
+                            <span class="filter-label">転勤の可否（複数選択可）</span>
+                        </div>
+                        <div class="filter-item-bottom">
+                            <div class="checkbox-group horizontal-wrap">
+                                <label class="option-label">
+                                    <input type="checkbox" value="不可" onchange={handleTransferChange}
+                                        checked={isTransferNo} />
+                                    不可
+                                </label>
+                                <label class="option-label">
+                                    <input type="checkbox" value="可（単身）" onchange={handleTransferChange}
+                                        checked={isTransferSingle} />
+                                    可（単身）
+                                </label>
+                                <label class="option-label">
+                                    <input type="checkbox" value="可（家族同伴）" onchange={handleTransferChange}
+                                        checked={isTransferFamily} />
+                                    可（家族同伴）
+                                </label>
+                                <label class="option-label">
+                                    <input type="checkbox" value="条件付き可" onchange={handleTransferChange}
+                                        checked={isTransferConditional} />
+                                    条件付き可
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-submit" onclick={handleRegister}
+                            disabled={isModalLoading}>希望条件を登録して検索</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <div class="sub-modal" if:true={showJobTypeModal} onclick={handleModalOutsideClick}>
+        <div class="sub-modal-content" onclick={stopPropagation}>
+            <div class="sub-modal-header">
+                <span class="filter-icon">
+                    <span class="material-symbols-outlined">card_travel</span>
+                </span>
+                <span class="filter-label">職種から選ぶ</span>
+                <button class="close-btn" onclick={closeJobTypeModal}>
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="sub-modal-body">
+                <div class="category-options-flat">
+                    <template for:each={jobCategories} for:item="category">
+                        <label key={category.value} class="option-label">
+                            <input type="checkbox" value={category.value} checked={category.isSelected}
+                                onchange={handleCheckboxChange} data-type="category" />
+                            {category.label}
+                        </label>
+                    </template>
+                </div>
+            </div>
+            <div class="sub-modal-footer">
+                <button class="btn-submit" onclick={handleJobTypeSubmit}>この条件を選ぶ</button>
+            </div>
+        </div>
+    </div>
+
+    <div class={fixedBarClass}>
+        <div class="fixed-bar-content">
+            <button class="modify-condition-btn fixed-btn-style" onclick={openModifyModal}>
+                <span class="material-symbols-outlined icon">checklist</span>
+                <span class="btn-text">希望条件を変更する</span>
+            </button>
+        </div>
+    </div>
+</template>

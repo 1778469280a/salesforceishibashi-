@@ -1,0 +1,6 @@
+.checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding-top: 8px;
+}

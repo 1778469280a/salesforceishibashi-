@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>連動複数選択リスト（保存機能付き）</masterLabel>
+    <description>カスタムメタデータに基づいた親子連動の選択リストを表示し、レコードを直接更新します。</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="metadataApiName" type="String" label="マッピング用メタデータAPI名" role="inputOnly" required="true" default="Picklist_Mapping__mdt" />
+            <property name="mParentField" type="String" label="メタデータの親項目API名" role="inputOnly" required="true" default="Parent_Value__c" />
+            <property name="mChildField" type="String" label="メタデータの子項目API名" role="inputOnly" required="true" default="Child_Value__c" />
+
+            <property name="objectApiName" type="String" label="対象オブジェクトAPI名" role="inputOnly" required="true" default="objectApiName" />
+            <property name="oParentField" type="String" label="反映先の親項目API名" role="inputOnly" required="true" default="oParentField" />
+            <property name="oChildField" type="String" label="反映先の子項目API名" role="inputOnly" required="true" default="oChildField" />
+            <property name="oRecordId" type="String" label="レコードID" role="inputOnly" default="oRecordId" />
+
+            <property name="searchPlaceholder" type="String" label="検索バーのプレースホルダ" role="inputOnly" default="検索" />
+            <property name="columnCount" type="Integer" label="子の表示列数" role="inputOnly" default="4" />
+            
+            <property name="selectedParentValuesString" type="String" label="選択された親（出力）" role="outputOnly" />
+            <property name="selectedChildValuesString" type="String" label="選択された子（出力）" role="outputOnly" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

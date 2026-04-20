@@ -1,0 +1,112 @@
+66.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DATA_ACCESS,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+Execute Anonymous: Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
+Execute Anonymous: 	
+Execute Anonymous: 	        mail.setToAddresses(new String[] { 'zli@enmish.co.jp' });
+Execute Anonymous: 	
+Execute Anonymous: 	        mail.setCcAddresses(new String[] { 'zli@enmish.co.jp' });
+Execute Anonymous: 
+Execute Anonymous: 	        String subject = 'CL請求書';
+Execute Anonymous: 	        mail.setSubject(subject);
+Execute Anonymous: 	
+Execute Anonymous: 	        mail.setPlainTextBody('自動送信メール');
+Execute Anonymous: 	
+Execute Anonymous: 	        OrgWideEmailAddress[] owaList = [
+Execute Anonymous: 	            SELECT Id 
+Execute Anonymous: 	            FROM OrgWideEmailAddress 
+Execute Anonymous: 	            WHERE Address = 'cli@enmish.co.jp'
+Execute Anonymous: 	            LIMIT 1
+Execute Anonymous: 	        ];
+Execute Anonymous: 	
+Execute Anonymous: 	        if (!owaList.isEmpty()) {
+Execute Anonymous: 	            mail.setOrgWideEmailAddressId(owaList[0].Id);
+Execute Anonymous: 	        } else {
+Execute Anonymous: 	            System.debug('OrgWideEmailAddress not found');
+Execute Anonymous: 	           
+Execute Anonymous: 	        }
+Execute Anonymous: 	
+Execute Anonymous: 	        Messaging.SendEmailResult[] results =
+Execute Anonymous: 	            Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mail });
+Execute Anonymous: 	
+Execute Anonymous: 	        if (results != null && results.size() > 0 && results[0].isSuccess()) {
+Execute Anonymous: 	            System.debug( 'SUCCESS');
+Execute Anonymous: 	        } else {
+Execute Anonymous: 	            System.debug('SendEmail failed: ' + results[0].getErrors());
+Execute Anonymous: 	            System.debug('ERROR');
+Execute Anonymous:             }
+10:58:55.1 (1393786)|USER_INFO|[EXTERNAL]|0057F0000042UBb|ishibashi@hurex.co.jp.dev1|(GMT+09:00) 日本標準時 (Asia/Tokyo)|GMT+09:00
+10:58:55.1 (1420151)|EXECUTION_STARTED
+10:58:55.1 (1434033)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+10:58:55.1 (1623143)|VARIABLE_SCOPE_BEGIN|[1]|mail|Messaging.SingleEmailMessage|true|false
+10:58:55.1 (1776681)|VARIABLE_SCOPE_BEGIN|[12]|owaList|List<OrgWideEmailAddress>|true|false
+10:58:55.1 (1799102)|VARIABLE_SCOPE_BEGIN|[26]|results|List<Messaging.SendEmailResult>|true|false
+10:58:55.1 (1821583)|VARIABLE_SCOPE_BEGIN|[7]|subject|String|false|false
+10:58:55.1 (1937386)|HEAP_ALLOCATE|[95]|Bytes:3
+10:58:55.1 (1992651)|HEAP_ALLOCATE|[100]|Bytes:152
+10:58:55.1 (2010889)|HEAP_ALLOCATE|[417]|Bytes:408
+10:58:55.1 (2030183)|HEAP_ALLOCATE|[430]|Bytes:408
+10:58:55.1 (2060061)|HEAP_ALLOCATE|[317]|Bytes:6
+10:58:55.1 (2104897)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:42
+10:58:55.1 (2320627)|STATEMENT_EXECUTE|[1]
+10:58:55.1 (2324382)|STATEMENT_EXECUTE|[1]
+10:58:55.1 (2596966)|VARIABLE_ASSIGNMENT|[1]|mail|"common.api.soap.wsdl.SingleEmailMessage@4406a22b"|0x2ebdbab5
+10:58:55.1 (2609251)|STATEMENT_EXECUTE|[3]
+10:58:55.1 (2635303)|HEAP_ALLOCATE|[3]|Bytes:4
+10:58:55.1 (2696342)|HEAP_ALLOCATE|[3]|Bytes:16
+10:58:55.1 (2779897)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+10:58:55.1 (2814277)|STATEMENT_EXECUTE|[5]
+10:58:55.1 (2820126)|HEAP_ALLOCATE|[5]|Bytes:4
+10:58:55.1 (2843071)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+10:58:55.1 (2860571)|STATEMENT_EXECUTE|[7]
+10:58:55.1 (2862691)|HEAP_ALLOCATE|[7]|Bytes:5
+10:58:55.1 (2882221)|VARIABLE_ASSIGNMENT|[7]|subject|"CL請求書"
+10:58:55.1 (2887832)|STATEMENT_EXECUTE|[8]
+10:58:55.1 (2921540)|STATEMENT_EXECUTE|[10]
+10:58:55.1 (2923956)|HEAP_ALLOCATE|[10]|Bytes:7
+10:58:55.1 (2933650)|STATEMENT_EXECUTE|[12]
+10:58:55.1 (2935279)|HEAP_ALLOCATE|[12]|Bytes:77
+10:58:55.1 (2952912)|HEAP_ALLOCATE|[12]|Bytes:4
+10:58:55.1 (2993544)|HEAP_ALLOCATE|[68]|Bytes:5
+10:58:55.1 (3026882)|HEAP_ALLOCATE|[74]|Bytes:5
+10:58:55.1 (3035605)|HEAP_ALLOCATE|[82]|Bytes:7
+10:58:55.1 (3545859)|SOQL_EXECUTE_BEGIN|[12]|Aggregations:0|SELECT Id FROM OrgWideEmailAddress WHERE Address = 'cli@enmish.co.jp' LIMIT 1
+10:58:55.1 (16455230)|SOQL_EXECUTE_END|[12]|Rows:1
+10:58:55.1 (16536030)|HEAP_ALLOCATE|[12]|Bytes:8
+10:58:55.1 (16563606)|HEAP_ALLOCATE|[12]|Bytes:29
+10:58:55.1 (16648931)|HEAP_ALLOCATE|[12]|Bytes:8
+10:58:55.1 (16809640)|VARIABLE_ASSIGNMENT|[12]|owaList|[{"Id":"0D2BK0000000ert0AA"}]|0x5fbad386
+10:58:55.1 (16967391)|STATEMENT_EXECUTE|[19]
+10:58:55.1 (16969581)|STATEMENT_EXECUTE|[20]
+10:58:55.1 (17010785)|HEAP_ALLOCATE|[20]|Bytes:8
+10:58:55.1 (17117102)|STATEMENT_EXECUTE|[26]
+10:58:55.1 (17264796)|HEAP_ALLOCATE|[27]|Bytes:4
+10:58:55.1 (17384799)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+10:58:55.1 (17426949)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+10:58:55.1 (335518026)|EMAIL_QUEUE|[27]|subject: CL請求書, bccSender: false, saveAsActivity: true, useSignature: true, toAddresses: [zli@enmish.co.jp], ccAddresses: [zli@enmish.co.jp], plainTextBody: 自動送信メール, 
+10:58:55.1 (336129174)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+10:58:55.1 (336175034)|HEAP_ALLOCATE|[27]|Bytes:8
+10:58:55.1 (336338345)|VARIABLE_ASSIGNMENT|[26]|results|"common.apex.runtime.impl.ScalarList@671d47e7"|0x2fbbc44c
+10:58:55.1 (336486427)|HEAP_ALLOCATE|[29]|Bytes:4
+10:58:55.1 (336536986)|STATEMENT_EXECUTE|[29]
+10:58:55.1 (336538971)|STATEMENT_EXECUTE|[30]
+10:58:55.1 (336544865)|HEAP_ALLOCATE|[30]|Bytes:7
+10:58:55.1 (336594289)|USER_DEBUG|[30]|DEBUG|SUCCESS
+10:58:55.485 (485087553)|CUMULATIVE_LIMIT_USAGE
+10:58:55.485 (485087553)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 1 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+10:58:55.485 (485087553)|CUMULATIVE_LIMIT_USAGE_END
+
+10:58:55.1 (485179002)|CODE_UNIT_FINISHED|execute_anonymous_apex
+10:58:55.1 (485198863)|EXECUTION_FINISHED

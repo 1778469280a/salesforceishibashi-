@@ -1,0 +1,98 @@
+66.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DATA_ACCESS,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+15:27:23.0 (952736)|USER_INFO|[EXTERNAL]|0057F0000042UBb|ishibashi@hurex.co.jp.dev1|(GMT+09:00) 日本標準時 (Asia/Tokyo)|GMT+09:00
+15:27:23.0 (991686)|EXECUTION_STARTED
+15:27:23.0 (1003864)|CODE_UNIT_STARTED|[EXTERNAL]|apex://CustomNotificationController/ACTION$getNotifications
+15:27:23.0 (2458048)|CODE_UNIT_STARTED|[EXTERNAL]|01pBK000001VvEL|CustomNotificationController.getNotifications(String)
+15:27:23.0 (6176473)|HEAP_ALLOCATE|[95]|Bytes:3
+15:27:23.0 (6311188)|HEAP_ALLOCATE|[100]|Bytes:152
+15:27:23.0 (6331587)|HEAP_ALLOCATE|[417]|Bytes:408
+15:27:23.0 (6356408)|HEAP_ALLOCATE|[430]|Bytes:408
+15:27:23.0 (6387907)|HEAP_ALLOCATE|[317]|Bytes:6
+15:27:23.0 (6442407)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:7
+15:27:23.0 (6454161)|METHOD_ENTRY|[1]|01pBK000001VvEL|CustomNotificationController.CustomNotificationController()
+15:27:23.0 (6461020)|STATEMENT_EXECUTE|[1]
+15:27:23.0 (6466125)|STATEMENT_EXECUTE|[1]
+15:27:23.0 (6485917)|HEAP_ALLOCATE|[68]|Bytes:5
+15:27:23.0 (6509177)|HEAP_ALLOCATE|[74]|Bytes:5
+15:27:23.0 (6516136)|HEAP_ALLOCATE|[82]|Bytes:7
+15:27:23.0 (6736543)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+15:27:23.0 (6754376)|METHOD_EXIT|[1]|CustomNotificationController
+15:27:23.0 (6763769)|VARIABLE_SCOPE_BEGIN|[5]|before|String|false|false
+15:27:23.0 (6797922)|VARIABLE_ASSIGNMENT|[5]|before|null
+15:27:23.0 (6812351)|HEAP_ALLOCATE|[6]|Bytes:5
+15:27:23.0 (6816769)|STATEMENT_EXECUTE|[5]
+15:27:23.0 (6817985)|STATEMENT_EXECUTE|[6]
+15:27:23.0 (6841656)|VARIABLE_SCOPE_BEGIN|[6]|req|System.HttpRequest|true|false
+15:27:23.0 (7090509)|VARIABLE_ASSIGNMENT|[6]|req|"System.HttpRequest[Endpoint=null, Method=null]"|0x4e20d570
+15:27:23.0 (7101051)|STATEMENT_EXECUTE|[7]
+15:27:23.0 (7105946)|HEAP_ALLOCATE|[7]|Bytes:3
+15:27:23.0 (7173948)|STATEMENT_EXECUTE|[8]
+15:27:23.0 (7177089)|HEAP_ALLOCATE|[8]|Bytes:13
+15:27:23.0 (7182284)|HEAP_ALLOCATE|[8]|Bytes:7
+15:27:23.0 (7293166)|HEAP_ALLOCATE|[8]|Bytes:105
+15:27:23.0 (7308140)|SYSTEM_METHOD_ENTRY|[1]|UserInfo.UserInfo()
+15:27:23.0 (7311982)|STATEMENT_EXECUTE|[1]
+15:27:23.0 (7320312)|SYSTEM_METHOD_EXIT|[1]|UserInfo
+15:27:23.0 (7334242)|METHOD_ENTRY|[8]||System.UserInfo.getSessionId()
+15:27:23.0 (16114481)|METHOD_EXIT|[8]||System.UserInfo.getSessionId()
+15:27:23.0 (16154663)|HEAP_ALLOCATE|[8]|Bytes:119
+15:27:23.0 (16201242)|STATEMENT_EXECUTE|[10]
+15:27:23.0 (16244168)|HEAP_ALLOCATE|[10]|Bytes:67
+15:27:23.0 (16255684)|SYSTEM_METHOD_ENTRY|[1]|Url.Url()
+15:27:23.0 (16257909)|STATEMENT_EXECUTE|[1]
+15:27:23.0 (16284607)|SYSTEM_METHOD_EXIT|[1]|Url
+15:27:23.0 (16294166)|METHOD_ENTRY|[10]||System.Url.getOrgDomainUrl()
+15:27:23.0 (16481024)|METHOD_EXIT|[10]||System.Url.getOrgDomainUrl()
+15:27:23.0 (16494488)|METHOD_ENTRY|[10]||System.Url.toExternalForm()
+15:27:23.0 (16529070)|METHOD_EXIT|[10]||System.Url.toExternalForm()
+15:27:23.0 (16534256)|VARIABLE_SCOPE_BEGIN|[10]|domainPath|String|false|false
+15:27:23.0 (16556825)|VARIABLE_ASSIGNMENT|[10]|domainPath|"https://hurex--dev1. (25 more) ..."
+15:27:23.0 (16561182)|STATEMENT_EXECUTE|[11]
+15:27:23.0 (16564247)|HEAP_ALLOCATE|[11]|Bytes:50
+15:27:23.0 (16572777)|HEAP_ALLOCATE|[11]|Bytes:95
+15:27:23.0 (16577212)|VARIABLE_SCOPE_BEGIN|[11]|endpoint|String|false|false
+15:27:23.0 (16585023)|VARIABLE_ASSIGNMENT|[11]|endpoint|"https://hurex--dev1. (75 more) ..."
+15:27:23.0 (16635314)|STATEMENT_EXECUTE|[13]
+15:27:23.0 (16636769)|STATEMENT_EXECUTE|[16]
+15:27:23.0 (16666535)|STATEMENT_EXECUTE|[18]
+15:27:23.0 (16686956)|VARIABLE_SCOPE_BEGIN|[18]|http|System.Http|true|false
+15:27:23.0 (16850963)|VARIABLE_ASSIGNMENT|[18]|http|"System.Http[]"|0x4598c036
+15:27:23.0 (16858336)|STATEMENT_EXECUTE|[19]
+15:27:23.0 (16971581)|CALLOUT_REQUEST|[19]|System.HttpRequest[Endpoint=https://hurex--dev1.sandbox.my.salesforce.com/services/data/v56.0/connect/notifications?size=20, Method=GET]
+15:27:23.0 (119251513)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:939
+15:27:23.0 (121841358)|CALLOUT_RESPONSE|[19]|System.HttpResponse[Status=Unauthorized, StatusCode=401]
+15:27:23.0 (121880807)|HEAP_ALLOCATE|[19]|Bytes:91
+15:27:23.0 (121912018)|VARIABLE_SCOPE_BEGIN|[19]|res|System.HttpResponse|true|false
+15:27:23.0 (121991271)|VARIABLE_ASSIGNMENT|[19]|res|"System.HttpResponse[Status=Unauthorized, StatusCode=401]"|0x28897b05
+15:27:23.0 (122060885)|STATEMENT_EXECUTE|[23]
+15:27:23.0 (122062694)|STATEMENT_EXECUTE|[24]
+15:27:23.0 (122098701)|HEAP_ALLOCATE|[24]|Bytes:9
+15:27:23.0 (122133413)|HEAP_ALLOCATE|[24]|Bytes:75
+15:27:23.0 (122148137)|HEAP_ALLOCATE|[24]|Bytes:84
+15:27:23.0 (122288124)|FATAL_ERROR|System.AuraHandledException: Script-thrown exception
+
+Class.CustomNotificationController.getNotifications: line 24, column 1
+15:27:23.0 (122296803)|FATAL_ERROR|System.AuraHandledException: Script-thrown exception
+
+Class.CustomNotificationController.getNotifications: line 24, column 1
+15:27:23.122 (122304845)|CUMULATIVE_LIMIT_USAGE
+15:27:23.122 (122304845)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 1 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+15:27:23.122 (122304845)|CUMULATIVE_LIMIT_USAGE_END
+
+15:27:23.0 (122340431)|CODE_UNIT_FINISHED|CustomNotificationController.getNotifications(String)
+15:27:23.0 (122593986)|CODE_UNIT_FINISHED|apex://CustomNotificationController/ACTION$getNotifications
+15:27:23.0 (122600332)|EXECUTION_FINISHED

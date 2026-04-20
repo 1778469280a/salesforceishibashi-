@@ -1,0 +1,52 @@
+<template>
+    <div class="step-desired-conditions">
+        <div class="field">
+            <label class="field-label">転職希望日</label>
+            <select class="field-select" value={desiredDate} onchange={handleChange} data-id="desiredDate">
+                <option value=""></option>
+                <template for:each={desiredOptions} for:item="opt">
+                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                </template>
+            </select>
+        </div>
+
+        <div class="secctionLine"></div>
+
+        <div class="field-group">
+            <label class="section-label">希望勤務地</label>
+            <div class="field-subgroup">
+                <label class="sub-label">第1希望</label>
+                <select class="field-select" value={location1} onchange={handleChange} data-id="location1">
+                    <option value=""></option>
+                    <template if:false={isLocationLoading}>
+                        <template for:each={locationOptions} for:item="opt">
+                            <option key={opt.value} value={opt.value}>{opt.label}</option>
+                        </template>
+                    </template>
+                </select>
+            </div>
+            <div class="field-subgroup">
+                <label class="sub-label">第2希望</label>
+                <select class="field-select" value={location2} onchange={handleChange} data-id="location2">
+                    <option value=""></option>
+                    <template if:false={isLocationLoading}>
+                        <template for:each={locationOptions} for:item="opt">
+                            <option key={opt.value} value={opt.value}>{opt.label}</option>
+                        </template>
+                    </template>
+                </select>
+            </div>
+            <div class="field-subgroup">
+                <label class="sub-label">第3希望</label>
+                <select class="field-select" value={location3} onchange={handleChange} data-id="location3">
+                    <option value=""></option>
+                    <template if:false={isLocationLoading}>
+                        <template for:each={locationOptions} for:item="opt">
+                            <option key={opt.value} value={opt.value}>{opt.label}</option>
+                        </template>
+                    </template>
+                </select>
+            </div>
+        </div>
+    </div>
+</template>

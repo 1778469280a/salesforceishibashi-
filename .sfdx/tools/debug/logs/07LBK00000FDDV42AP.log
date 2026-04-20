@@ -1,0 +1,53 @@
+66.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DATA_ACCESS,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+15:01:40.0 (205849)|USER_INFO|[EXTERNAL]|0057F0000042UBb|ishibashi@hurex.co.jp.dev1|(GMT+09:00) 日本標準時 (Asia/Tokyo)|GMT+09:00
+15:01:40.0 (245019)|EXECUTION_STARTED
+15:01:40.0 (256893)|CODE_UNIT_STARTED|[EXTERNAL]|apex://JobCardsController/ACTION$getJobs
+15:01:40.0 (2581330)|CODE_UNIT_STARTED|[EXTERNAL]|01pBK000001RGBP|JobCardsController.getJobs()
+15:01:40.0 (2907158)|HEAP_ALLOCATE|[95]|Bytes:3
+15:01:40.0 (2994551)|HEAP_ALLOCATE|[100]|Bytes:152
+15:01:40.0 (3009684)|HEAP_ALLOCATE|[417]|Bytes:408
+15:01:40.0 (3021466)|HEAP_ALLOCATE|[430]|Bytes:408
+15:01:40.0 (3043280)|HEAP_ALLOCATE|[317]|Bytes:6
+15:01:40.0 (3054570)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:1
+15:01:40.0 (3067948)|METHOD_ENTRY|[1]|01pBK000001RGBP|JobCardsController.JobCardsController()
+15:01:40.0 (3073157)|STATEMENT_EXECUTE|[1]
+15:01:40.0 (3077133)|STATEMENT_EXECUTE|[1]
+15:01:40.0 (3101670)|HEAP_ALLOCATE|[68]|Bytes:5
+15:01:40.0 (3126604)|HEAP_ALLOCATE|[74]|Bytes:5
+15:01:40.0 (3131370)|HEAP_ALLOCATE|[82]|Bytes:7
+15:01:40.0 (3277831)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+15:01:40.0 (3288745)|METHOD_EXIT|[1]|JobCardsController
+15:01:40.0 (3300483)|HEAP_ALLOCATE|[5]|Bytes:5
+15:01:40.0 (3303309)|STATEMENT_EXECUTE|[4]
+15:01:40.0 (3304469)|STATEMENT_EXECUTE|[5]
+15:01:40.0 (3306369)|HEAP_ALLOCATE|[5]|Bytes:214
+15:01:40.0 (3323513)|HEAP_ALLOCATE|[5]|Bytes:4
+15:01:40.0 (5449952)|SOQL_EXECUTE_BEGIN|[5]|Aggregations:0|SELECT Id, JobPosition__c, WorkLocation2__c, MaxAnnualSalary__c, MinAnnualSalary__c, JobDescription__c, LastModifiedDate FROM Job__c WHERE LastModifiedDate != NULL ORDER BY LastModifiedDate DESC NULLS FIRST LIMIT 4
+15:01:40.0 (23735606)|SOQL_EXECUTE_END|[5]|Rows:4
+15:01:40.0 (23777695)|HEAP_ALLOCATE|[5]|Bytes:20
+15:01:40.0 (23795044)|HEAP_ALLOCATE|[5]|Bytes:1224
+15:01:40.0 (23846488)|HEAP_ALLOCATE|[5]|Bytes:20
+15:01:40.0 (23868053)|VARIABLE_SCOPE_BEGIN|[5]|jobs|List<Job__c>|true|false
+15:01:40.0 (24059595)|VARIABLE_ASSIGNMENT|[5]|jobs|[{"JobPosition__c":"テスト451求人タイトル求人タイトル求人 (28 more) ...","LastModifiedDate":"2026-02-06T01:25:17.000Z","Id":"a0KBK00000Gexdg2AB","MinAnnualSalary__c":0,"JobDescription__c":"テスト451仕事内容仕事内容仕事内容仕事 (30 more) ...","MaxAnnualSalary__c":0},{"JobPosition__c":"テスト467求人タイトル求人タイトル求人 (28 more) ...","LastModifiedDate":"2026-02-06T01:25:17.000Z","Id":"a0KBK00000Gexdw2AB","MinAnnualSalary__c":216,"JobDescription__c":"テスト467仕事内容仕事内容仕事内容仕事 (30 more) ...","MaxAnnualSalary__c":0},{"JobPosition__c":"テスト424求人タイトル求人タイトル求人 (28 more) ...","LastModifiedDate":"2026-02-06T01:25:17.000Z","Id":"a0KBK00000GexdF2AR","MinAnnualSalary__c":250,"JobDescription__c":"テスト424仕事内容仕事内容仕事内容仕事 (30 more) ...","MaxAnnualSalary__c":350},{"JobPosition__c":"テスト297求人タイトル求人タイトル求人 (28 more) ...","LastModifiedDate":"2026-02-05T00:50:25.000Z","Id":"a0KBK00000Gezpx2AB","MinAnnualSalary__c":350,"JobDescription__c":"テスト297仕事内容仕事内容仕事内容仕事 (30 more) ...","MaxAnnualSalary__c":600}]|0x5df0f722
+15:01:40.0 (24079039)|STATEMENT_EXECUTE|[16]
+15:01:40.24 (24142523)|CUMULATIVE_LIMIT_USAGE
+15:01:40.24 (24142523)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 4 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 0
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+15:01:40.24 (24142523)|CUMULATIVE_LIMIT_USAGE_END
+
+15:01:40.0 (24166999)|CODE_UNIT_FINISHED|JobCardsController.getJobs()
+15:01:40.0 (24278060)|CODE_UNIT_FINISHED|apex://JobCardsController/ACTION$getJobs
+15:01:40.0 (24282569)|EXECUTION_FINISHED

@@ -1,0 +1,50 @@
+<template>
+    <div class="step-desired-job">
+        <div class="field">
+            <span class="filter-label">希望年収</span>
+            <select class="filter-select" onchange={handleSalaryChange} value={selectedSalary}>
+                <option value=""></option>
+                <template if:false={isSalaryLoading}>
+                    <template for:each={salaryOptions} for:item="opt">
+                        <option key={opt.value} value={opt.value}>{opt.label}</option>
+                    </template>
+                </template>
+            </select>
+        </div>
+
+        <div class="field">
+            <span class="filter-label">転勤可否</span>
+            <div class="radio-group horizontal-radio">
+                <label class="radio-label">
+                    <input type="radio" name="transfer" value="不可" onchange={handleTransferChange} checked={transferNone} /> 不可
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="transfer" value="可（单身）" onchange={handleTransferChange} checked={transferSingle} /> 可（单身）
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="transfer" value="可（家族同伴）" onchange={handleTransferChange} checked={transferFamily} /> 可（家族同伴）
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="transfer" value="条件付き可" onchange={handleTransferChange} checked={transferConditional} /> 条件付き可
+                </label>
+            </div>
+        </div>
+
+        <div class="field">
+            <span class="filter-label">希望職種</span>
+            <template if:false={isJobLoading}>
+                <div class="job-category-list">
+                    <template for:each={jobCategories} for:item="category">
+                        <label key={category.value} class="job-category-label">
+                            <input type="checkbox" 
+                                   value={category.value}
+                                   checked={category.isSelected}
+                                   onchange={handleCategoryChange} />
+                            {category.label}
+                        </label>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

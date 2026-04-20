@@ -1,0 +1,50 @@
+66.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DATA_ACCESS,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+Execute Anonymous: String FIELDS = 'Person.P_Id,Person.P_Name,Person.P_Telephone,Person.P_Mail,Person.P_Mobile,Person.P_MobileMail,Person.P_RegistrationDate,Person.P_RegisteredBy,Person.P_UpdateDate,Person.P_UpdatedBy';
+Execute Anonymous: Datetime lastSyncTime = Datetime.valueOf('2020-10-29T10:56:02Z');
+Execute Anonymous: PORTERS_DTO_CandidateResponse res =
+Execute Anonymous:             PORTERS_BATCH_GetCandiData.getCandiData(FIELDS,lastSyncTime, 0);
+Execute Anonymous: for(PORTERS_DTO_CandidateResponse.Wrapper wrapper:res.result){
+Execute Anonymous:                 system.debug(wrapper);
+Execute Anonymous:             }
+10:31:39.1 (1159190)|USER_INFO|[EXTERNAL]|0057F0000042UBb|ishibashi@hurex.co.jp.dev1|(GMT+09:00) 日本標準時 (Asia/Tokyo)|GMT+09:00
+10:31:39.1 (1182091)|EXECUTION_STARTED
+10:31:39.1 (1203387)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+10:31:39.1 (1360888)|VARIABLE_SCOPE_BEGIN|[1]|FIELDS|String|false|false
+10:31:39.1 (1384266)|VARIABLE_SCOPE_BEGIN|[2]|lastSyncTime|Datetime|false|false
+10:31:39.1 (4076322)|VARIABLE_SCOPE_BEGIN|[3]|res|PORTERS_DTO_CandidateResponse|true|false
+10:31:39.1 (4199318)|HEAP_ALLOCATE|[95]|Bytes:3
+10:31:39.1 (4252281)|HEAP_ALLOCATE|[100]|Bytes:152
+10:31:39.1 (4264980)|HEAP_ALLOCATE|[417]|Bytes:408
+10:31:39.1 (4276089)|HEAP_ALLOCATE|[430]|Bytes:408
+10:31:39.1 (4296399)|HEAP_ALLOCATE|[317]|Bytes:6
+10:31:39.1 (4330448)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:11
+10:31:39.1 (4406814)|STATEMENT_EXECUTE|[1]
+10:31:39.1 (4408752)|STATEMENT_EXECUTE|[1]
+10:31:39.1 (4411077)|HEAP_ALLOCATE|[1]|Bytes:181
+10:31:39.1 (4464221)|VARIABLE_ASSIGNMENT|[1]|FIELDS|"Person.P_Id,Person.P (161 more) ..."
+10:31:39.1 (4467107)|STATEMENT_EXECUTE|[2]
+10:31:39.1 (4468312)|HEAP_ALLOCATE|[2]|Bytes:20
+10:31:39.1 (5036802)|HEAP_ALLOCATE|[2]|Bytes:43
+10:31:39.1 (5193078)|FATAL_ERROR|System.TypeException: Invalid date/time: 2020-10-29T10:56:02Z
+
+AnonymousBlock: line 2, column 1
+10:31:39.5 (5222171)|CUMULATIVE_LIMIT_USAGE
+10:31:39.5 (5222171)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+10:31:39.5 (5222171)|CUMULATIVE_LIMIT_USAGE_END
+
+10:31:39.1 (5262812)|CODE_UNIT_FINISHED|execute_anonymous_apex
+10:31:39.1 (5274466)|EXECUTION_FINISHED

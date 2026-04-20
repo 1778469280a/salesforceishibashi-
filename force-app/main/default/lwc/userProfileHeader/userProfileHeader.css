@@ -1,0 +1,203 @@
+/* 外側：背景グラデーションを画面いっぱいに広げる */
+.header-outer {
+    background: linear-gradient(to right, #042356 0%, #4D6DA1 40%, #042356 100%);
+    width: 100%;
+    /* 下側にカードを重ねるための余白（80px）を確保 */
+    padding: 25px 0 100px 0;
+    box-sizing: border-box;
+}
+
+.header-inner {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    color: #FFF;
+}
+
+/* 下半分の薄いグレー背景（横幅100%） */
+.main-bg {
+    background-color: #F5F5F5;
+    /* 画面下部まで続く薄いグレー */
+    width: 100%;
+    display: flex;
+}
+
+.content-inner {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+/* 上に重なる白いメインカード */
+.overlap-card {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    margin-top: -80px;
+    position: relative;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+}
+
+/* --- 文字やアイコンのスタイル --- */
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.material-symbols-outlined {
+    margin-right: 12px;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.user-name {
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 8px;
+    letter-spacing: 0.05em;
+}
+
+.user-suffix {
+    font-size: 1.1rem;
+    margin-top: 6px;
+    font-weight: 500;
+}
+
+/* --- カード内（応募状況）のスタイル（今回追加分） --- */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: #042356;
+}
+
+.icon-mail {
+    font-size: 32px;
+    margin-right: 8px;
+    font-weight: 500;
+}
+
+.card-link-wrapper {
+    font-size: 14px;
+}
+
+.card-link {
+    color: #042356 !important;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.icon-chevron {
+    font-size: 1.2rem;
+    margin-left: 2px;
+}
+
+/* --- 各ステータス項目 --- */
+.status-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+}
+
+.status-item {
+    background-color: #F5F6F8;
+    border-radius: 8px;
+    padding: 10px;
+    flex: 1;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.status-number {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.status-text {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* --- テキストカラーのユーティリティ --- */
+.text-primary {
+    color: #042356;
+}
+
+.text-gray {
+    color: #888888;
+}
+
+/* --- スマホ用レスポンシブ --- */
+@media screen and (max-width: 850px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 0;
+    }
+
+    .material-symbols-outlined {
+        margin-right: 4px;
+    }
+
+    .user-name {
+        font-size: 20px;
+    }
+
+    .user-suffix {
+        font-size: 12px;
+    }
+
+
+    .content-inner {
+        padding: 0;
+    }
+
+    .overlap-card {
+        padding: 20px 5px;
+        margin-left:10px;
+        margin-right:10px;
+    }
+
+    .card-title {
+        font-size: 20px;
+    }
+
+    .card-link-wrapper {
+        font-size: 14px;
+    }
+
+    .status-list {
+        gap: 5px;
+    }
+
+    .status-item {
+        padding: 10px 0;
+        min-width: 20%;
+    }
+}

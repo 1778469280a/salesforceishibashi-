@@ -1,0 +1,44 @@
+.step-education {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #001a66;
+    line-height: 1.2;
+}
+
+.field-input, .field-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+    box-sizing: border-box;
+    color: #333;
+}
+
+.field-input:focus, .field-select:focus {
+    outline: none;
+    border-color: #001a66;
+    box-shadow: 0 0 0 2px rgba(0, 26, 102, 0.2);
+}
+
+.field-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23001a66'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 30px;
+    padding-right: 35px;
+}

@@ -1,0 +1,38 @@
+<template>
+    <div class="step-employment-status">
+        <div class="field">
+            <label class="field-label">経験社数</label>
+            <select class="field-input" value={companyCount} onchange={handleCompanyCountChange}>
+                <option value="" disabled selected></option>
+                <option value="1社">1社</option>
+                <option value="2社">2社</option>
+                <option value="3社">3社</option>
+                <option value="4社">4社</option>
+                <option value="5社">5社</option>
+                <option value="6社">6社</option>
+                <option value="7社">7社</option>
+                <option value="8社">8社</option>
+                <option value="9社">9社</option>
+                <option value="10社以上">10社以上</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label class="field-label">就業状況</label>
+            <div class="radio-group">
+                <label class="radio-label">
+                    <input type="radio" name="employmentStatus" value="就業中" onchange={handleStatusChange} checked={statusWorking} />
+                    就業中
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="employmentStatus" value="離職中" onchange={handleStatusChange} checked={statusSeparated} />
+                    離職中
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="employmentStatus" value="就業経験なし" onchange={handleStatusChange} checked={statusNoExperience} />
+                    就業経験なし
+                </label>
+            </div>
+        </div>
+    </div>
+</template>

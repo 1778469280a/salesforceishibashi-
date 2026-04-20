@@ -1,0 +1,68 @@
+66.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DATA_ACCESS,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+13:28:50.2 (2399340)|USER_INFO|[EXTERNAL]|0057F0000042UBb|ishibashi@hurex.co.jp.dev1|(GMT+09:00) 日本標準時 (Asia/Tokyo)|GMT+09:00
+13:28:50.2 (2446678)|EXECUTION_STARTED
+13:28:50.2 (2463993)|CODE_UNIT_STARTED|[EXTERNAL]|apex://JobDetailController/ACTION$getJobDetail
+13:28:50.2 (4689073)|CODE_UNIT_STARTED|[EXTERNAL]|01pBK000001e6PW|JobDetailController.getJobDetail(String)
+13:28:50.2 (5199100)|HEAP_ALLOCATE|[95]|Bytes:3
+13:28:50.2 (5288778)|HEAP_ALLOCATE|[100]|Bytes:152
+13:28:50.2 (5303794)|HEAP_ALLOCATE|[417]|Bytes:408
+13:28:50.2 (5314918)|HEAP_ALLOCATE|[430]|Bytes:408
+13:28:50.2 (5335343)|HEAP_ALLOCATE|[317]|Bytes:6
+13:28:50.2 (5345914)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+13:28:50.2 (5361168)|METHOD_ENTRY|[6]|01pBK000001e6PW|JobDetailController.JobDetailController()
+13:28:50.2 (5367651)|STATEMENT_EXECUTE|[6]
+13:28:50.2 (5372287)|STATEMENT_EXECUTE|[6]
+13:28:50.2 (5395367)|HEAP_ALLOCATE|[68]|Bytes:5
+13:28:50.2 (5421701)|HEAP_ALLOCATE|[74]|Bytes:5
+13:28:50.2 (5426749)|HEAP_ALLOCATE|[82]|Bytes:7
+13:28:50.2 (5793604)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+13:28:50.2 (5811576)|METHOD_EXIT|[6]|JobDetailController
+13:28:50.2 (5816623)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:18
+13:28:50.2 (5827086)|VARIABLE_SCOPE_BEGIN|[20]|jobId|String|false|false
+13:28:50.2 (5871509)|VARIABLE_ASSIGNMENT|[20]|jobId|"a0KBK00000GezgQ2AR"
+13:28:50.2 (5884631)|HEAP_ALLOCATE|[22]|Bytes:5
+13:28:50.2 (5888194)|STATEMENT_EXECUTE|[20]
+13:28:50.2 (5978368)|STATEMENT_EXECUTE|[22]
+13:28:50.2 (5981790)|HEAP_ALLOCATE|[26]|Bytes:36
+13:28:50.2 (6036699)|HEAP_ALLOCATE|[26]|Bytes:24
+13:28:50.2 (6046929)|SYSTEM_METHOD_ENTRY|[1]|Pattern.Pattern()
+13:28:50.2 (6050554)|STATEMENT_EXECUTE|[1]
+13:28:50.2 (6056013)|SYSTEM_METHOD_EXIT|[1]|Pattern
+13:28:50.2 (6067642)|METHOD_ENTRY|[26]||System.Pattern.matches(String, String)
+13:28:50.2 (12173847)|METHOD_EXIT|[26]||System.Pattern.matches(String, String)
+13:28:50.2 (12190783)|STATEMENT_EXECUTE|[26]
+13:28:50.2 (12194157)|STATEMENT_EXECUTE|[31]
+13:28:50.2 (12197097)|HEAP_ALLOCATE|[31]|Bytes:608
+13:28:50.2 (12236403)|HEAP_ALLOCATE|[31]|Bytes:4
+13:28:50.2 (12248482)|HEAP_ALLOCATE|[31]|Bytes:7
+13:28:50.2 (23950935)|SOQL_EXECUTE_BEGIN|[31]|Aggregations:0|SELECT Id, JobPosition__c, JobCategory1__c, WorkLocation2__c, Company__c, HiringBackground__c, JobDescription__c, ApplicationQualification__c, EmploymentType__c, MaxAnnualSalary__c, MinAnnualSalary__c, WorkLocationRegion__c, WorkLocationPrefecture__c, TransferRequired__c, TransferRemarks__c, BenefitsAndWelfare__c, HolidaysAndLeave__c, WorkingHours__c, SpecificConditions__c, LastModifiedDate, LastViewedDate, JobHighlight1__c, JobHighlight2__c, JobHighlight3__c, Company__r.Name, Company__r.Industry__c, Company__r.BusinessSummary__c, Company__r.NumberOfEmployees__c FROM Job__c WHERE Id = :tmpVar1 LIMIT 1
+13:28:50.2 (93959992)|SOQL_EXECUTE_END|[31]|Rows:1
+13:28:50.2 (94000370)|HEAP_ALLOCATE|[31]|Bytes:8
+13:28:50.2 (94023572)|HEAP_ALLOCATE|[31]|Bytes:1305
+13:28:50.2 (94122787)|HEAP_ALLOCATE|[31]|Bytes:8
+13:28:50.2 (94143048)|VARIABLE_SCOPE_BEGIN|[31]|jobList|List<Job__c>|true|false
+13:28:50.2 (94437183)|VARIABLE_ASSIGNMENT|[31]|jobList|[{"LastModifiedDate":"2026-03-19T02:02:27.000Z","WorkLocation2__c":"新潟県新潟市（転勤なし／車通勤可）","LastViewedDate":"2026-04-02T04:28:50.000Z","TransferRequired__c":"無し","SpecificConditions__c":"完全週休2日制;土日祝休み;正社員;設立 (13 more) ...","WorkLocationRegion__c":"上信越/北陸","Company__c":"001BK00000b1JOJYA2","MinAnnualSalary__c":350,"JobDescription__c":"自社開発製造の給配水機器とその関連製品の (25 more) ...","JobCategory1__c":"経営幹部/企画/マーケティング系","WorkLocationPrefecture__c":"新潟県","JobPosition__c":"新潟市(新潟) 法人ルート営業・業界シェ (74 more) ...","HiringBackground__c":"1960〜70年代の高度経済成長期に設置 (122 more) ...","JobHighlight1__c":"【圧倒的な安定感】創業83年、70年以上 (26 more) ...","Id":"a0KBK00000GezgQ2AR","ApplicationQualification__c":"【必須条件】\r\n下記いずれかのご経験のあ (219 more) ...","JobHighlight2__c":"【営業のしやすさ】シェア30％超のブラン (33 more) ...","Company__r":{"Industry__c":"IT・通信・インターネット系;商社・流通 (11 more) ...","Name":"(demo)株式会社エンミッシュ","Id":"001BK00000b1JOJYA2"},"MaxAnnualSalary__c":550}]|0x1475021d
+13:28:50.2 (94541491)|STATEMENT_EXECUTE|[64]
+13:28:50.2 (94543550)|STATEMENT_EXECUTE|[68]
+13:28:50.2 (94558327)|HEAP_ALLOCATE|[68]|Bytes:80
+13:28:50.94 (94658254)|CUMULATIVE_LIMIT_USAGE
+13:28:50.94 (94658254)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 0
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+13:28:50.94 (94658254)|CUMULATIVE_LIMIT_USAGE_END
+
+13:28:50.2 (94702301)|CODE_UNIT_FINISHED|JobDetailController.getJobDetail(String)
+13:28:50.2 (94897085)|CODE_UNIT_FINISHED|apex://JobDetailController/ACTION$getJobDetail
+13:28:50.2 (94904085)|EXECUTION_FINISHED

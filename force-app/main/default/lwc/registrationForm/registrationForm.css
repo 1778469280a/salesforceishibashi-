@@ -1,0 +1,95 @@
+.registration-container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 16px;
+    font-family: sans-serif;
+    background-color: #F5F5F5;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.header {
+    margin-bottom: 24px;
+}
+
+.progress-area {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.progress-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.current-step {
+    font-size: 40px;
+    font-weight: bold;
+    color: #0a3069;
+    line-height: 1;
+}
+
+.step-fraction {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0a3069;
+    display: inline-flex;
+    align-items: baseline;
+}
+
+.step-fraction .step-total {
+    color: #b0b0b0;
+}
+
+.step-fraction .step-separator {
+    margin: 0 2px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #0a3069;
+    border-radius: 12px;
+    transition: width 0.3s ease;
+}
+
+.footer {
+    margin-top: 32px;
+    text-align: center;
+}
+
+.next-button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #042356;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.next-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.error-message{
+    color: red; 
+    text-align: center; 
+    margin: 1rem;
+}

@@ -1,0 +1,80 @@
+<template>
+    <section class="container">
+        <div class="status-list">
+            <template for:each={statusGroups} for:item="group">
+                <div key={group.key} class="status-group" style={group.groupStyle}>
+                    <template if:true={group.hasItems}>
+                        <div class="status-summary" style={group.summaryStyle} data-key={group.key}
+                            onclick={handleToggle}>
+                            <div class="status-icon-label-group">
+                                <template if:true={group.iconName}>
+                                    <span class="status-icon">
+                                        <span class="material-symbols-outlined">{group.iconName}</span>
+                                    </span>
+                                </template>
+                                <span class="status-label">{group.label}</span>
+                            </div>
+
+                            <div class="status-count">
+                                <span class="count-number">{group.count}</span>
+                                <span class="count-unit">件</span>
+                            </div>
+                            <span class="toggle-icon">
+                                <span class="material-symbols-outlined">{group.toggleIconName}</span>
+                            </span>
+                        </div>
+                        <template if:true={group.isExpanded}>
+                            <div class="status-content">
+                                <template for:each={group.items} for:item="item">
+                                    <a href={item.jobUrl} key={item.id} class="status-item job-title-link"
+                                        style={group.itemStyle}>
+                                        <div class="card-content">
+                                            <template if:true={item.showInterviewDate}>
+                                                <div class="interview-date-info">
+                                                    {item.interviewDateLabel}<span
+                                                        class="text-red">{item.interviewDateValue}</span>
+                                                </div>
+                                            </template>
+
+                                            <div class="badge-group">
+                                                <span class="badge-outline">{group.label}</span>
+                                                <span class={item.viewStatusClass}>{item.viewStatusLabel}</span>
+                                                <span class="job-category-tag"
+                                                    if:true={item.JobCategory1}>職種が入ります</span>
+                                                <span class="job-category-tag"
+                                                    if:true={item.WorkLocation2}>業種が入ります</span>
+                                            </div>
+                                            <div class="company-name">企業名：{item.companyName}</div>
+                                            <h3 class="job-title-text">求人タイトル：{item.JobPosition}</h3>
+                                            <div class="update-info">
+                                                <span class="material-symbols-outlined">schedule</span>
+                                                <span class="update-date">更新日時：{item.lastUpdate}</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </template>
+                            </div>
+                        </template>
+                    </template>
+                    <template if:false={group.hasItems}>
+                        <div class="status-static" style={group.summaryStyle}>
+                            <div class="status-icon-label-group">
+                                <template if:true={group.iconName}>
+                                    <span class="status-icon">
+                                        <span class="material-symbols-outlined">{group.iconName}</span>
+                                    </span>
+                                </template>
+                                <span class="status-label">{group.label}</span>
+                            </div>
+
+                            <div class="status-count">
+                                <span class="count-number">{group.count}</span>
+                                <span class="count-unit">件</span>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </section>
+</template>

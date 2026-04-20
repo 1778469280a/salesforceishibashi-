@@ -1,0 +1,188 @@
+<template>
+    <template if:true={error}>
+        <div class="error-container">
+            <span class="material-symbols-outlined error-icon">error</span>
+            <p class="error-text">{errorMessage}</p>
+        </div>
+    </template>
+    <template if:true={job}>
+        <section class="job-detail-container">
+            <template if:true={bannerMessage}>
+                <div class="status-banner">
+                    <span class="material-symbols-outlined banner-icon">info</span>
+                    {bannerMessage}
+                </div>
+            </template>
+
+            <div class="job-card">
+                <div class="job-card-header-row">
+                    <div class="job-status-container">
+                        <span class={viewStatusClass}>{viewStatusLabel}</span>
+                        <span class="job-category-tag" if:true={job.JobCategory1__c}>{job.JobCategory1__c}</span>
+                        <span class="job-category-tag" if:true={job.MainIndustry__c}>{job.MainIndustry__c}</span>
+                    </div>
+                </div>
+                <div class="job-card-content">
+                    <div class="job-title-container">
+                        <h3 class="job-title">{jobTitlePart}</h3>
+                        <template if:true={jobBenefitPart}>
+                            <div class="job-benefit">{jobBenefitPart}</div>
+                        </template>
+                    </div>
+                    <!-- <div class="job-info-item">
+                        <div class="info-label">
+                            <span class="material-symbols-outlined icon-icon">card_travel</span>
+                            仕事内容
+                        </div>
+                        <div class="info-content job-description">{jobDescription}</div>
+                    </div>
+                    <div class="job-info-item">
+                        <div class="info-label">
+                            <span class="material-symbols-outlined icon-icon">currency_yen</span>
+                            想定年収
+                        </div>
+                        <div class="info-content">{formattedAnnualSalary}</div>
+                    </div>
+                    <div class="job-info-item">
+                        <div class="info-label">
+                            <span class="material-symbols-outlined icon-icon">distance</span>
+                            勤務地
+                        </div>
+                        <div class="info-content">{WorkLocation2}</div>
+                    </div> -->
+                    <div class="job-info-item update-time">
+                        <span class="material-symbols-outlined time-icon">schedule</span>
+                        <span class="info-time">更新日時：{formattedLastModifiedDate}</span>
+                    </div>
+                    <button class="contact-button" onclick={handleInquiryClick} disabled={isContactButtonDisabled}>
+                        <span class="material-symbols-outlined">mail</span>
+                        {contactButtonLabel}
+                    </button>
+                </div>
+            </div>
+            <template if:true={hasHighlights}>
+                <div class="job-highlight-section">
+                    <div class="section-header">
+                        <span class="material-symbols-outlined section-icon">lightbulb</span>
+                        <span>この求人のおすすめポイント！</span>
+                    </div>
+                    <div class="highlight-list">
+                        <template for:each={jobHighlights} for:item="highlight">
+                            <div key={highlight.id} class="highlight-item">
+                                <span class="material-symbols-outlined check-icon">check_circle</span>
+                                <span class="highlight-text">{highlight.value}</span>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </template>
+            <div class="detail-section-card">
+                <div class="detail-section-title">
+                    <span class="material-symbols-outlined detail-section-icon">assignment</span>
+                    <h2 class="detail-section-title-text">募集要項</h2>
+                </div>
+                <hr class="detail-section-divider" />
+                <div class="detail-section-content">
+                    <div class="detail-section-item">
+                        <div class="detail-section-label">企業名</div>
+                        <div class="detail-section-value">{companyName}</div>
+                    </div>
+                    <div class="detail-section-item">
+                        <div class="detail-section-label">募集背景</div>
+                        <div class="detail-section-value">{hiringBackground}</div>
+                    </div>
+                    <div class="detail-section-item">
+                        <div class="detail-section-label">仕事内容</div>
+                        <div class="detail-section-value">{jobDescription}</div>
+                    </div>
+                    <div class="detail-section-item">
+                        <div class="detail-section-label">応募資格</div>
+                        <div class="detail-section-value">{applicationQualification}</div>
+                    </div>
+                    <div class="detail-section-item">
+                        <div class="detail-section-label">雇用形態</div>
+                        <div class="detail-section-value">{employmentType}</div>
+                    </div>
+                    <div class="detail-section-item">
+                        <div class="detail-section-label">想定年収</div>
+                        <div class="detail-section-value">{formattedAnnualSalary}</div>
+                    </div>
+                    <div class="detail-section-item">
+                        <div class="detail-section-label">勤務地</div>
+                        <div class="detail-section-value">{formattedWorkLocation}</div>
+                    </div>
+                    <div class="detail-section-item">
+                        <div class="detail-section-label">勤務地（詳細）</div>
+                        <div class="detail-section-value">{workLocationDetail}</div>
+                    </div>
+                    <div class="detail-section-item">
+                        <div class="detail-section-label">諸手当</div>
+                        <div class="detail-section-value">{benefits}</div>
+                    </div>
+                    <div class="detail-section-item">
+                        <div class="detail-section-label">休日休暇</div>
+                        <div class="detail-section-value">{holidays}</div>
+                    </div>
+                    <div class="detail-section-item">
+                        <div class="detail-section-label">勤務時間</div>
+                        <div class="detail-section-value">{workingHours}</div>
+                    </div>
+                    <div class="detail-section-item">
+                        <div class="detail-section-label">こだわり条件</div>
+                        <div class="detail-section-value">{specificConditions}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-section-card">
+                <div class="detail-section-title">
+                    <span class="material-symbols-outlined detail-section-icon">business</span>
+                    <h2 class="detail-section-title-text">会社概要</h2>
+                </div>
+                <hr class="detail-section-divider" />
+                <div class="detail-section-content">
+                    <div class="detail-section-item">
+                        <div class="detail-section-label">業種</div>
+                        <div class="detail-section-value">{formattedIndustry}</div>
+                    </div>
+                    <div class="detail-section-item">
+                        <div class="detail-section-label">事業内容</div>
+                        <div class="detail-section-value">{formattedBusinessSummary}</div>
+                    </div>
+                    <div class="detail-section-item">
+                        <div class="detail-section-label">従業員数</div>
+                        <div class="detail-section-value">{formattedEmployeeCount}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-button-container">
+                <button class="contact-button standalone-contact-button" onclick={handleInquiryClick}
+                    disabled={isContactButtonDisabled}>
+                    <span class="material-symbols-outlined">mail</span>
+                    {contactButtonLabel}
+                </button>
+                <button class={favoriteButtonFullClass} data-job-id={jobIdGetter} data-is-favorite={isFavorite}
+                    onclick={handleFavoriteClick}>
+                    <span class="material-symbols-outlined icon-bookmark">bookmark</span>
+                    <span class="button-text">{favoriteButtonText}</span>
+                </button>
+            </div>
+        </section>
+        <div class={fixedBarClass}>
+            <div class="fixed-bar-content">
+                <!-- <button class="modify-condition-btn fixed-btn-style" onclick={openModifyModal}>
+                <span class="material-symbols-outlined icon">document_search</span>
+                <span class="btn-text">条件を変更</span>
+            </button> -->
+                <button class="contact-button" onclick={handleInquiryClick} disabled={isContactButtonDisabled} style="margin-top: 0">
+                    <span class="material-symbols-outlined">mail</span>
+                    {contactButtonLabel}
+                </button>
+                <button class={favoriteButtonFullClass} data-job-id={jobIdGetter} data-is-favorite={isFavorite}
+                    onclick={handleFavoriteClick}>
+                    <span class="material-symbols-outlined icon-bookmark">bookmark</span>
+                    <span class="button-text">{favoriteButtonText}</span>
+                </button>
+            </div>
+        </div>
+    </template>
+</template>

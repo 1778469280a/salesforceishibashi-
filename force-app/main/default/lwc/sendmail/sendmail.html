@@ -1,0 +1,41 @@
+<template>
+    <div class="container">
+        <template if:true={isNewUser}>
+            <div class="message-box">
+                <p class="main-message">
+                    ご登録のメールアドレスに、<br>
+                    メールをお送りしました。
+                </p>
+                <p class="instruction">
+                    メールに記載のリンクをクリックし、<br>
+                    追加情報登録へお進みください。
+                </p>
+                <p class="note">
+                    メールが届かない場合は、お手数ですが<br>
+                    迷惑メールフォルダをご確認いただくか<br>
+                    ご登録アドレスに誤りがないかお確かめのうえ<br>
+                    再度メールアドレス認証をお試しください。
+                </p>
+                <div class="back-link">
+                    <a onclick={handleBackToTop}>
+                        トップページへ戻る
+                        <span class="material-symbols-outlined arrow">arrow_circle_right</span>
+                    </a>
+                </div>
+            </div>
+        </template>
+        <template if:true={isExistingUser}>
+            <div class="message-box existing-user">
+                <p class="main-message">
+                    すでに有効なユーザーがあります
+                </p>
+                <div class="back-link">
+                    <a onclick={handleBackToTop}>
+                        トップページへ戻る
+                        <span class="material-symbols-outlined arrow">arrow_circle_right</span>
+                    </a>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

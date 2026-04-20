@@ -1,0 +1,24 @@
+66.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DATA_ACCESS,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+18:43:54.4 (4217103)|EXECUTION_STARTED
+18:43:54.4 (4261655)|CODE_UNIT_STARTED|[EXTERNAL]|VisualForce View State
+18:43:54.4 (15537315)|CODE_UNIT_FINISHED|VisualForce View State
+18:43:54.4 (15558688)|EXECUTION_FINISHED
+18:43:54.25 (25961415)|SYSTEM_MODE_ENTER|false
+18:43:54.171 (171950561)|CUMULATIVE_LIMIT_USAGE
+18:43:54.171 (171950561)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+18:43:54.171 (171950561)|CUMULATIVE_LIMIT_USAGE_END
+

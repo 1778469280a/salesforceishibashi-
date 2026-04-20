@@ -1,0 +1,44 @@
+<template>
+  <div style="padding: 1rem;">
+    
+    <template for:each={jobCategoryData} for:item="category">
+      <div key={category.name} style="margin-bottom: 20px;">
+
+        <lightning-input
+          type="checkbox"
+          label={category.name}
+          checked={category.checked}
+          data-category-name={category.name}
+          onchange={handleParentChange}
+          style="font-weight: bold; color: #2c3e50; margin-bottom: 10px;">
+        </lightning-input>
+
+
+        <div class="slds-grid slds-wrap" style="margin-left: 20px;">
+          <template for:each={category.child} for:item="subCategory">
+            <div key={subCategory.name} class="slds-col slds-size_1-of-4" style="padding: 5px;">
+              <lightning-input
+                type="checkbox"
+                label={subCategory.name} 
+                checked={subCategory.checked}
+                data-parent-name={category.name}
+                data-subcategory-name={subCategory.name}
+                onchange={handleChildChange}
+                style="margin-bottom: 5px;">
+              </lightning-input>
+            </div>
+          </template>
+        </div>
+      </div>
+    </template>
+
+
+    <!-- <lightning-button
+      label="検索"
+      variant="brand"
+      onclick={handleSearch}
+      style="margin-top: 20px;">
+    </lightning-button> -->
+
+  </div>
+</template>

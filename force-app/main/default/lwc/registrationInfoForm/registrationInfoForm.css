@@ -1,0 +1,244 @@
+.registration-container {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.title-bar {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #042356;
+    margin-bottom: 20px;
+}
+
+.title-bar .material-symbols-outlined {
+    margin-right: 8px;
+    font-size: 1.8rem;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E5E7EB;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #042356;
+}
+
+.title-line {
+    width: 4px;
+    height: 18px;
+    background-color: #042356;
+    margin-right: 10px;
+}
+
+.edit-link, .cancel-link {
+    font-size: 14px;
+    color: #042356 !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.edit-link .material-symbols-outlined {
+    font-size: 20px;
+    margin-left: 2px;
+}
+
+.cancel-link {
+    font-size: 14px;
+    color: #555;
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+}
+
+.cancel-link .material-symbols-outlined {
+    font-size: 20px;
+    margin-right: 4px;
+}
+
+.info-list {
+    margin: 0;
+    padding: 0;
+}
+
+.info-list dt {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #042356;
+    margin-bottom: 6px;
+}
+
+.info-list dd {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.4;
+    margin: 0 0 14px 0;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.info-list dd:last-of-type {
+    border-bottom: none;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.other-text {
+    line-height: 1.6 !important;
+}
+
+.edit-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #042356;
+    margin-bottom: 8px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #333;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-field:focus {
+    border-color: #042356;
+}
+
+.date-field, .select-field, .tel-field {
+    max-width: 250px;
+}
+
+.tel-field {
+    max-width: 300px;
+}
+
+.textarea-field {
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.zip-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.zip-row span {
+    font-size: 0.95rem;
+    margin-right: 8px;
+}
+
+.zip-field {
+    width: 120px !important;
+    max-width: none !important;
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.radio-label input {
+    margin-right: 6px;
+}
+
+.last-group {
+    margin-bottom: 30px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    border-top: 1px solid #E5E7EB;
+    padding-top: 25px;
+}
+
+.btn-cancel {
+    padding: 12px 30px;
+    background-color: #fff;
+    color: #555;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-cancel:hover {
+    background-color: #f9fafb;
+}
+
+.btn-save {
+    padding: 12px 40px;
+    background-color: #042356;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(4, 35, 86, 0.2);
+    transition: background-color 0.2s;
+}
+
+.btn-save:hover {
+    background-color: #031a40;
+}
+
+.year-select, .month-select{
+    margin-right: 10px;
+}

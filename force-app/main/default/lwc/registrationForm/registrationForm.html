@@ -1,0 +1,76 @@
+<template>
+    <div class="registration-container">
+        <template if:false={isComplete}>
+            <header class="header">
+                <div class="progress-area">
+                    <div class="progress-top">
+                        <span class="current-step">{currentStepDisplay}</span>
+                        <span class="step-fraction">
+                            <span class="step-current">{currentStepDisplay}</span>
+                            <span class="step-separator">/</span>
+                            <span class="step-total">{totalStepsDisplay}</span>
+                        </span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style={progressStyle}></div>
+                    </div>
+                </div>
+            </header>
+            <div style={step1Style}>
+                <c-step-1-personal-info
+                    onstepvaliditychange={handleStepValidityChange}
+                    data-step="1">
+                </c-step-1-personal-info>
+            </div>
+
+            <div style={step2Style}>
+                <c-step-2-desired-conditions
+                    onstepvaliditychange={handleStepValidityChange}
+                    data-step="2">
+                </c-step-2-desired-conditions>
+            </div>
+
+            <div style={step3Style}>
+                <c-step-3-desired-job-categories
+                    onstepvaliditychange={handleStepValidityChange}
+                    data-step="3">
+                </c-step-3-desired-job-categories>
+            </div>
+
+            <div style={step4Style}>
+                <c-step-4-education
+                    onstepvaliditychange={handleStepValidityChange}
+                    data-step="4">
+                </c-step-4-education>
+            </div>
+
+            <div style={step5Style}>
+                <c-step-5-employment-status
+                    onstepvaliditychange={handleStepValidityChange}
+                    ontotalstepschanged={handleTotalStepsChange}
+                    data-step="5">
+                </c-step-5-employment-status>
+            </div>
+
+            <div style={step6Style}>
+                <c-step-6-previous-job
+                    onstepvaliditychange={handleStepValidityChange}
+                    data-step="6">
+                </c-step-6-previous-job>
+            </div>
+
+            <div class="footer">
+                <button class="next-button" disabled={isNextDisabled} onclick={handleNext}>次へ</button>
+            </div>
+            <template if:true={errorMessage}>
+                <div class="error-message">
+                    {errorMessage}
+                </div>
+            </template>
+        </template>
+
+        <template if:true={isComplete}>
+            <c-registration-complete></c-registration-complete>
+        </template>
+    </div>
+</template>

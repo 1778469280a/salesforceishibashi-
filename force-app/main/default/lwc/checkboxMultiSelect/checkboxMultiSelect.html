@@ -1,0 +1,49 @@
+<template>
+    <div class="slds-box slds-theme_default slds-is-relative">
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </template>
+
+        <template if:true={options.length}>
+            <div class="slds-p-bottom_medium">
+                
+                <legend class="slds-form-element__legend slds-form-element__label slds-m-right_medium">{displayLabel}</legend>
+                
+                <div class="checkbox-container">
+                    <template for:each={options} for:item="option">
+                        <lightning-input 
+                            key={option.value}
+                            type="checkbox"
+                            label={option.label}
+                            value={option.value}
+                            checked={option.checked}
+                            onchange={handleCheckboxChange}>
+                        </lightning-input>
+                    </template>
+                </div>
+
+                <template if:true={fieldHelpText}>
+                    <div class="slds-m-top_x-small slds-text-color_weak slds-text-body_small">
+                        {fieldHelpText}
+                    </div>
+                </template>
+                
+            </div>
+
+            <div class="slds-border_top slds-p-top_small slds-text-align_right">
+                <lightning-button 
+                    variant="brand" 
+                    label="保存して閉じる" 
+                    onclick={handleSave}
+                    disabled={isLoading}>
+                </lightning-button>
+            </div>
+        </template>
+
+        <template if:false={options.length}>
+            <template if:false={isLoading}>
+                <p class="slds-text-color_error">項目情報を取得できませんでした。設定を確認してください。</p>
+            </template>
+        </template>
+    </div>
+</template>

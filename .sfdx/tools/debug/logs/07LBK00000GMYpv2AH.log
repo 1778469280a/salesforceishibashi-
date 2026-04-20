@@ -1,0 +1,205 @@
+66.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DATA_ACCESS,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+14:55:22.2 (2527654)|USER_INFO|[EXTERNAL]|0057F0000042UBb|ishibashi@hurex.co.jp.dev1|(GMT+09:00) 日本標準時 (Asia/Tokyo)|GMT+09:00
+14:55:22.2 (2575319)|EXECUTION_STARTED
+14:55:22.2 (2594748)|CODE_UNIT_STARTED|[EXTERNAL]|01pBK000001k7PJ|InterestedJobControllerTest.setupTestData()
+14:55:22.2 (2838594)|HEAP_ALLOCATE|[95]|Bytes:3
+14:55:22.2 (2919044)|HEAP_ALLOCATE|[100]|Bytes:152
+14:55:22.2 (2932702)|HEAP_ALLOCATE|[417]|Bytes:408
+14:55:22.2 (2944404)|HEAP_ALLOCATE|[430]|Bytes:408
+14:55:22.2 (2965147)|HEAP_ALLOCATE|[317]|Bytes:6
+14:55:22.2 (2975349)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:119
+14:55:22.2 (2985716)|METHOD_ENTRY|[2]|01pBK000001k7PJ|InterestedJobControllerTest.InterestedJobControllerTest()
+14:55:22.2 (2990079)|STATEMENT_EXECUTE|[2]
+14:55:22.2 (2995803)|STATEMENT_EXECUTE|[2]
+14:55:22.2 (3011945)|HEAP_ALLOCATE|[68]|Bytes:5
+14:55:22.2 (3030075)|HEAP_ALLOCATE|[74]|Bytes:5
+14:55:22.2 (3035274)|HEAP_ALLOCATE|[82]|Bytes:7
+14:55:22.2 (3885314)|SYSTEM_MODE_ENTER|false
+14:55:22.2 (3911990)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+14:55:22.2 (3923921)|SYSTEM_MODE_EXIT|false
+14:55:22.2 (3937719)|METHOD_EXIT|[2]|InterestedJobControllerTest
+14:55:22.2 (3994270)|SYSTEM_MODE_ENTER|false
+14:55:22.2 (3999427)|HEAP_ALLOCATE|[7]|Bytes:5
+14:55:22.2 (4004104)|STATEMENT_EXECUTE|[5]
+14:55:22.2 (4007419)|STATEMENT_EXECUTE|[7]
+14:55:22.2 (4066531)|HEAP_ALLOCATE|[7]|Bytes:4
+14:55:22.2 (4144769)|HEAP_ALLOCATE|[7]|Bytes:5
+14:55:22.2 (4282988)|VARIABLE_ASSIGNMENT|[7]|this.Name|"テスト企業"|0x16ca1620
+14:55:22.2 (4319332)|VARIABLE_SCOPE_BEGIN|[7]|acc|Account|true|false
+14:55:22.2 (4343335)|VARIABLE_ASSIGNMENT|[7]|acc|{"Name":"テスト企業"}|0x16ca1620
+14:55:22.2 (4348869)|STATEMENT_EXECUTE|[8]
+14:55:22.2 (4390999)|HEAP_ALLOCATE|[8]|Bytes:8
+14:55:22.2 (4405884)|DML_BEGIN|[8]|Op:Insert|Type:Account|Rows:1
+14:55:22.2 (4437302)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+14:55:22.2 (572100872)|CODE_UNIT_STARTED|[EXTERNAL]|Flow:Account
+14:55:22.2 (572136685)|CODE_UNIT_FINISHED|Flow:Account
+14:55:22.591 (591692957)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+14:55:22.591 (592167448)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+14:55:22.591 (592204279)|VARIABLE_SCOPE_BEGIN|[1]|this|pi.LogAccountChange|true|false
+14:55:22.591 (592281850)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x5756026e
+14:55:22.591 (597295934)|DML_BEGIN|[16]|Op:Insert|Type:pi__Trigger_Settings__c|Rows:1
+14:55:22.591 (636519083)|DML_END|[16]
+14:55:22.658 (658395466)|CUMULATIVE_LIMIT_USAGE
+14:55:22.658 (658395466)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+14:55:22.658 (658395466)|LIMIT_USAGE_FOR_NS|pi|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+14:55:22.658 (658395466)|CUMULATIVE_LIMIT_USAGE_END
+
+14:55:23.294 (1294475877)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+14:55:23.294 (1294620744)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+14:55:23.294 (1294636567)|VARIABLE_SCOPE_BEGIN|[1]|this|pi.LogAccountChange|true|false
+14:55:23.294 (1294699563)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x73e82e89
+14:55:23.301 (1301262554)|CUMULATIVE_LIMIT_USAGE
+14:55:23.301 (1301262554)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 49 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+14:55:23.301 (1301262554)|LIMIT_USAGE_FOR_NS|pi|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+14:55:23.301 (1301262554)|CUMULATIVE_LIMIT_USAGE_END
+
+14:55:23.309 (1309449549)|CODE_UNIT_STARTED|[EXTERNAL]|Flow:Account
+14:55:23.309 (1309599772)|CODE_UNIT_FINISHED|Flow:Account
+14:55:23.309 (1310356227)|CODE_UNIT_STARTED|[EXTERNAL]|Flow:Account
+14:55:23.309 (1310368935)|CODE_UNIT_FINISHED|Flow:Account
+14:55:23.309 (1333832863)|DML_END|[8]
+14:55:23.309 (1334075535)|STATEMENT_EXECUTE|[11]
+14:55:23.309 (1334177698)|HEAP_ALLOCATE|[11]|Bytes:4
+14:55:23.309 (1334495920)|VARIABLE_ASSIGNMENT|[11]|this.Company__c|"001BK00000gPlNBYA0"|0x42aed5a
+14:55:23.309 (1334510080)|HEAP_ALLOCATE|[13]|Bytes:3
+14:55:23.309 (1334541324)|VARIABLE_ASSIGNMENT|[11]|this.Name|"求人1"|0x42aed5a
+14:55:23.309 (1334547906)|HEAP_ALLOCATE|[14]|Bytes:12
+14:55:23.309 (1334563398)|VARIABLE_ASSIGNMENT|[11]|this.JobPosition__c|"エンジニア／福利厚生充実"|0x42aed5a
+14:55:23.309 (1334568594)|HEAP_ALLOCATE|[15]|Bytes:10
+14:55:23.309 (1334587665)|VARIABLE_ASSIGNMENT|[11]|this.JobDescription__c|"ソフトウェア開発業務"|0x42aed5a
+14:55:23.309 (1334648024)|HEAP_ALLOCATE|[11]|Bytes:28
+14:55:23.309 (1334675540)|VARIABLE_ASSIGNMENT|[11]|this.MinAnnualSalary__c|500|0x42aed5a
+14:55:23.309 (1334683253)|HEAP_ALLOCATE|[11]|Bytes:28
+14:55:23.309 (1334697856)|VARIABLE_ASSIGNMENT|[11]|this.MaxAnnualSalary__c|700|0x42aed5a
+14:55:23.309 (1334703469)|HEAP_ALLOCATE|[18]|Bytes:6
+14:55:23.309 (1334717704)|VARIABLE_ASSIGNMENT|[11]|this.WorkLocation2__c|"東京都渋谷区"|0x42aed5a
+14:55:23.309 (1334722361)|HEAP_ALLOCATE|[19]|Bytes:3
+14:55:23.309 (1334735600)|VARIABLE_ASSIGNMENT|[11]|this.JobCategory1__c|"IT系"|0x42aed5a
+14:55:23.309 (1334776208)|VARIABLE_SCOPE_BEGIN|[11]|job1|Job__c|true|false
+14:55:23.309 (1334813717)|VARIABLE_ASSIGNMENT|[11]|job1|{"Company__c":"001BK00000gPlNBYA0","Name":"求人1","JobPosition__c":"エンジニア／福利厚生充実","JobDescription__c":"ソフトウェア開発業務","MinAnnualSalary__c":500,"MaxAnnualSalary__c":700,"WorkLocation2__c":"東京都渋谷区","JobCategory1__c":"IT系"}|0x42aed5a
+14:55:23.309 (1334823728)|STATEMENT_EXECUTE|[21]
+14:55:23.309 (1334838845)|HEAP_ALLOCATE|[21]|Bytes:4
+14:55:23.309 (1334875270)|VARIABLE_ASSIGNMENT|[21]|this.Company__c|"001BK00000gPlNBYA0"|0x871dcbb
+14:55:23.309 (1334880284)|HEAP_ALLOCATE|[23]|Bytes:3
+14:55:23.309 (1334900819)|VARIABLE_ASSIGNMENT|[21]|this.Name|"求人2"|0x871dcbb
+14:55:23.309 (1334905679)|HEAP_ALLOCATE|[24]|Bytes:8
+14:55:23.309 (1334917394)|VARIABLE_ASSIGNMENT|[21]|this.JobPosition__c|"営業／未経験歓迎"|0x871dcbb
+14:55:23.309 (1334921649)|HEAP_ALLOCATE|[25]|Bytes:4
+14:55:23.309 (1334935135)|VARIABLE_ASSIGNMENT|[21]|this.JobDescription__c|"法人営業"|0x871dcbb
+14:55:23.309 (1334944855)|HEAP_ALLOCATE|[21]|Bytes:28
+14:55:23.309 (1334957485)|VARIABLE_ASSIGNMENT|[21]|this.MinAnnualSalary__c|400|0x871dcbb
+14:55:23.309 (1334962994)|HEAP_ALLOCATE|[21]|Bytes:28
+14:55:23.309 (1334974483)|VARIABLE_ASSIGNMENT|[21]|this.MaxAnnualSalary__c|600|0x871dcbb
+14:55:23.309 (1334978854)|HEAP_ALLOCATE|[28]|Bytes:6
+14:55:23.309 (1334990450)|VARIABLE_ASSIGNMENT|[21]|this.WorkLocation2__c|"大阪府大阪市"|0x871dcbb
+14:55:23.309 (1334995579)|HEAP_ALLOCATE|[29]|Bytes:3
+14:55:23.309 (1335006349)|VARIABLE_ASSIGNMENT|[21]|this.JobCategory1__c|"営業系"|0x871dcbb
+14:55:23.309 (1335025559)|VARIABLE_SCOPE_BEGIN|[21]|job2|Job__c|true|false
+14:55:23.309 (1335039983)|VARIABLE_ASSIGNMENT|[21]|job2|{"Company__c":"001BK00000gPlNBYA0","Name":"求人2","JobPosition__c":"営業／未経験歓迎","JobDescription__c":"法人営業","MinAnnualSalary__c":400,"MaxAnnualSalary__c":600,"WorkLocation2__c":"大阪府大阪市","JobCategory1__c":"営業系"}|0x871dcbb
+14:55:23.309 (1335044772)|STATEMENT_EXECUTE|[31]
+14:55:23.309 (1335086780)|HEAP_ALLOCATE|[31]|Bytes:4
+14:55:23.309 (1335223143)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:12
+14:55:23.309 (1335294829)|DML_BEGIN|[31]|Op:Insert|Type:Job__c|Rows:2
+14:55:23.309 (1335348013)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:12
+14:55:23.309 (1733091950)|DML_END|[31]
+14:55:23.309 (1733238890)|VF_PAGE_MESSAGE|職種: 制限つき選択リスト項目の値が不適切: IT系
+14:55:23.309 (1733352946)|EXCEPTION_THROWN|[31]|System.DmlException: Insert failed. First exception on row 0; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, 職種: 制限つき選択リスト項目の値が不適切: IT系: [JobCategory1__c]
+14:55:23.309 (1735038666)|HEAP_ALLOCATE|[31]|Bytes:144
+14:55:23.309 (1735089937)|SYSTEM_MODE_EXIT|false
+14:55:23.309 (1735186279)|FATAL_ERROR|System.DmlException: Insert failed. First exception on row 0; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, 職種: 制限つき選択リスト項目の値が不適切: IT系: [JobCategory1__c]
+
+Class.InterestedJobControllerTest.setupTestData: line 31, column 1
+14:55:23.309 (1735203305)|FATAL_ERROR|System.DmlException: Insert failed. First exception on row 0; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, 職種: 制限つき選択リスト項目の値が不適切: IT系: [JobCategory1__c]
+
+Class.InterestedJobControllerTest.setupTestData: line 31, column 1
+14:55:23.735 (1735213242)|CUMULATIVE_LIMIT_USAGE
+14:55:23.735 (1735213242)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 2 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 3 out of 10000
+  Maximum CPU time: 49 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+14:55:23.735 (1735213242)|LIMIT_USAGE_FOR_NS|pi|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+14:55:23.735 (1735213242)|CUMULATIVE_LIMIT_USAGE_END
+
+14:55:23.309 (1735277290)|CODE_UNIT_FINISHED|InterestedJobControllerTest.setupTestData()
+14:55:23.309 (1735287109)|EXECUTION_FINISHED

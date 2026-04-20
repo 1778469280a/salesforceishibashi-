@@ -1,0 +1,56 @@
+66.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DATA_ACCESS,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+17:59:58.1 (1643334)|USER_INFO|[EXTERNAL]|0057F0000042UBb|ishibashi@hurex.co.jp.dev1|(GMT+09:00) 日本標準時 (Asia/Tokyo)|GMT+09:00
+17:59:58.1 (1700452)|EXECUTION_STARTED
+17:59:58.1 (1724708)|CODE_UNIT_STARTED|[EXTERNAL]|apex://RegistrationInfoController/ACTION$updateRegistrationInfo
+17:59:58.1 (4822880)|CODE_UNIT_STARTED|[EXTERNAL]|01pBK000001mgyr|RegistrationInfoController.updateRegistrationInfo(Map<String,ANY>)
+17:59:58.1 (9492031)|HEAP_ALLOCATE|[95]|Bytes:3
+17:59:58.1 (9833860)|HEAP_ALLOCATE|[100]|Bytes:152
+17:59:58.1 (9871463)|HEAP_ALLOCATE|[417]|Bytes:408
+17:59:58.1 (9892785)|HEAP_ALLOCATE|[430]|Bytes:408
+17:59:58.1 (9935038)|HEAP_ALLOCATE|[317]|Bytes:6
+17:59:58.1 (9964395)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:23
+17:59:58.1 (9974381)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:37
+17:59:58.1 (9981640)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:7
+17:59:58.1 (10048806)|METHOD_ENTRY|[5]|01pBK000001mgyr|RegistrationInfoController.RegistrationInfoController()
+17:59:58.1 (10085651)|STATEMENT_EXECUTE|[5]
+17:59:58.1 (10103597)|STATEMENT_EXECUTE|[5]
+17:59:58.1 (10161820)|HEAP_ALLOCATE|[68]|Bytes:5
+17:59:58.1 (10236626)|HEAP_ALLOCATE|[74]|Bytes:5
+17:59:58.1 (10261534)|HEAP_ALLOCATE|[82]|Bytes:7
+17:59:58.1 (10753892)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+17:59:58.1 (10760772)|STATEMENT_EXECUTE|[7]
+17:59:58.1 (10782529)|METHOD_EXIT|[5]|RegistrationInfoController
+17:59:58.1 (10801236)|VARIABLE_SCOPE_BEGIN|[54]|wrapperMap|Map<String,ANY>|true|false
+17:59:58.1 (10869098)|VARIABLE_ASSIGNMENT|[54]|wrapperMap|null|
+17:59:58.1 (10882507)|HEAP_ALLOCATE|[56]|Bytes:5
+17:59:58.1 (10885140)|STATEMENT_EXECUTE|[54]
+17:59:58.1 (10886072)|STATEMENT_EXECUTE|[56]
+17:59:58.1 (10888916)|HEAP_ALLOCATE|[56]|Bytes:8
+17:59:58.1 (10970331)|HEAP_ALLOCATE|[56]|Bytes:41
+17:59:58.1 (11132539)|FATAL_ERROR|System.NullPointerException: Attempt to de-reference a null object
+
+Class.RegistrationInfoController.updateRegistrationInfo: line 56, column 1
+17:59:58.1 (11142794)|FATAL_ERROR|System.NullPointerException: Attempt to de-reference a null object
+
+Class.RegistrationInfoController.updateRegistrationInfo: line 56, column 1
+17:59:58.11 (11152559)|CUMULATIVE_LIMIT_USAGE
+17:59:58.11 (11152559)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+17:59:58.11 (11152559)|CUMULATIVE_LIMIT_USAGE_END
+
+17:59:58.1 (11193459)|CODE_UNIT_FINISHED|RegistrationInfoController.updateRegistrationInfo(Map<String,ANY>)
+17:59:58.1 (48470533)|CODE_UNIT_FINISHED|apex://RegistrationInfoController/ACTION$updateRegistrationInfo
+17:59:58.1 (48492935)|EXECUTION_FINISHED

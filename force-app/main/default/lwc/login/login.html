@@ -1,0 +1,32 @@
+<template>
+    <!-- ここから -->
+    <div class="email-regist-card">
+
+        <p class="subtitle">まだ登録済みではない方</p>
+
+        <div class="form-section">
+            <div class="slds-form-element slds-m-bottom_medium">
+                <div class="input-label">メールアドレス</div>
+                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                    <input type="email" class="slds-input custom-input" placeholder="例：info@hurex.co.jp" value={email}
+                        onchange={handleEmailChange} />
+                </div>
+            </div>
+
+            <template if:true={errorMessage}>
+                <p class="error-text slds-m-bottom_small">{errorMessage}</p>
+            </template>
+
+            <button class="email-regist-button" onclick={handleRegister} disabled={isLoading}>
+                <span><span class="material-symbols-outlined" style="transform:translateY(4px);">
+                        edit_square
+                    </span>無料会員登録をする</span>
+            </button>
+
+            <div class="link-section slds-m-top_large">
+                <a href=# class="regist-merit-link">会員登録するメリットを詳しくみる<span
+                        class="arrow">&gt;</span></a>
+            </div>
+        </div>
+    </div>
+</template>

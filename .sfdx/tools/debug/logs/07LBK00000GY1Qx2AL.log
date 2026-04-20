@@ -1,0 +1,91 @@
+66.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DATA_ACCESS,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+18:07:17.0 (209171)|USER_INFO|[EXTERNAL]|0057F0000042UBb|ishibashi@hurex.co.jp.dev1|(GMT+09:00) 日本標準時 (Asia/Tokyo)|GMT+09:00
+18:07:17.0 (242971)|EXECUTION_STARTED
+18:07:17.0 (253196)|CODE_UNIT_STARTED|[EXTERNAL]|apex://RegistrationInfoController/ACTION$updateRegistrationInfo
+18:07:17.0 (1361332)|HEAP_ALLOCATE|[95]|Bytes:3
+18:07:17.0 (1479312)|HEAP_ALLOCATE|[100]|Bytes:152
+18:07:17.0 (1495307)|HEAP_ALLOCATE|[417]|Bytes:408
+18:07:17.0 (1505862)|HEAP_ALLOCATE|[430]|Bytes:408
+18:07:17.0 (1527634)|HEAP_ALLOCATE|[317]|Bytes:6
+18:07:17.0 (1573346)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:76
+18:07:17.0 (1581046)|VARIABLE_SCOPE_BEGIN|[7]|this|RegistrationInfoController.RegistrationInfoWrapper|true|false
+18:07:17.0 (1646096)|VARIABLE_ASSIGNMENT|[7]|this|{}|0x534f082f
+18:07:17.0 (1658215)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:6
+18:07:17.0 (6736428)|STATEMENT_EXECUTE|[7]
+18:07:17.0 (6741522)|STATEMENT_EXECUTE|[8]
+18:07:17.0 (6743054)|STATEMENT_EXECUTE|[9]
+18:07:17.0 (6744098)|STATEMENT_EXECUTE|[10]
+18:07:17.0 (6745046)|STATEMENT_EXECUTE|[11]
+18:07:17.0 (6746130)|STATEMENT_EXECUTE|[12]
+18:07:17.0 (6746921)|STATEMENT_EXECUTE|[13]
+18:07:17.0 (6747844)|STATEMENT_EXECUTE|[14]
+18:07:17.0 (6748670)|STATEMENT_EXECUTE|[15]
+18:07:17.0 (6749610)|STATEMENT_EXECUTE|[16]
+18:07:17.0 (6750609)|STATEMENT_EXECUTE|[17]
+18:07:17.0 (6751401)|STATEMENT_EXECUTE|[18]
+18:07:17.0 (6752450)|STATEMENT_EXECUTE|[19]
+18:07:17.0 (6753448)|STATEMENT_EXECUTE|[20]
+18:07:17.0 (6754235)|STATEMENT_EXECUTE|[21]
+18:07:17.0 (6755018)|STATEMENT_EXECUTE|[22]
+18:07:17.0 (6756156)|STATEMENT_EXECUTE|[23]
+18:07:17.0 (6757069)|STATEMENT_EXECUTE|[24]
+18:07:17.0 (6757905)|STATEMENT_EXECUTE|[25]
+18:07:17.0 (9092189)|CODE_UNIT_STARTED|[EXTERNAL]|01pBK000001mgyr|RegistrationInfoController.updateRegistrationInfo(RegistrationInfoController.RegistrationInfoWrapper)
+18:07:17.0 (9252870)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:23
+18:07:17.0 (9262684)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:36
+18:07:17.0 (9267613)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:13
+18:07:17.0 (9280777)|METHOD_ENTRY|[5]|01pBK000001mgyr|RegistrationInfoController.RegistrationInfoController()
+18:07:17.0 (9285631)|STATEMENT_EXECUTE|[5]
+18:07:17.0 (9291325)|STATEMENT_EXECUTE|[5]
+18:07:17.0 (9316584)|HEAP_ALLOCATE|[68]|Bytes:5
+18:07:17.0 (9351344)|HEAP_ALLOCATE|[74]|Bytes:5
+18:07:17.0 (9359921)|HEAP_ALLOCATE|[82]|Bytes:7
+18:07:17.0 (9416566)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+18:07:17.0 (9420606)|STATEMENT_EXECUTE|[7]
+18:07:17.0 (9429694)|METHOD_EXIT|[5]|RegistrationInfoController
+18:07:17.0 (9435268)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:76
+18:07:17.0 (9441093)|VARIABLE_SCOPE_BEGIN|[54]|wrapper|RegistrationInfoController.RegistrationInfoWrapper|true|false
+18:07:17.0 (9489603)|VARIABLE_ASSIGNMENT|[54]|wrapper|{}|0x534f082f
+18:07:17.0 (9501122)|HEAP_ALLOCATE|[55]|Bytes:5
+18:07:17.0 (9503765)|STATEMENT_EXECUTE|[54]
+18:07:17.0 (9504732)|STATEMENT_EXECUTE|[55]
+18:07:17.0 (9506298)|HEAP_ALLOCATE|[55]|Bytes:24
+18:07:17.0 (9555863)|USER_DEBUG|[55]|DEBUG|=== wrapper 接收到的完整内容 ===
+18:07:17.0 (9564995)|STATEMENT_EXECUTE|[56]
+18:07:17.0 (9612605)|HEAP_ALLOCATE|[56]|Bytes:24
+18:07:17.0 (9617422)|SYSTEM_METHOD_ENTRY|[1]|JSON.JSON()
+18:07:17.0 (9619189)|STATEMENT_EXECUTE|[1]
+18:07:17.0 (9623430)|SYSTEM_METHOD_EXIT|[1]|JSON
+18:07:17.0 (9632032)|METHOD_ENTRY|[56]||System.JSON.serialize(Object)
+18:07:17.0 (9733403)|METHOD_EXIT|[56]||System.JSON.serialize(Object)
+18:07:17.0 (9738838)|USER_DEBUG|[56]|DEBUG|{"school":null,"remarks":null,"recordId":null,"prefecture":null,"postalCode":null,"phone":null,"managementExperience":null,"license":null,"lastName":null,"kanaSei":null,"kanaMei":null,"gender":null,"firstName":null,"employmentStatus":null,"education":null,"companyCount":null,"birthdate":null,"address":null}
+18:07:17.0 (9789332)|STATEMENT_EXECUTE|[57]
+18:07:17.0 (9790291)|STATEMENT_EXECUTE|[58]
+18:07:17.0 (9804086)|HEAP_ALLOCATE|[58]|Bytes:20
+18:07:17.0 (9948946)|FATAL_ERROR|System.AuraHandledException: Script-thrown exception
+
+Class.RegistrationInfoController.updateRegistrationInfo: line 58, column 1
+18:07:17.0 (9957622)|FATAL_ERROR|System.AuraHandledException: Script-thrown exception
+
+Class.RegistrationInfoController.updateRegistrationInfo: line 58, column 1
+18:07:17.9 (9963260)|CUMULATIVE_LIMIT_USAGE
+18:07:17.9 (9963260)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+18:07:17.9 (9963260)|CUMULATIVE_LIMIT_USAGE_END
+
+18:07:17.0 (9988185)|CODE_UNIT_FINISHED|RegistrationInfoController.updateRegistrationInfo(RegistrationInfoController.RegistrationInfoWrapper)
+18:07:17.0 (10176076)|CODE_UNIT_FINISHED|apex://RegistrationInfoController/ACTION$updateRegistrationInfo
+18:07:17.0 (10182015)|EXECUTION_FINISHED

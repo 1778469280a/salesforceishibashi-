@@ -1,0 +1,59 @@
+<template>
+    <div class="main-wrapper slds-box slds-theme_default">
+        
+        <div class="header-section slds-p-bottom_small">
+            <lightning-input 
+                type="search" 
+                variant="label-hidden" 
+                placeholder={computedPlaceholder} 
+                onchange={handleSearchChange}>
+            </lightning-input>
+        </div>
+
+        <div class="scrollable-content">
+            <template if:false={isLoaded}>
+                <div class="slds-is-relative slds-p-around_large">
+                    <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                </div>
+            </template>
+
+            <template if:true={isLoaded}>
+                <template if:true={hasData}>
+                    <div class="hierarchy-list slds-p-right_small">
+                        <template for:each={filteredGroupedData} for:item="parent">
+                            <div key={parent.name} class="parent-group slds-m-bottom_medium slds-p-bottom_x-small">
+                                <div class="parent-header slds-p-around_x-small clickable-area" onclick={handleParentToggle} data-value={parent.name}>
+                                    <lightning-input type="checkbox" label={parent.name} value={parent.name} checked={parent.selected} variant="label-hidden" class="no-pointer"></lightning-input>
+                                    <span class="parent-label slds-text-heading_small slds-m-left_x-small">{parent.name}</span>
+                                </div>
+                                <div class="child-container slds-grid slds-wrap slds-p-left_large slds-m-top_x-small">
+                                    <template for:each={parent.children} for:item="child">
+                                        <div key={child.name} class={columnSizeClass}>
+                                            <div class={child.className} onclick={handleChildToggle} data-value={child.name} data-parent={parent.name}>
+                                                <lightning-input type="checkbox" label={child.name} value={child.name} checked={child.selected} class="no-pointer"></lightning-input>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <template if:false={hasData}>
+                    <div class="slds-p-around_large slds-text-align_center slds-text-color_weak">
+                        表示できるデータがありません。
+                    </div>
+                </template>
+            </template>
+        </div>
+
+        <div class="footer-section slds-p-top_small slds-border_top">
+            <lightning-button 
+                variant="brand" 
+                label="保存" 
+                onclick={handleSave} 
+                loading={isSaving}>
+            </lightning-button>
+        </div>
+    </div>
+</template>

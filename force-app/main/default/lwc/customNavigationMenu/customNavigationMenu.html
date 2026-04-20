@@ -1,0 +1,136 @@
+<template>
+    <div>
+        <div if:true={isMobileMenuOpen} class="mobile-overlay" onclick={toggleMobileMenu}></div>
+
+        <div class="header-placeholder"></div>
+
+        <div class={wrapperClass}>
+
+            <div class="top-header">
+                <div class="header-left">
+                    <a href="/" target="_self">
+                        <img src="/portal/sfsites/c/cms/delivery/media/MCHIVQ7W4FBZFD5DQEQLUN7CZNWE"
+                            alt="HUREX human resource experts" class="logo-img" />
+                    </a>
+                </div>
+
+                <div class="mobile-controls">
+                    <template if:false={isUserGuest}>
+                        <div class="bell-container">
+                            <div class="control-icon-group">
+                                <c-custom-notification-bell style="transform: translateY(-2.5px);"></c-custom-notification-bell>
+                                <!-- <span class="control-label">お知らせ</span> -->
+                            </div>
+                            <span class="action-divider pc-divider">|</span>
+                        </div>
+                    </template>
+
+                    <div class="mobile-toggle control-icon-group" onclick={toggleMobileMenu}>
+                        <span class="material-symbols-outlined">{mobileIcon}</span>
+                        <span class="control-label">{mobileLabel}</span>
+                    </div>
+                </div>
+
+                <div if:false={isMobileMenuOpen} class="header-right-actions">
+                    <a href="https://www.hurex.jp/" target="_blank" class="action-link">
+                        HUREXホームページ
+                        <span class="material-symbols-outlined icon-new-window">open_in_new</span>
+                    </a>
+
+                    <span class="action-divider">|</span>
+
+                    <template if:false={isUserGuest}>
+                        <a href="/portal/manual/page1" target="_blank" class="action-link">
+                            ご利用マニュアル
+                            <span class="material-symbols-outlined icon-new-window">open_in_new</span>
+                        </a>
+                        <span class="action-divider">|</span>
+                    </template>
+
+                    <div class="contact-box">
+                        <span class="contact-label">電話でのお問い合わせ</span>
+                        <a href="tel:0120141150" class="contact-phone">
+                            <span class="material-symbols-outlined icon-phone">phone_in_talk</span>
+                            0120-14-1150
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div if:false={isUserGuest} class="nav-container">
+                <template for:each={processedMenuItems} for:item="item">
+                    <a key={item.id} href={item.path} data-path={item.path} class={item.className} onclick={handleNavigate}>
+                        <span class="material-symbols-outlined fill">{item.icon}</span>
+                        <span class="nav-label">{item.label}</span>
+                        <template if:true={item.showBadge}>
+                            <span class="nav-badge">{item.badgeCount}</span>
+                        </template>
+                    </a>
+                </template>
+            </div>
+
+            <template if:true={isMobileMenuOpen}>
+                <div class="mobile-footer-menu">
+                    <ul class="mobile-footer-list" style="margin-bottom:12px;">
+                        <li class="mobile-footer-item">
+                            <a href="https://www.hurex.jp/" class="mobile-footer-link">
+                                HUREXホームページ
+                                <span class="material-symbols-outlined mobile-footer-icon">open_in_new</span>
+                            </a>
+                        </li>
+                        <li if:false={isUserGuest} class="mobile-footer-item">
+                            <a href="https://www.hurex.jp/privacy-policy/" class="mobile-footer-link">
+                                個人情報の取り扱い
+                                <span class="material-symbols-outlined mobile-footer-icon">open_in_new</span>
+                            </a>
+                        </li>
+                        <li if:false={isUserGuest} class="mobile-footer-item">
+                            <a href="/manual/page1" target="_blank" class="mobile-footer-link">
+                                ご利用マニュアル
+                                <span class="material-symbols-outlined mobile-footer-icon">open_in_new</span>
+                            </a>
+                        </li>
+                        <li if:false={isUserGuest} class="mobile-footer-item">
+                            <a href="https://www.hurex.jp/responsibility/" class="mobile-footer-link">
+                                利用規約・免責事項
+                                <span class="material-symbols-outlined mobile-footer-icon">open_in_new</span>
+                            </a>
+                        </li>
+                        <li if:false={isUserGuest} class="mobile-footer-item">
+                            <a href="https://www.hurex.jp/inquiry/" class="mobile-footer-link">
+                                お問い合わせ
+                                <span class="material-symbols-outlined mobile-footer-icon">open_in_new</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul if:false={isUserGuest} class="mobile-footer-list">
+                        <li class="mobile-footer-item">
+                            <a href="/secur/logout.jsp" class="mobile-footer-link">ログアウト</a>
+                        </li>
+                        <li class="mobile-footer-item">
+                            <a href="/portal/suspension" class="mobile-footer-link">メールマガジン停止・退会</a>
+                        </li>
+                    </ul>
+                </div>
+            </template>
+
+        </div>
+
+        <div class="mobile-footer-navigation-menu">
+            <template if:false={isUserGuest}>
+                <div class="mobile-nav-container">
+                    <template for:each={processedMenuItems} for:item="item">
+                        <a key={item.id} href={item.path} data-path={item.path} class={item.mobileClassName}
+                            onclick={handleNavigate}>
+                            <span class="material-symbols-outlined mobile-nav-icon">{item.icon}</span>
+                            <span class="mobile-nav-label">{item.label}</span>
+                            <template if:true={item.showBadge}>
+                                <span class="mobile-nav-badge">{item.badgeCount}</span>
+                            </template>
+                        </a>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

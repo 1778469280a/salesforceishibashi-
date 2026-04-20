@@ -1,0 +1,110 @@
+<template>
+    <div class="recent-viewed-container">
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="読み込み中" size="medium"></lightning-spinner>
+        </template>
+
+        <template if:false={isLoading}>
+            <template if:true={groupedJobs.length}>
+                <template for:each={groupedJobs} for:item="group">
+                    <div key={group.dateString} class="date-group-section">
+                        
+                        <div class="date-header">
+                            <span class="material-symbols-outlined time-icon">schedule</span>
+                            <span class="date-text">{group.dateString}</span>
+                        </div>
+                        
+                        <div class="date-group-content">
+                            <template for:each={group.jobs} for:item="job">
+                                <a key={job.Id} href={job.url} class="job-card job-title-link">
+                                    <div class="job-card-content">
+                                        
+                                        <div class="job-status-container">
+                                            <div class="status-tags-left">
+                                                <span class={job.viewStatusClass}>{job.viewStatusLabel}</span>
+                                                <span class="job-category-tag" if:true={job.DisplayCategory}>{job.DisplayCategory}</span>
+                                                <span class="job-category-tag" if:true={job.DisplayIndustry}>{job.DisplayIndustry}</span>
+                                            </div>
+                                            <button class={job.favoriteButtonClass} data-job-id={job.Id}
+                                                data-is-favorite={job.IsFavorite} onclick={handleFavoriteClick}>
+                                                <span class="material-symbols-outlined icon-bookmark">bookmark</span>
+                                                <span class="button-text">{job.favoriteButtonText}</span>
+                                            </button>
+                                        </div>
+
+                                        <div class="job-title-container">
+                                            <h3 class="job-title">{job.jobTitlePart}</h3>
+                                            <template if:true={job.jobBenefitPart}>
+                                                <div class="job-benefit">{job.jobBenefitPart}</div>
+                                            </template>
+                                        </div>
+                                        
+                                        <div class="job-info-item">
+                                            <div class="info-label">
+                                                <span class="material-symbols-outlined icon-icon">card_travel</span>
+                                                仕事内容
+                                            </div>
+                                            <div class="info-content job-description">{job.DisplayDescription}</div>
+                                        </div>
+                                        
+                                        <div class="job-info-item">
+                                            <div class="info-label">
+                                                <span class="material-symbols-outlined icon-icon">currency_yen</span>
+                                                想定年収
+                                            </div>
+                                            <div class="info-content">{job.DisplayMinSalary}万円〜{job.DisplayMaxSalary}万円</div>
+                                        </div>
+                                        
+                                        <div class="job-info-item">
+                                            <div class="info-label">
+                                                <span class="material-symbols-outlined icon-icon">distance</span>
+                                                勤務地
+                                            </div>
+                                            <div class="info-content">{job.DisplayLocation}</div>
+                                        </div>
+                                        
+                                        <div class="job-info-item update-time">
+                                            <span class="material-symbols-outlined time-icon">schedule</span>
+                                            <span class="info-time">更新日時：{job.FormattedLastModifiedDate}</span>
+                                        </div>
+                                        
+                                    </div>
+                                </a>
+                            </template>
+                        </div>
+                        
+                    </div>
+                </template>
+            </template>
+
+            <template if:false={groupedJobs.length}>
+                <div class="no-results">最近閲覧した求人はありません</div>
+            </template>
+
+            <section class="pagination-container" if:true={showPagination}>
+                <div class="pagination-info">
+                    <span class="total-count">{totalCount}</span>件
+                    <span class="range-text">({paginationRangeText})</span>
+                </div>
+                <div class="pagination-controls">
+                    <button class="pagination-btn pagination-nav" onclick={handlePrevPage} disabled={isFirstPage}>
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <template for:each={visiblePages} for:item="pageItem">
+                        <button key={pageItem.key} class="pagination-btn pagination-page"
+                            data-page={pageItem.value} onclick={handlePageClick} disabled={pageItem.isCurrent}
+                            if:true={pageItem.isNumber}>
+                            {pageItem.value}
+                        </button>
+                        <span key={pageItem.key} class="pagination-ellipsis" if:true={pageItem.isEllipsis}>
+                            …
+                        </span>
+                    </template>
+                    <button class="pagination-btn pagination-nav" onclick={handleNextPage} disabled={isLastPage}>
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+            </section>
+            </template>
+    </div>
+</template>

@@ -1,0 +1,20 @@
+<template>
+    <div class="step-education">
+        <div class="field">
+            <label class="field-label">最終学歴</label>
+            <select class="field-select" value={selectedEducation} onchange={handleEducationChange}>
+                <option value=""></option>
+                <template if:false={isLoading}>
+                    <template for:each={educationOptions} for:item="opt">
+                        <option key={opt.value} value={opt.value}>{opt.label}</option>
+                    </template>
+                </template>
+            </select>
+        </div>
+
+        <div class="field">
+            <label class="field-label">学校名 / 学部 / 学科</label>
+            <input type="text" class="field-input" value={schoolDetail} oninput={handleSchoolInput} />
+        </div>
+    </div>
+</template>

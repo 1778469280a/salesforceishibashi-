@@ -1,0 +1,29 @@
+<template>
+    <div class="preferredCriteriaCard">
+        <div class="card">
+            <div class="card-header">
+                <div class="header-title">
+                    <span class="title-line"></span>
+                    希望条件
+                </div>
+                <a class="edit-link" href="/portal/search?tabs-8472=tab2">
+                    希望条件を変更する
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </a>
+            </div>
+            <div class="card-content">
+                <dl class="info-list">
+                    <dt>希望勤務地</dt>
+                    <dd>第1希望：{preferredCriteria.pref1}　第2希望：{preferredCriteria.pref2}　第3希望：{preferredCriteria.pref3}</dd>
+                    <dt>希望年収</dt>
+                    <dd>{preferredCriteria.minSalary}</dd>
+                    <dt>希望職種</dt>
+                    <dd>{preferredCriteria.categories}</dd>
+                    <dt>転勤の可否</dt>
+                    <dd>{preferredCriteria.transfer}</dd>
+                </dl>
+            </div>
+            <div class="card-bottom"></div>
+        </div>
+    </div>
+</template>

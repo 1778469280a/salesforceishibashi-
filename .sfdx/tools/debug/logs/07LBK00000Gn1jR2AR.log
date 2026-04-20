@@ -1,0 +1,68 @@
+66.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DATA_ACCESS,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+12:32:46.0 (231099)|USER_INFO|[EXTERNAL]|005BK00000Ilvi1|foryoze@owleyes.ch.hurex|(GMT+09:00) 日本標準時 (Asia/Tokyo)|GMT+09:00
+12:32:46.0 (280241)|EXECUTION_STARTED
+12:32:46.0 (291264)|CODE_UNIT_STARTED|[EXTERNAL]|apex://JobDetailController/ACTION$getJobDetail
+12:32:46.0 (1413947)|CODE_UNIT_STARTED|[EXTERNAL]|01pBK000001e6PW|JobDetailController.getJobDetail(String)
+12:32:46.0 (2007121)|HEAP_ALLOCATE|[95]|Bytes:3
+12:32:46.0 (2103686)|HEAP_ALLOCATE|[100]|Bytes:152
+12:32:46.0 (2123618)|HEAP_ALLOCATE|[417]|Bytes:408
+12:32:46.0 (2139762)|HEAP_ALLOCATE|[430]|Bytes:408
+12:32:46.0 (2170222)|HEAP_ALLOCATE|[317]|Bytes:6
+12:32:46.0 (2185807)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:13
+12:32:46.0 (2200165)|METHOD_ENTRY|[6]|01pBK000001e6PW|JobDetailController.JobDetailController()
+12:32:46.0 (2206280)|STATEMENT_EXECUTE|[6]
+12:32:46.0 (2212375)|STATEMENT_EXECUTE|[6]
+12:32:46.0 (2234532)|HEAP_ALLOCATE|[68]|Bytes:5
+12:32:46.0 (2260028)|HEAP_ALLOCATE|[74]|Bytes:5
+12:32:46.0 (2267125)|HEAP_ALLOCATE|[82]|Bytes:7
+12:32:46.0 (2465312)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+12:32:46.0 (2481771)|METHOD_EXIT|[6]|JobDetailController
+12:32:46.0 (2487141)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:18
+12:32:46.0 (2497581)|VARIABLE_SCOPE_BEGIN|[20]|jobId|String|false|false
+12:32:46.0 (2543174)|VARIABLE_ASSIGNMENT|[20]|jobId|"a0KBK00000JSb4v2AD"
+12:32:46.0 (2558545)|HEAP_ALLOCATE|[22]|Bytes:5
+12:32:46.0 (2562709)|STATEMENT_EXECUTE|[20]
+12:32:46.0 (2641603)|STATEMENT_EXECUTE|[22]
+12:32:46.0 (2644483)|HEAP_ALLOCATE|[26]|Bytes:36
+12:32:46.0 (2712240)|HEAP_ALLOCATE|[26]|Bytes:24
+12:32:46.0 (2723265)|SYSTEM_METHOD_ENTRY|[1]|Pattern.Pattern()
+12:32:46.0 (2726518)|STATEMENT_EXECUTE|[1]
+12:32:46.0 (2732252)|SYSTEM_METHOD_EXIT|[1]|Pattern
+12:32:46.0 (2751915)|METHOD_ENTRY|[26]||System.Pattern.matches(String, String)
+12:32:46.0 (7620689)|METHOD_EXIT|[26]||System.Pattern.matches(String, String)
+12:32:46.0 (7636238)|STATEMENT_EXECUTE|[26]
+12:32:46.0 (7638800)|STATEMENT_EXECUTE|[31]
+12:32:46.0 (7641051)|HEAP_ALLOCATE|[31]|Bytes:617
+12:32:46.0 (7656427)|HEAP_ALLOCATE|[31]|Bytes:4
+12:32:46.0 (7664779)|HEAP_ALLOCATE|[31]|Bytes:7
+12:32:46.0 (9556030)|SOQL_EXECUTE_BEGIN|[31]|Aggregations:0|SELECT Id, JobPosition__c, JobCategory1__c, WorkLocation2__c, Company__c, HiringBackground__c, JobDescription__c, ApplicationQualification__c, EmploymentType__c, MaxAnnualSalary__c, MinAnnualSalary__c, WorkLocationRegion__c, WorkLocationPrefecture__c, TransferRequired__c, TransferRemarks__c, BenefitsAndWelfare__c, HolidaysAndLeave__c, WorkingHours__c, SpecificConditions__c, LastModifiedDate, LastViewedDate, JobHighlight1__c, JobHighlight2__c, JobHighlight3__c, Company__r.Name, Company__r.Industry__c, Company__r.BusinessSummary__c, Company__r.NumberOfEmployees__c FROM Job__c WHERE Id = :tmpVar1 LIMIT 1 FOR VIEW
+12:32:46.0 (43180295)|SOQL_EXECUTE_END|[31]|Rows:1
+12:32:46.0 (43217380)|HEAP_ALLOCATE|[31]|Bytes:8
+12:32:46.0 (43235906)|HEAP_ALLOCATE|[31]|Bytes:1148
+12:32:46.0 (43371215)|HEAP_ALLOCATE|[31]|Bytes:8
+12:32:46.0 (43391258)|VARIABLE_SCOPE_BEGIN|[31]|jobList|List<Job__c>|true|false
+12:32:46.0 (43544044)|VARIABLE_ASSIGNMENT|[31]|jobList|[{"WorkingHours__c":"XX:XX-XX:XX （フレックスタイ (108 more) ...","LastModifiedDate":"2026-04-10T08:58:30.000Z","TransferRemarks__c":"\u203b詳細は面談時にお伝えします","JobPosition__c":"●形式厳守！右記テンプレに則って作成→市 (63 more) ...","LastViewedDate":"2026-04-15T03:32:46.000Z","HiringBackground__c":"作成例）\u203b作成後、削除\n航空宇宙・医療・ (89 more) ...","BenefitsAndWelfare__c":"【諸手当】\n交通費支給、住宅手当、役職手 (210 more) ...","HolidaysAndLeave__c":"【休日】\n年間休日：xxx日\n完全週休2 (94 more) ...","Id":"a0KBK00000JSb4v2AD","ApplicationQualification__c":"【必須条件】\n・\n・\n\n【歓迎条件】\n・ (20 more) ...","JobDescription__c":"・・・\n\n【具体的には\u2026】\n・\n・\n・\n (153 more) ..."}]|0x68e91602
+12:32:46.0 (43689110)|STATEMENT_EXECUTE|[65]
+12:32:46.0 (43691079)|STATEMENT_EXECUTE|[69]
+12:32:46.0 (43707102)|HEAP_ALLOCATE|[69]|Bytes:48
+12:32:46.43 (43770178)|CUMULATIVE_LIMIT_USAGE
+12:32:46.43 (43770178)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 0
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+12:32:46.43 (43770178)|CUMULATIVE_LIMIT_USAGE_END
+
+12:32:46.0 (43802540)|CODE_UNIT_FINISHED|JobDetailController.getJobDetail(String)
+12:32:46.0 (43954487)|CODE_UNIT_FINISHED|apex://JobDetailController/ACTION$getJobDetail
+12:32:46.0 (43959275)|EXECUTION_FINISHED

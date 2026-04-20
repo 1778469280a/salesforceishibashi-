@@ -1,0 +1,213 @@
+<template>
+    <div class="container">
+
+        <template if:true={toastConfig.show}>
+            <div class="custom-toast-container">
+                <template if:false={toastConfig.isError}>
+                    <div class="custom-toast toast-success">
+                        <span class="material-symbols-outlined">check_circle</span>
+                        {toastConfig.message}
+                    </div>
+                </template>
+                <template if:true={toastConfig.isError}>
+                    <div class="custom-toast toast-error">
+                        <span class="material-symbols-outlined">error</span>
+                        {toastConfig.message}
+                    </div>
+                </template>
+            </div>
+        </template>
+        <div class="card">
+            <div class="header-section">
+                <div class="header-title">
+                    <div class="title-line"></div>
+                    職務経歴
+                </div>
+
+                <template if:false={isAllEditMode}>
+                    <div class="edit-link" onclick={handleAllEditSaveClick}>
+                        全体を変更する
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </div>
+                </template>
+                <template if:true={isAllEditMode}>
+                    <div class="edit-link" onclick={handleCancel}>
+                        <span class="material-symbols-outlined cancel-link">close</span>
+                        キャンセル
+                    </div>
+                </template>
+
+            </div>
+
+            <template for:each={processedCareerData} for:item="career">
+                <div key={career.id} class="career-card">
+                    <div class="career-header">
+                        <span class="career-title">
+                            <template if:true={career.isFirst}>現在または直前の勤務先</template>
+                            <template if:true={career.isSecond}>以前の勤務先１</template>
+                            <template if:true={career.isThird}>以前の勤務先２</template>
+                            <template if:true={career.isFourth}>以前の勤務先３～</template>
+                        </span>
+                        <template if:false={career.showEditFields}>
+                            <div class="edit-link" data-id={career.id} onclick={handleSingleEditStart}>
+                                変更する
+                                <span class="material-symbols-outlined">chevron_right</span>
+                            </div>
+                        </template>
+                        <template if:true={career.isEditing}>
+                            <div class="edit-link" data-id={career.id} onclick={handleSingleEditCansel}>
+                                <span class="material-symbols-outlined">close</span>
+                                キャンセル
+                            </div>
+                        </template>
+                    </div>
+
+                    <template if:true={career.isFirstThree}>
+                        <div class="career-item">
+                            <div class="item-label">企業名</div>
+                            <template if:true={career.showEditFields}>
+                                <input type="text" class="item-input" value={career.companyName}
+                                    onchange={handleInputChange} data-id={career.id} data-field="companyName">
+                            </template>
+                            <template if:false={career.showEditFields}>
+                                <div class="item-value">{career.companyName}</div>
+                            </template>
+                        </div>
+
+                        <div class="career-item">
+                            <div class="item-label">勤務開始</div>
+                            <template if:true={career.showEditFields}>
+                                <input type="month" class="item-input" value={career.startDateInput}
+                                    onchange={handleDateChange} data-id={career.id} data-field="startDate">
+                            </template>
+                            <template if:false={career.showEditFields}>
+                                <div class="item-value">{career.startDateDisplay}</div>
+                            </template>
+                        </div>
+
+                        <div class="career-item">
+                            <div class="item-label">勤務終了</div>
+                            <template if:true={career.showEditFields}>
+                                <input type="month" class="item-input" value={career.endDateInput}
+                                    onchange={handleDateChange} data-id={career.id} data-field="endDate">
+                            </template>
+                            <template if:false={career.showEditFields}>
+                                <template if:true={career.isCurrentJob}>
+                                    <div class="item-value">-</div>
+                                </template>
+                                <template if:false={career.isCurrentJob}>
+                                    <div class="item-value">{career.endDateDisplay}</div>
+                                </template>
+                            </template>
+                        </div>
+
+                        <template if:true={career.isFirst}>
+                            <div class="career-item">
+                                <div class="item-label">現在の年収</div>
+                                <template if:true={career.showEditFields}>
+                                    <select class="item-select" onchange={handleInputChange} data-id={career.id}
+                                        data-field="annualIncome">
+                                        <option value="">選択してください</option>
+                                        <template for:each={career.rowIncomeOptions} for:item="option">
+                                            <option key={option.value} value={option.value} selected={option.selected}>
+                                                {option.label}
+                                            </option>
+                                        </template>
+                                    </select>
+                                </template>
+                                <template if:false={career.showEditFields}>
+                                    <template if:true={career.hasAnnualIncome}>
+                                        <div class="item-value">{career.annualIncome}</div>
+                                    </template>
+                                    <template if:false={career.hasAnnualIncome}>
+                                        <div class="item-value">未選択</div>
+                                    </template>
+                                </template>
+                            </div>
+                        </template>
+
+                        <div class="career-item">
+                            <div class="item-label">経験職種</div>
+                            <template if:true={career.showEditFields}>
+                                <div class="category-container">
+                                    <template for:each={career.rowJobGroups} for:item="group">
+                                        <div key={group.key} class="category-group">
+                                            <div class="category-summary" onclick={toggleGroup}
+                                                data-group-key={group.key} data-id={career.id}>
+                                                <input type="checkbox" checked={group.allSelected}
+                                                    indeterminate={group.indeterminate} onchange={handleGroupSelect}
+                                                    data-group-key={group.key} data-id={career.id}
+                                                    onclick={stopPropagation} />
+                                                <span class="category-label">{group.label}</span>
+                                                <span class="toggle-icon">{group.toggleIconName}</span>
+                                            </div>
+                                            <div if:true={group.isExpanded} class="category-options">
+                                                <template for:each={group.options} for:item="option">
+                                                    <label key={option.value} class="option-label">
+                                                        <input type="checkbox" value={option.value}
+                                                            checked={option.isSelected} onchange={handleOptionChange}
+                                                            data-group-key={group.key} data-id={career.id} />
+                                                        {option.label}
+                                                    </label>
+                                                </template>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </template>
+                            <template if:false={career.showEditFields}>
+                                <div class="item-value" style="white-space: pre-wrap;">{career.jobGroupDisplay}</div>
+                            </template>
+                        </div>
+
+                        <div class="career-item no-border">
+                            <div class="item-label">職務内容</div>
+                            <template if:true={career.showEditFields}>
+                                <textarea class="item-textarea" onchange={handleInputChange} data-id={career.id}
+                                    data-field="jobDescription">{career.jobDescription}</textarea>
+                            </template>
+                            <template if:false={career.showEditFields}>
+                                <div class="item-value" style="white-space: pre-wrap;">{career.jobDescription}</div>
+                            </template>
+                        </div>
+
+                        <template if:true={career.isEditing}>
+                            <div class="button-group">
+                                <button class="btn-cancel" data-id={career.id}
+                                    onclick={handleSingleCancelClick}>キャンセル</button>
+                                <button class="btn-save" data-id={career.id} onclick={handleSingleSaveClick}>保存</button>
+                            </div>
+                        </template>
+                    </template>
+
+                    <template if:true={career.isFourth}>
+                        <div class="career-item no-border">
+                            <div class="item-label">職務経歴（複数可）</div>
+                            <template if:true={career.showEditFields}>
+                                <textarea class="item-textarea" onchange={handleInputChange} data-id={career.id}
+                                    data-field="jobDescription">{career.jobDescription}</textarea>
+                            </template>
+                            <template if:false={career.showEditFields}>
+                                <div class="item-value" style="white-space: pre-wrap;">{career.jobDescription}</div>
+                            </template>
+                        </div>
+                        <template if:true={career.isEditing}>
+                            <div class="button-group">
+                                <button class="btn-cancel" data-id={career.id}
+                                    onclick={handleSingleCancelClick}>キャンセル</button>
+                                <button class="btn-save" data-id={career.id} onclick={handleSingleSaveClick}>保存</button>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+            </template>
+
+            <template if:true={isAllEditMode}>
+                <div class="button-group">
+                    <button class="btn-cancel" onclick={handleAllCancelClick}>キャンセル</button>
+                    <button class="btn-save" onclick={handleAllEditSaveClick}>すべての変更を保存する</button>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

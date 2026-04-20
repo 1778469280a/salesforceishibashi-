@@ -1,0 +1,44 @@
+45.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DATA_ACCESS,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+18:33:54.75 (75948069)|SOQL_EXECUTE_BEGIN|[187]|Aggregations:0|SELECT id, name, Pardot_Env_Indicator__c FROM Private_Settings__c WHERE name = :tmpVar1
+18:33:54.75 (99516281)|SOQL_EXECUTE_END|[187]|Rows:1
+18:33:54.75 (100248898)|SOQL_EXECUTE_BEGIN|[187]|Aggregations:0|SELECT id, name, Pardot_Env_Indicator__c FROM Private_Settings__c WHERE name = :tmpVar1
+18:33:54.75 (108505071)|SOQL_EXECUTE_END|[187]|Rows:1
+18:33:54.75 (110073602)|SOQL_EXECUTE_BEGIN|[108]|Aggregations:0|SELECT id, name, Pardot_Api_Access_Secret__c, SystemModstamp FROM Private_Settings__c WHERE name = :tmpVar1
+18:33:54.75 (125227860)|SOQL_EXECUTE_END|[108]|Rows:1
+18:33:54.75 (163639838)|SOQL_EXECUTE_BEGIN|[108]|Aggregations:0|SELECT id, name, Pardot_Api_Access_Secret__c, SystemModstamp FROM Private_Settings__c WHERE name = :tmpVar1
+18:33:54.75 (176090641)|SOQL_EXECUTE_END|[108]|Rows:1
+18:33:54.75 (177925463)|SOQL_EXECUTE_BEGIN|[108]|Aggregations:0|SELECT id, name, Pardot_Api_Access_Secret__c, SystemModstamp FROM Private_Settings__c WHERE name = :tmpVar1
+18:33:54.75 (190852688)|SOQL_EXECUTE_END|[108]|Rows:1
+18:33:54.199 (199522717)|CUMULATIVE_LIMIT_USAGE
+18:33:54.199 (199522717)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+18:33:54.199 (199522717)|LIMIT_USAGE_FOR_NS|pi|
+  Number of SOQL queries: 5 out of 100
+  Number of query rows: 5 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+18:33:54.199 (199522717)|CUMULATIVE_LIMIT_USAGE_END
+
