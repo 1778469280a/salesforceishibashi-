@@ -230,7 +230,6 @@
     -webkit-line-clamp: 2;
     overflow: hidden;
     color: var(--group-color, #111111);
-    /* テキストカラーをデフォルトに */
 }
 
 .update-info {
