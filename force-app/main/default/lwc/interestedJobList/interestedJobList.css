@@ -102,16 +102,17 @@
     flex-wrap: wrap;
     gap: 8px;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .job-category-tag {
-    background-color: #e0e0e0;
+    background-color: #F5F5F5;
     color: #042356;
     padding: 4px 10px;
     border-radius: 4px;
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: bold;
+    border: 1px solid #D9D9D9;
 }
 
 .view-status-new {
@@ -120,16 +121,17 @@
     padding: 4px 10px;
     border-radius: 4px;
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .view-status-viewed {
+    display: none;
     background-color: #A0A0A0;
     color: white;
     padding: 4px 10px;
     border-radius: 4px;
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .job-title-container {
@@ -218,14 +220,14 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
     gap: 10px;
     flex-shrink: 0;
-    margin-left: 8px;
 }
 
 .action-icon-button {
     background: none;
-    border: 1px solid #042356;
+    border: 1px solid #D9D9D9;
     border-radius: 50%;
     width: 44px;
     height: 44px;

@@ -169,6 +169,10 @@
         font-size: 20px;
     }
 
+    .user-info {
+        padding-left: 10px;
+    }
+
     .user-suffix {
         font-size: 12px;
     }

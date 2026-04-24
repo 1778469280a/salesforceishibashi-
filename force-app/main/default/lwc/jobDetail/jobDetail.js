@@ -67,9 +67,12 @@ export default class JobDetail extends LightningElement {
         getSelectionProcessStatus({ jobId: this.jobId })
             .then(result => {
                 this.processStatus = result;
+                console.log("取得");
+                console.log(JSON.stringify(this.processStatus, null, 2));
             })
             .catch(error => {
                 console.error('ステータス取得エラー:', error);
+                console.log("no取得");
             });
     }
 

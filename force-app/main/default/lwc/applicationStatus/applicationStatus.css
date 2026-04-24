@@ -162,32 +162,28 @@
 }
 
 .badge-group {
-    margin-bottom: 12px;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    gap: 8px;
     align-items: center;
-    gap: 2px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    margin-bottom: 10px;
 }
 
 .badge-group>span {
     margin-right: 0;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 6px;
 }
 
 .badge-outline,
 .view-status-new,
 .view-status-viewed,
 .job-category-tag {
-    font-size: 11px;
-    font-weight: bold;
-    padding: 3px 8px;
+    font-size: 0.85rem;
+    padding: 4px 10px;
     border-radius: 4px;
-    display: inline-block;
-    line-height: 1.4;
-    white-space: nowrap;
-    box-sizing: border-box;
-    margin-right: 4px;
+    font-weight: bold;
 }
 
 .badge-outline {
@@ -275,6 +271,7 @@
 }
 
 .view-status-viewed {
+    display: none;
     background-color: #A0A0A0;
     /* サブテキスト */
     color: white;
@@ -283,10 +280,9 @@
 
 .job-category-tag {
     margin-right: 8px;
-    background-color: #f0f0f0;
+    background-color: #F5F5F5;
     color: #042356;
-    /* メインカラー */
-    border: none;
+    border: 1px solid #D9D9D9;
 }
 
 

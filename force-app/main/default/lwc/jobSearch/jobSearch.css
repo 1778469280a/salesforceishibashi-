@@ -62,8 +62,8 @@
     color: #042356;
 }
 .filter-label {
-    font-size: 15px;
-    font-weight: 500;
+    font-weight: bold;
+    font-size: 16px;
     color: #042356;
 }
 .filter-item-right {
@@ -240,6 +240,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
+    font-weight: bold;
     cursor: pointer;
 }
 .btn-submit {
@@ -249,6 +250,7 @@
     border: none;
     border-radius: 4px;
     font-size: 14px;
+    font-weight: bold;
     cursor: pointer;
 }
 input[type="checkbox"],

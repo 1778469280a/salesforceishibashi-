@@ -239,6 +239,7 @@
     background-color: #031a40;
 }
 
-.year-select, .month-select{
-    margin-right: 10px;
+.date-select-group {
+    display: flex;
+    gap: 5px;
 }

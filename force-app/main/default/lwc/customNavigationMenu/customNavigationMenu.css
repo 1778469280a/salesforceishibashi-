@@ -241,7 +241,7 @@ c-custom-notification-bell {
     position: absolute;
     top: -6px;
     left: 16px;
-    background-color: #FF3B30;
+    background-color: #FF5924;
     color: #ffffff;
     font-size: 10px;
     font-weight: bold;
@@ -499,7 +499,7 @@ c-custom-notification-bell {
         position: absolute;
         top: 4px;
         right: calc(50% - 18px);
-        background-color: #FF3B30;
+        background-color: #FF5924;
         color: #ffffff;
         font-size: 9px;
         font-weight: bold;
@@ -515,5 +515,9 @@ c-custom-notification-bell {
     .nav-badge {
         top: 4px;
         left: 15px;
+    }
+
+    .mobile-controls {
+        transform: translateY(-6px);
     }
 }

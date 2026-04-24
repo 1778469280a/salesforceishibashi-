@@ -1,0 +1,28 @@
+<template>
+    <section class="job-list-container">
+        <template if:true={error}>
+            <div class="error-message">エラーが発生しました</div>
+        </template>
+        <template if:false={error}>
+            <div class="job-table">
+                <div class="table-header">
+                    <span class="col-title">求人案件</span>
+                    <span class="col-category">職種</span>
+                    <span class="col-location">勤務地</span>
+                    <span class="col-salary">給与</span>
+                </div>
+                <template for:each={jobs} for:item="job">
+                    <a href={job.url} key={job.Id} class="table-row">
+                        <span class="col-title">
+                            <span if:true={job.isNew} class="new-badge">NEW</span>
+                            {job.JobPosition__c}
+                        </span>
+                        <span class="col-category">{job.JobCategory1__c}</span>
+                        <span class="col-location">{job.WorkLocation2__c}</span>
+                        <span class="col-salary">{job.salaryRange}</span>
+                    </a>
+                </template>
+            </div>
+        </template>
+    </section>
+</template>
